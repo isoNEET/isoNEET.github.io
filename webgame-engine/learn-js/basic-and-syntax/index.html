@@ -1,0 +1,2751 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../overview/coding-style/">
+      
+      
+        <link rel="next" href="../class-and-object/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.7">
+    
+    
+      
+        <title>基礎型別與語法 - Gamelab 課程教材</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.4b4a2bd9.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../styles/atom-one-dark.min.css">
+    
+      <link rel="stylesheet" href="../../../styles/styles.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Gamelab 課程教材" class="md-header__button md-logo" aria-label="Gamelab 課程教材" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Gamelab 課程教材
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              基礎型別與語法
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+  首頁
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  網頁遊戲引擎原理與實做
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Gamelab 課程教材" class="md-nav__button md-logo" aria-label="Gamelab 課程教材" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Gamelab 課程教材
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    首頁
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            首頁
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HomePage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    網頁遊戲引擎原理與實做
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            網頁遊戲引擎原理與實做
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    介紹
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    課程總覽
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            課程總覽
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../overview/cocos-creator/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cocos Creator
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../overview/javascript/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    JavaScript 與 TypeScript 環境安裝
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../overview/git/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git 環境安裝
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../overview/coding-style/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Prettier & ESLint
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    JavaScript & TypeScript
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            JavaScript & TypeScript
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    基礎型別與語法
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    基礎型別與語法
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#data-types" class="md-nav__link">
+    資料型別(Data Types)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#syntax" class="md-nav__link">
+    語法(Syntax)
+  </a>
+  
+    <nav class="md-nav" aria-label="語法(Syntax)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    介紹(Introduction)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keywords" class="md-nav__link">
+    關鍵字(Keywords)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comments" class="md-nav__link">
+    註解(Comments)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#values" class="md-nav__link">
+    數值(Values)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#literals" class="md-nav__link">
+    字符(Literals)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    變數(Variables)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operators" class="md-nav__link">
+    運算子(Operators)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    函式(Functions)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expressions" class="md-nav__link">
+    表達式(Expressions)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#declarations" class="md-nav__link">
+    宣告式(Declarations)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#statements" class="md-nav__link">
+    陳述式(Statements)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hoisting" class="md-nav__link">
+    提升(Hoisting)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../class-and-object/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    類別與物件
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ts-js-compare/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    JS vs TS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dig-deep/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    進階：深入型別
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../strict-mode/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    嚴格模式
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../http-request/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HTTP request
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../websocket/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Websocket 介紹
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    設計模式
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            設計模式
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pattern/singleton/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    單例模式
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pattern/composition/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    組合模式
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pattern/observer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    觀察者模式
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pattern/object-pool/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    物件池模式
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cocos Creator
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Cocos Creator
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cocos/basic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Component 基本介紹
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cocos/node-and-coord/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Node & 坐標系統
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cocos/events/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    事件系統
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5_4" id="__nav_2_5_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    常用元件
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            常用元件
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cocos/common/ui-transform-and-anchor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UITransform & Anchor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cocos/common/layout/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Layout
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cocos/common/ui-opacity/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ui opacity
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cocos/common/label-and-richtext/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Label and richtext
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cocos/common/sprite/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sprite
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cocos/common/button/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Button
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cocos/common/editor-box/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Editor box
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cocos/common/toggle/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Toggle
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cocos/common/progress-bar/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Progress bar
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cocos/common/slider/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Slider
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cocos/common/scroll-view/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scroll view
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cocos/common/page-view/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Page view
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_5_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5_5" id="__nav_2_5_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    動畫系統
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5_5">
+            <span class="md-nav__icon md-icon"></span>
+            動畫系統
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cocos/animate/tween/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tween
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cocos/animate/animation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Animation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cocos/animate/spine/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Spine
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cocos/animate/particle-system/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Particle System
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_5_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5_6" id="__nav_2_5_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    音效系統
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_5_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5_6">
+            <span class="md-nav__icon md-icon"></span>
+            音效系統
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cocos/sound/autoplay-policy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Autoplay Policy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cocos/sound/audio-source/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AudioSource
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_5_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5_7" id="__nav_2_5_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    資源管理
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_5_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5_7">
+            <span class="md-nav__icon md-icon"></span>
+            資源管理
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cocos/resource/prefab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Prefab
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cocos/resource/dynamic-load/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dynamic load
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cocos/resource/bundle/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bundle
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#data-types" class="md-nav__link">
+    資料型別(Data Types)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#syntax" class="md-nav__link">
+    語法(Syntax)
+  </a>
+  
+    <nav class="md-nav" aria-label="語法(Syntax)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    介紹(Introduction)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keywords" class="md-nav__link">
+    關鍵字(Keywords)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comments" class="md-nav__link">
+    註解(Comments)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#values" class="md-nav__link">
+    數值(Values)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#literals" class="md-nav__link">
+    字符(Literals)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    變數(Variables)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operators" class="md-nav__link">
+    運算子(Operators)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    函式(Functions)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expressions" class="md-nav__link">
+    表達式(Expressions)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#declarations" class="md-nav__link">
+    宣告式(Declarations)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#statements" class="md-nav__link">
+    陳述式(Statements)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hoisting" class="md-nav__link">
+    提升(Hoisting)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="_1">基礎型別與語法</h1>
+<h2 id="data-types">資料型別(Data Types)</h2>
+<hr />
+<ol>
+<li>
+<p>基礎型別(Primitives)</p>
+</li>
+<li>
+<p>boolean</p>
+<p>布林型別(<code>true</code> or <code>false</code>)</p>
+</li>
+<li>
+<p>number</p>
+<p>數字型別，使用 64 位元雙精度浮點數(<a href="https://en.wikipedia.org/wiki/Double-precision_floating-point_format">double-precision 64-bit floating point</a>) 格式存儲</p>
+</li>
+<li>
+<p>string</p>
+<p>字串型別(sequence of characters)</p>
+</li>
+<li>
+<p>bigint</p>
+<p>整數型別，可為任意大小</p>
+</li>
+<li>
+<p>symbol<sup id="fnref13:2"><a class="footnote-ref" href="#fn:2">2</a></sup></p>
+<p>符號型別，唯一且不可變的識別符(unique and immutable identifier)</p>
+</li>
+<li>
+<p>null</p>
+<p>空或無效型別(nonexistent or invalid object)</p>
+</li>
+<li>
+<p>undefined</p>
+<p>未定義型別，會自動賦予給未賦值的變數(unassigned variables)</p>
+</li>
+<li>
+<p>函式型別(Function)</p>
+</li>
+</ol>
+<p><a href="#functions">函式(Functions)</a> 在技術上來說是一種 <strong>可被呼叫的物件(Callable Objects)</strong></p>
+<ol>
+<li>物件型別(Object)</li>
+</ol>
+<p>詳見 <a href="/webgame-engine/learn-js/class-and-object#object">類別與物件</a></p>
+<h2 id="syntax">語法(Syntax)</h2>
+<hr />
+<h3 id="introduction">介紹(Introduction)</h3>
+<ul>
+<li>指令(instructions) 在 JavaScript 中被稱為 <a href="#statements">陳述式(statements)</a> 並以 分號(<code>;</code>) 分隔不同陳述式</li>
+<li>如果在一行中僅有一個陳述式，則陳述式後面可以不加上分號(<code>;</code>)</li>
+<li>一個陳述式可以跨越多行</li>
+<li>JavaScript 是 大小寫有別的(Case-sensitive) 且使用 Unicode 字元集來編碼</li>
+</ul>
+<h3 id="keywords">關鍵字(Keywords)</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><strong>JavaScript</strong></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">abstract<sup id="fnref14:1"><a class="footnote-ref" href="#fn:1">1</a></sup></td>
+<td style="text-align: center;">arguments</td>
+<td style="text-align: center;">await<sup id="fnref12:2"><a class="footnote-ref" href="#fn:2">2</a></sup></td>
+<td style="text-align: center;">boolean<sup id="fnref15:1"><a class="footnote-ref" href="#fn:1">1</a></sup></td>
+<td style="text-align: center;">break</td>
+<td style="text-align: center;">byte<sup id="fnref16:1"><a class="footnote-ref" href="#fn:1">1</a></sup></td>
+<td style="text-align: center;">case</td>
+<td style="text-align: center;">catch</td>
+</tr>
+<tr>
+<td style="text-align: center;">char<sup id="fnref13:1"><a class="footnote-ref" href="#fn:1">1</a></sup></td>
+<td style="text-align: center;">class<sup id="fnref10:2"><a class="footnote-ref" href="#fn:2">2</a></sup></td>
+<td style="text-align: center;">const<sup id="fnref11:2"><a class="footnote-ref" href="#fn:2">2</a></sup></td>
+<td style="text-align: center;">continue</td>
+<td style="text-align: center;">debugger</td>
+<td style="text-align: center;">default</td>
+<td style="text-align: center;">delete</td>
+<td style="text-align: center;">do</td>
+</tr>
+<tr>
+<td style="text-align: center;">double<sup id="fnref11:1"><a class="footnote-ref" href="#fn:1">1</a></sup></td>
+<td style="text-align: center;">else</td>
+<td style="text-align: center;">enum<sup id="fnref7:2"><a class="footnote-ref" href="#fn:2">2</a></sup></td>
+<td style="text-align: center;">eval</td>
+<td style="text-align: center;">export<sup id="fnref8:2"><a class="footnote-ref" href="#fn:2">2</a></sup></td>
+<td style="text-align: center;">extends<sup id="fnref9:2"><a class="footnote-ref" href="#fn:2">2</a></sup></td>
+<td style="text-align: center;">false</td>
+<td style="text-align: center;">final<sup id="fnref12:1"><a class="footnote-ref" href="#fn:1">1</a></sup></td>
+</tr>
+<tr>
+<td style="text-align: center;">finally</td>
+<td style="text-align: center;">float<sup id="fnref9:1"><a class="footnote-ref" href="#fn:1">1</a></sup></td>
+<td style="text-align: center;">for</td>
+<td style="text-align: center;">function</td>
+<td style="text-align: center;">goto<sup id="fnref10:1"><a class="footnote-ref" href="#fn:1">1</a></sup></td>
+<td style="text-align: center;">if</td>
+<td style="text-align: center;">implements</td>
+<td style="text-align: center;">import<sup id="fnref6:2"><a class="footnote-ref" href="#fn:2">2</a></sup></td>
+</tr>
+<tr>
+<td style="text-align: center;">in</td>
+<td style="text-align: center;">instanceof</td>
+<td style="text-align: center;">int<sup id="fnref6:1"><a class="footnote-ref" href="#fn:1">1</a></sup></td>
+<td style="text-align: center;">interface</td>
+<td style="text-align: center;">let<sup id="fnref5:2"><a class="footnote-ref" href="#fn:2">2</a></sup></td>
+<td style="text-align: center;">long<sup id="fnref7:1"><a class="footnote-ref" href="#fn:1">1</a></sup></td>
+<td style="text-align: center;">native<sup id="fnref8:1"><a class="footnote-ref" href="#fn:1">1</a></sup></td>
+<td style="text-align: center;">new</td>
+</tr>
+<tr>
+<td style="text-align: center;">null</td>
+<td style="text-align: center;">package</td>
+<td style="text-align: center;">private</td>
+<td style="text-align: center;">protected</td>
+<td style="text-align: center;">public</td>
+<td style="text-align: center;">return</td>
+<td style="text-align: center;">short<sup id="fnref5:1"><a class="footnote-ref" href="#fn:1">1</a></sup></td>
+<td style="text-align: center;">static</td>
+</tr>
+<tr>
+<td style="text-align: center;">super<sup id="fnref4:2"><a class="footnote-ref" href="#fn:2">2</a></sup></td>
+<td style="text-align: center;">switch</td>
+<td style="text-align: center;">synchronized<sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">1</a></sup></td>
+<td style="text-align: center;">this</td>
+<td style="text-align: center;">throw</td>
+<td style="text-align: center;">throws<sup id="fnref3:1"><a class="footnote-ref" href="#fn:1">1</a></sup></td>
+<td style="text-align: center;">transient<sup id="fnref4:1"><a class="footnote-ref" href="#fn:1">1</a></sup></td>
+<td style="text-align: center;">true</td>
+</tr>
+<tr>
+<td style="text-align: center;">try</td>
+<td style="text-align: center;">typeof</td>
+<td style="text-align: center;">var</td>
+<td style="text-align: center;">void</td>
+<td style="text-align: center;">volatile<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></td>
+<td style="text-align: center;">while</td>
+<td style="text-align: center;">with</td>
+<td style="text-align: center;">yield</td>
+</tr>
+</tbody>
+</table>
+<h3 id="comments">註解(Comments)</h3>
+<ul>
+<li>單行註解</li>
+</ul>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">// ...</span>
+</span></code></pre></div>
+<ul>
+<li>跨行註解</li>
+</ul>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="cm">/* ...</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="cm">...</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="cm">...</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="cm">... */</span>
+</span></code></pre></div>
+<h3 id="values">數值(Values)</h3>
+<ul>
+<li>不用 容器(container) 來參照數值的被稱為 <a href="#literals">字符(Literals)</a></li>
+<li>使用 容器(container) 來參照數值的被稱為 <a href="#variables">變數(Variables)</a></li>
+</ul>
+<h3 id="literals">字符(Literals)</h3>
+<ul>
+<li>布林字符(Boolean literals)</li>
+</ul>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kc">true</span><span class="p">;</span>
+</span></code></pre></div>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kc">false</span><span class="p">;</span>
+</span></code></pre></div>
+<ul>
+<li>整數字符(Numerical literals)</li>
+</ul>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="mf">60</span><span class="p">;</span><span class="w"> </span><span class="c1">// 十進制</span>
+</span></code></pre></div>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="mb">0b111100</span><span class="p">;</span><span class="w"> </span><span class="c1">// 二進制</span>
+</span></code></pre></div>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="mo">0o74</span><span class="p">;</span><span class="w"> </span><span class="c1">// 八進制</span>
+</span></code></pre></div>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="mh">0x3c</span><span class="p">;</span><span class="w"> </span><span class="c1">// 十六進制(a~f 不區分大小寫)</span>
+</span></code></pre></div>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="mi">999999999999999999999999999999999999999n</span><span class="p">;</span><span class="w"> </span><span class="c1">// BigInt</span>
+</span></code></pre></div>
+<ul>
+<li>浮點數字符(Floating-point literals)</li>
+</ul>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="mf">3.1415926535</span><span class="p">;</span>
+</span></code></pre></div>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="o">-</span><span class="mf">273.15</span><span class="p">;</span>
+</span></code></pre></div>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="mf">6.626e-34</span><span class="p">;</span>
+</span></code></pre></div>
+<ul>
+<li>字串字符(String literals)</li>
+</ul>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="s2">&quot;Hello World!&quot;</span><span class="p">;</span>
+</span></code></pre></div>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="s2">&quot;bye bye~&quot;</span><span class="p">;</span>
+</span></code></pre></div>
+<ul>
+<li>陣列字符(Array literals)</li>
+</ul>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="p">[</span><span class="s2">&quot;Male&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Female&quot;</span><span class="p">];</span>
+</span></code></pre></div>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;2&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">3.0</span><span class="p">];</span>
+</span></code></pre></div>
+<ul>
+<li>物件字符(Object literals)</li>
+</ul>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="p">{</span><span class="w"> </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="mf">25</span><span class="p">,</span><span class="w"> </span><span class="nx">sex</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Male&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">height</span><span class="o">:</span><span class="w"> </span><span class="mf">182</span><span class="p">,</span><span class="w"> </span><span class="nx">weight</span><span class="o">:</span><span class="w"> </span><span class="mf">75</span><span class="w"> </span><span class="p">}</span>
+</span></code></pre></div>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Cindy&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">money</span><span class="o">:</span><span class="w"> </span><span class="mf">3156721</span><span class="p">,</span><span class="w"> </span><span class="nx">phone</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;0912-345-678&quot;</span><span class="w"> </span><span class="p">}</span>
+</span></code></pre></div>
+<ul>
+<li>正則表達式字符(RegExp literals)</li>
+</ul>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="sr">/ab+c/</span><span class="p">;</span>
+</span></code></pre></div>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="sr">/(\w+)\s+(\w+)/</span><span class="p">;</span>
+</span></code></pre></div>
+<ul>
+<li>範本字符(Template literals)<sup id="fnref3:2"><a class="footnote-ref" href="#fn:2">2</a></sup></li>
+</ul>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="c1">// 基本字串</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="sb">`In JavaScript &#39;\n&#39; is a line-feed.`</span><span class="c1">// 多行字串</span>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="sb">`My Love in her attire doth show her wit,</span>
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="sb">It doth so well become her;</span>
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="sb">For every season she hath dressings fit,</span>
+</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="sb">For Winter, Spring, and Summer.</span>
+</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="sb">No beauty she doth miss</span>
+</span><span id="__span-20-8"><a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="sb">When all her robes are on:</span>
+</span><span id="__span-20-9"><a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a><span class="sb">But Beauty’s self she is</span>
+</span><span id="__span-20-10"><a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a><span class="sb">When all her robes are gone.`</span><span class="p">;</span>
+</span><span id="__span-20-11"><a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a>
+</span><span id="__span-20-12"><a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a><span class="c1">// 字串插值 ${ expr }</span>
+</span><span id="__span-20-13"><a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a><span class="kd">const</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Cindy&quot;</span><span class="p">;</span>
+</span><span id="__span-20-14"><a id="__codelineno-20-14" name="__codelineno-20-14" href="#__codelineno-20-14"></a><span class="kd">const</span><span class="w"> </span><span class="nx">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">18</span><span class="p">;</span>
+</span><span id="__span-20-15"><a id="__codelineno-20-15" name="__codelineno-20-15" href="#__codelineno-20-15"></a><span class="sb">`</span><span class="si">${</span><span class="nx">name</span><span class="si">}</span><span class="sb"> is </span><span class="si">${</span><span class="nx">age</span><span class="si">}</span><span class="sb"> year-old.`</span><span class="p">;</span><span class="w"> </span><span class="c1">// &quot;Cindy is 18 year-old.&quot;</span>
+</span></code></pre></div>
+<h3 id="variables">變數(Variables)</h3>
+<ol>
+<li>
+<p>命名規則(Naming conventions)</p>
+</li>
+<li>
+<p>不能與 <a href="#keywords">關鍵字(Keywords)</a> 同名</p>
+</li>
+<li>命名上可使用 字母(<code>a</code>~<code>z</code>, <code>A</code>~<code>Z</code>) 、 底線(<code>_</code>) 、 美元符號(<code>$</code>) 或 絕大多數的 Unicode 字母(e.g. <code>å</code>, <code>è</code>, <code>ü</code>) 作為開頭字元</li>
+<li>命名上除了開頭可用字元外還可使用 數字(<code>0</code>~<code>9</code>) 作為後續字元</li>
+<li>
+<p>在命名變數上建議表明其變數所具備的意義或用處，且在 JavaScript 中習慣使用 <strong>小駝峰命名法(lower camel case)</strong> 來命名變數(e.g. <code>flyingDistance</code>, <code>eventCounter</code>, <code>animalAge</code>)</p>
+</li>
+<li>
+<p>宣告方式(Declaring ways)</p>
+</li>
+<li>
+<p><code>var</code>
+     用於在函式內宣告 函式範圍變數(function-scoped variables) 或是在函式外宣告 全域範圍變數(globally-scoped variables)</p>
+</li>
+<li><code>let</code><sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>
+     用於宣告 區塊範圍變數(block-scoped local variables)</li>
+<li>
+<p><code>const</code><sup id="fnref2:2"><a class="footnote-ref" href="#fn:2">2</a></sup>
+     用於宣告 區塊範圍常數(read-only block-scoped local variables)</p>
+</li>
+<li>
+<p>宣告語法(Declaring syntax)</p>
+</li>
+<li><code>var</code> | <code>let</code> | <code>const</code> <code>variableName</code> <code>=</code> <code>expression</code>
+   <div class="language-js highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">123</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">987</span><span class="p">;</span>
+</span></code></pre></div>
+   <div class="language-js highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">sex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Male&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Female&quot;</span><span class="p">];</span>
+</span></code></pre></div></li>
+</ol>
+<h3 id="operators">運算子(Operators)</h3>
+<ul>
+<li>賦值運算子(Assignment operators)</li>
+<li>賦值(Assignment) <code>=</code>
+  <div class="language-js highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="nx">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">f</span><span class="p">();</span>
+</span></code></pre></div></li>
+<li>加法賦值或串接賦值(Addition assignment or Concatenation assignment) <code>+=</code>
+  <div class="language-js highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="nx">x</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">f</span><span class="p">();</span><span class="w"> </span><span class="c1">// 其等價於(equivalent to) x = x + f()</span>
+</span></code></pre></div></li>
+<li>減法賦值(Subtraction assignment) <code>-=</code>
+  <div class="language-js highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="nx">x</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="nx">f</span><span class="p">();</span><span class="w"> </span><span class="c1">// 其等價於(equivalent to) x = x - f()</span>
+</span></code></pre></div></li>
+<li>乘法賦值(Multiplication assignment) <code>*=</code>
+  <div class="language-js highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="nx">x</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="nx">f</span><span class="p">();</span><span class="w"> </span><span class="c1">// 其等價於(equivalent to) x = x * f()</span>
+</span></code></pre></div></li>
+<li>除法賦值(Division assignment) <code>/=</code>
+  <div class="language-js highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="nx">x</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="nx">f</span><span class="p">();</span><span class="w"> </span><span class="c1">// 其等價於(equivalent to) x = x / f()</span>
+</span></code></pre></div></li>
+<li>餘數賦值(Remainder assignment) <code>%=</code>
+  <div class="language-js highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="nx">x</span><span class="w"> </span><span class="o">%=</span><span class="w"> </span><span class="nx">f</span><span class="p">();</span><span class="w"> </span><span class="c1">// 其等價於(equivalent to) x = x % f()</span>
+</span></code></pre></div></li>
+<li>指數賦值(Exponentiation assignment) <code>**=</code>
+  <div class="language-js highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="nx">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">f</span><span class="p">();</span><span class="w"> </span><span class="c1">// 其等價於(equivalent to) x = x ** f()</span>
+</span></code></pre></div></li>
+<li>左移賦值(Left shift assignment) <code>&lt;&lt;=</code>
+  <div class="language-js highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="nx">x</span><span class="w"> </span><span class="o">&lt;&lt;=</span><span class="w"> </span><span class="nx">f</span><span class="p">();</span><span class="w"> </span><span class="c1">// 其等價於(equivalent to) x = x &lt;&lt; f()</span>
+</span></code></pre></div></li>
+<li>右移賦值(Right shift assignment) <code>&gt;&gt;=</code>
+  <div class="language-js highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="nx">x</span><span class="w"> </span><span class="o">&gt;&gt;=</span><span class="w"> </span><span class="nx">f</span><span class="p">();</span><span class="w"> </span><span class="c1">// 其等價於(equivalent to) x = x &gt;&gt; f()</span>
+</span></code></pre></div></li>
+<li>無號右移賦值(Unsigned right shift assignment) <code>&gt;&gt;&gt;=</code>
+  <div class="language-js highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="nx">x</span><span class="w"> </span><span class="o">&gt;&gt;&gt;=</span><span class="w"> </span><span class="nx">f</span><span class="p">();</span><span class="w"> </span><span class="c1">// 其等價於(equivalent to) x = x &gt;&gt;&gt; f()</span>
+</span></code></pre></div></li>
+<li>位元 AND 賦值(Bitwise AND assignment) <code>&amp;=</code>
+  <div class="language-js highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="nx">x</span><span class="w"> </span><span class="o">&amp;=</span><span class="w"> </span><span class="nx">f</span><span class="p">();</span><span class="w"> </span><span class="c1">// 其等價於(equivalent to) x = x &amp; f()</span>
+</span></code></pre></div></li>
+<li>位元 XOR 賦值(Bitwise XOR assignment) <code>^=</code>
+  <div class="language-js highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="nx">x</span><span class="w"> </span><span class="o">^=</span><span class="w"> </span><span class="nx">f</span><span class="p">();</span><span class="w"> </span><span class="c1">// 其等價於(equivalent to) x = x ^ f()</span>
+</span></code></pre></div></li>
+<li>位元 OR 賦值(Bitwise OR assignment) <code>|=</code>
+  <div class="language-js highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="nx">x</span><span class="w"> </span><span class="o">|=</span><span class="w"> </span><span class="nx">f</span><span class="p">();</span><span class="w"> </span><span class="c1">// 其等價於(equivalent to) x = x | f()</span>
+</span></code></pre></div></li>
+<li>邏輯 AND 賦值(Logical AND assignment) <code>&amp;&amp;=</code>
+  <div class="language-js highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="nx">x</span><span class="w"> </span><span class="o">&amp;&amp;=</span><span class="w"> </span><span class="nx">f</span><span class="p">();</span><span class="w"> </span><span class="c1">// 其等價於(equivalent to) x &amp;&amp; (x = f())</span>
+</span></code></pre></div></li>
+<li>邏輯 OR 賦值(Logical OR assignment) <code>||=</code>
+  <div class="language-js highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="nx">x</span><span class="w"> </span><span class="o">||=</span><span class="w"> </span><span class="nx">f</span><span class="p">();</span><span class="w"> </span><span class="c1">// 其等價於(equivalent to) x || (x = f())</span>
+</span></code></pre></div></li>
+<li>空值合併賦值(Nullish coalescing assignment) <code>??=</code>
+  <div class="language-js highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="nx">x</span><span class="w"> </span><span class="o">??=</span><span class="w"> </span><span class="nx">f</span><span class="p">();</span><span class="w"> </span><span class="c1">// 其等價於(equivalent to) x ?? (x = f())</span>
+</span></code></pre></div></li>
+<li>比較運算子(Comparison operators)</li>
+<li>等於(Equal) <code>==</code><br />
+    運算元等價時回傳 <code>true</code>，否則回傳 `false
+  <div class="language-js highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="mf">5</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span><span class="w"> </span><span class="c1">// true</span>
+</span><span id="__span-39-2"><a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a><span class="mf">9</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;9&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// true</span>
+</span><span id="__span-39-3"><a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a><span class="mf">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mf">6</span><span class="p">;</span><span class="w"> </span><span class="c1">// false</span>
+</span></code></pre></div></li>
+<li>不等於(Not equal) <code>!=</code><br />
+    運算元不等價時回傳 <code>true</code>，否則回傳 <code>false</code>
+  <div class="language-js highlight"><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="mf">2</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mf">6</span><span class="p">;</span><span class="w"> </span><span class="c1">// true</span>
+</span><span id="__span-40-2"><a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a><span class="mf">5</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span><span class="w"> </span><span class="c1">// false</span>
+</span><span id="__span-40-3"><a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a><span class="mf">9</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s2">&quot;9&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// false</span>
+</span></code></pre></div></li>
+<li>嚴格等於(Strict equal) <code>===</code><br />
+    運算元等價且型別相同時回傳 <code>true</code>，否則回傳 <code>false</code>
+  <div class="language-js highlight"><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="mf">5</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span><span class="w"> </span><span class="c1">// true</span>
+</span><span id="__span-41-2"><a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a><span class="mf">9</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;9&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// false</span>
+</span><span id="__span-41-3"><a id="__codelineno-41-3" name="__codelineno-41-3" href="#__codelineno-41-3"></a><span class="mf">2</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">6</span><span class="p">;</span><span class="w"> </span><span class="c1">// false</span>
+</span></code></pre></div></li>
+<li>嚴格不等於(Strict not equal) <code>!==</code><br />
+    運算元不等價或型別不相同時回傳 <code>true</code>，否則回傳 <code>false</code>
+  <div class="language-js highlight"><pre><span></span><code><span id="__span-42-1"><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="mf">2</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="mf">6</span><span class="p">;</span><span class="w"> </span><span class="c1">// true</span>
+</span><span id="__span-42-2"><a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a><span class="mf">9</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="s2">&quot;9&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// true</span>
+</span><span id="__span-42-3"><a id="__codelineno-42-3" name="__codelineno-42-3" href="#__codelineno-42-3"></a><span class="mf">5</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span><span class="w"> </span><span class="c1">// false</span>
+</span></code></pre></div></li>
+<li>大於(Greater than) <code>&gt;</code><br />
+    左方運算元大於右方運算元時回傳 <code>true</code>，否則回傳 <code>false</code>
+  <div class="language-js highlight"><pre><span></span><code><span id="__span-43-1"><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a><span class="mf">2</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">6</span><span class="p">;</span><span class="w"> </span><span class="c1">// false</span>
+</span><span id="__span-43-2"><a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a><span class="mf">6</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span><span class="w"> </span><span class="c1">// true</span>
+</span><span id="__span-43-3"><a id="__codelineno-43-3" name="__codelineno-43-3" href="#__codelineno-43-3"></a><span class="mf">5</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span><span class="w"> </span><span class="c1">// false</span>
+</span></code></pre></div></li>
+<li>大於或等於(Greater than or equal) <code>&gt;=</code><br />
+    左方運算元大於或等於右方運算元時回傳 <code>true</code>，否則回傳 `false
+  <div class="language-js highlight"><pre><span></span><code><span id="__span-44-1"><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a><span class="mf">2</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">6</span><span class="p">;</span><span class="w"> </span><span class="c1">// false</span>
+</span><span id="__span-44-2"><a id="__codelineno-44-2" name="__codelineno-44-2" href="#__codelineno-44-2"></a><span class="mf">6</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span><span class="w"> </span><span class="c1">// true</span>
+</span><span id="__span-44-3"><a id="__codelineno-44-3" name="__codelineno-44-3" href="#__codelineno-44-3"></a><span class="mf">5</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span><span class="w"> </span><span class="c1">// true</span>
+</span></code></pre></div></li>
+<li>小於(Less than) <code>&lt;</code><br />
+    左方運算元小於右方運算元時回傳 <code>true</code>，否則回傳 <code>false</code>
+  <div class="language-js highlight"><pre><span></span><code><span id="__span-45-1"><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a><span class="mf">2</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">6</span><span class="p">;</span><span class="w"> </span><span class="c1">// true</span>
+</span><span id="__span-45-2"><a id="__codelineno-45-2" name="__codelineno-45-2" href="#__codelineno-45-2"></a><span class="mf">6</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span><span class="w"> </span><span class="c1">// false</span>
+</span><span id="__span-45-3"><a id="__codelineno-45-3" name="__codelineno-45-3" href="#__codelineno-45-3"></a><span class="mf">5</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span><span class="w"> </span><span class="c1">// false</span>
+</span></code></pre></div></li>
+<li>小於或等於(Less than or equal) <code>&lt;=</code><br />
+    左方運算元小於或等於右方運算元時回傳 <code>true</code>，否則回傳 <code>false</code>
+  <div class="language-js highlight"><pre><span></span><code><span id="__span-46-1"><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a><span class="mf">2</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mf">6</span><span class="p">;</span><span class="w"> </span><span class="c1">// true</span>
+</span><span id="__span-46-2"><a id="__codelineno-46-2" name="__codelineno-46-2" href="#__codelineno-46-2"></a><span class="mf">6</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span><span class="w"> </span><span class="c1">// false</span>
+</span><span id="__span-46-3"><a id="__codelineno-46-3" name="__codelineno-46-3" href="#__codelineno-46-3"></a><span class="mf">5</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span><span class="w"> </span><span class="c1">// true</span>
+</span></code></pre></div></li>
+<li>算術運算子(Arithmetic operators)</li>
+<li>加法(Addition) <code>+</code>
+  <div class="language-js highlight"><pre><span></span><code><span id="__span-47-1"><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a><span class="mf">2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">6</span><span class="p">;</span><span class="w"> </span><span class="c1">// 8</span>
+</span></code></pre></div></li>
+<li>減法(Subtraction) <code>-</code>
+  <div class="language-js highlight"><pre><span></span><code><span id="__span-48-1"><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a><span class="mf">2</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">6</span><span class="p">;</span><span class="w"> </span><span class="c1">// -4</span>
+</span></code></pre></div></li>
+<li>乘法(Multiplication) <code>*</code>
+  <div class="language-js highlight"><pre><span></span><code><span id="__span-49-1"><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a><span class="mf">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">6</span><span class="p">;</span><span class="w"> </span><span class="c1">// 12</span>
+</span></code></pre></div></li>
+<li>除法(Division) <code>/</code>
+  <div class="language-js highlight"><pre><span></span><code><span id="__span-50-1"><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a><span class="mf">2</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">6</span><span class="p">;</span><span class="w"> </span><span class="c1">// 0.3333333333333333</span>
+</span></code></pre></div></li>
+<li>餘數(Remainder) <code>%</code>
+  <div class="language-js highlight"><pre><span></span><code><span id="__span-51-1"><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a><span class="mf">2</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mf">6</span><span class="p">;</span><span class="w"> </span><span class="c1">// 2</span>
+</span></code></pre></div></li>
+<li>指數(Exponentiation) <code>**</code>
+  <div class="language-js highlight"><pre><span></span><code><span id="__span-52-1"><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a><span class="mf">2</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="mf">6</span><span class="p">;</span><span class="w"> </span><span class="c1">// 64</span>
+</span></code></pre></div></li>
+<li>遞增(Increment) <code>++</code>
+  <div class="language-js highlight"><pre><span></span><code><span id="__span-53-1"><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span>
+</span><span id="__span-53-2"><a id="__codelineno-53-2" name="__codelineno-53-2" href="#__codelineno-53-2"></a><span class="o">++</span><span class="nx">x</span><span class="p">;</span><span class="w"> </span><span class="c1">// 設 x 為 3 後 return 3</span>
+</span><span id="__span-53-3"><a id="__codelineno-53-3" name="__codelineno-53-3" href="#__codelineno-53-3"></a><span class="nx">x</span><span class="o">++</span><span class="p">;</span><span class="w"> </span><span class="c1">// 2 後 設 x 為 3</span>
+</span></code></pre></div></li>
+<li>遞減(Decrement) <code>--</code>
+  <div class="language-js highlight"><pre><span></span><code><span id="__span-54-1"><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span>
+</span><span id="__span-54-2"><a id="__codelineno-54-2" name="__codelineno-54-2" href="#__codelineno-54-2"></a><span class="o">--</span><span class="nx">x</span><span class="p">;</span><span class="w"> </span><span class="c1">// 設 x 為 1 後 return 1</span>
+</span><span id="__span-54-3"><a id="__codelineno-54-3" name="__codelineno-54-3" href="#__codelineno-54-3"></a><span class="nx">x</span><span class="o">--</span><span class="p">;</span>
+</span><span id="__span-54-4"><a id="__codelineno-54-4" name="__codelineno-54-4" href="#__codelineno-54-4"></a><span class="sb">```js</span>
+</span><span id="__span-54-5"><a id="__codelineno-54-5" name="__codelineno-54-5" href="#__codelineno-54-5"></a><span class="sb">2 後 設 x 為</span>
+</span></code></pre></div>
+  <div class="language-text highlight"><pre><span></span><code><span id="__span-55-1"><a id="__codelineno-55-1" name="__codelineno-55-1" href="#__codelineno-55-1"></a>- 一元正號(Unary plus) `+`
+</span><span id="__span-55-2"><a id="__codelineno-55-2" name="__codelineno-55-2" href="#__codelineno-55-2"></a>```js
+</span><span id="__span-55-3"><a id="__codelineno-55-3" name="__codelineno-55-3" href="#__codelineno-55-3"></a>+&quot;6&quot; // 6
+</span></code></pre></div></li>
+<li>一元負號(Unary negation) <code>-</code>
+  <div class="language-js highlight"><pre><span></span><code><span id="__span-56-1"><a id="__codelineno-56-1" name="__codelineno-56-1" href="#__codelineno-56-1"></a><span class="o">-</span><span class="s2">&quot;6&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// -6</span>
+</span></code></pre></div></li>
+<li>位元運算子(Bitwise operators)</li>
+<li>位元 AND(Bitwise AND) <code>&amp;</code>
+  <div class="language-js highlight"><pre><span></span><code><span id="__span-57-1"><a id="__codelineno-57-1" name="__codelineno-57-1" href="#__codelineno-57-1"></a><span class="mb">0b1100</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mb">0b1010</span><span class="p">;</span><span class="w"> </span><span class="c1">// 8(0b1000)</span>
+</span></code></pre></div></li>
+<li>位元 OR(Bitwise OR) <code>|</code>
+  <div class="language-js highlight"><pre><span></span><code><span id="__span-58-1"><a id="__codelineno-58-1" name="__codelineno-58-1" href="#__codelineno-58-1"></a><span class="mb">0b1100</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mb">0b1010</span><span class="p">;</span><span class="w"> </span><span class="c1">// 14(0b1110)</span>
+</span></code></pre></div></li>
+<li>位元 XOR(Bitwise XOR) <code>^</code>
+  <div class="language-js highlight"><pre><span></span><code><span id="__span-59-1"><a id="__codelineno-59-1" name="__codelineno-59-1" href="#__codelineno-59-1"></a><span class="mb">0b1100</span><span class="w"> </span><span class="o">^</span><span class="w"> </span><span class="mb">0b1010</span><span class="p">;</span><span class="w"> </span><span class="c1">// 6(0b0110)</span>
+</span></code></pre></div></li>
+<li>位元 NOT(Bitwise NOT) <code>~</code>
+  <div class="language-js highlight"><pre><span></span><code><span id="__span-60-1"><a id="__codelineno-60-1" name="__codelineno-60-1" href="#__codelineno-60-1"></a><span class="o">~</span><span class="mb">0b1100</span><span class="p">;</span><span class="w"> </span><span class="c1">// -13(0b11111111111111111111111111110011)</span>
+</span></code></pre></div></li>
+<li>左移(Left shift) <code>&lt;&lt;</code>
+  <div class="language-js highlight"><pre><span></span><code><span id="__span-61-1"><a id="__codelineno-61-1" name="__codelineno-61-1" href="#__codelineno-61-1"></a><span class="mb">0b1100</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span><span class="w"> </span><span class="c1">// 48(0b110000)</span>
+</span></code></pre></div></li>
+<li>右移(Sign-propagating right shift) <code>&gt;&gt;</code>
+  <div class="language-js highlight"><pre><span></span><code><span id="__span-62-1"><a id="__codelineno-62-1" name="__codelineno-62-1" href="#__codelineno-62-1"></a><span class="mb">0b11111111111111111111111111110011</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span><span class="w"> </span><span class="c1">// -4(0b11111111111111111111111111111100)</span>
+</span></code></pre></div></li>
+<li>無號右移(Zero-fill right shift) <code>&gt;&gt;&gt;</code>
+  <div class="language-js highlight"><pre><span></span><code><span id="__span-63-1"><a id="__codelineno-63-1" name="__codelineno-63-1" href="#__codelineno-63-1"></a><span class="mb">0b11111111111111111111111111110011</span><span class="w"> </span><span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span><span class="w"> </span><span class="c1">// 1073741820(0b00111111111111111111111111111100)</span>
+</span></code></pre></div></li>
+<li>邏輯運算子(Logical operators)</li>
+<li>邏輯 AND(Logical AND) <code>&amp;&amp;</code>
+  <div class="language-js highlight"><pre><span></span><code><span id="__span-64-1"><a id="__codelineno-64-1" name="__codelineno-64-1" href="#__codelineno-64-1"></a><span class="kc">true</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w"> </span><span class="c1">// true</span>
+</span></code></pre></div>
+  <div class="language-js highlight"><pre><span></span><code><span id="__span-65-1"><a id="__codelineno-65-1" name="__codelineno-65-1" href="#__codelineno-65-1"></a><span class="kc">true</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span><span class="w"> </span><span class="c1">// false</span>
+</span></code></pre></div>
+  <div class="language-js highlight"><pre><span></span><code><span id="__span-66-1"><a id="__codelineno-66-1" name="__codelineno-66-1" href="#__codelineno-66-1"></a><span class="kc">false</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span><span class="w"> </span><span class="c1">// false</span>
+</span></code></pre></div></li>
+<li>邏輯 OR(Logical OR) <code>||</code>
+  <div class="language-js highlight"><pre><span></span><code><span id="__span-67-1"><a id="__codelineno-67-1" name="__codelineno-67-1" href="#__codelineno-67-1"></a><span class="kc">true</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w"> </span><span class="c1">// true</span>
+</span></code></pre></div>
+  <div class="language-js highlight"><pre><span></span><code><span id="__span-68-1"><a id="__codelineno-68-1" name="__codelineno-68-1" href="#__codelineno-68-1"></a><span class="kc">true</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span><span class="w"> </span><span class="c1">// true</span>
+</span></code></pre></div>
+  <div class="language-js highlight"><pre><span></span><code><span id="__span-69-1"><a id="__codelineno-69-1" name="__codelineno-69-1" href="#__codelineno-69-1"></a><span class="kc">false</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span><span class="w"> </span><span class="c1">// false</span>
+</span></code></pre></div></li>
+<li>邏輯 NOT(Logical NOT) <code>!</code>
+  <div class="language-js highlight"><pre><span></span><code><span id="__span-70-1"><a id="__codelineno-70-1" name="__codelineno-70-1" href="#__codelineno-70-1"></a><span class="o">!</span><span class="kc">true</span><span class="p">;</span><span class="w"> </span><span class="c1">// false</span>
+</span></code></pre></div>
+  <div class="language-js highlight"><pre><span></span><code><span id="__span-71-1"><a id="__codelineno-71-1" name="__codelineno-71-1" href="#__codelineno-71-1"></a><span class="o">!</span><span class="kc">false</span><span class="p">;</span><span class="w"> </span><span class="c1">// true</span>
+</span></code></pre></div></li>
+<li>空值合併(Nullish coalescing) <code>??</code>
+  <div class="language-js highlight"><pre><span></span><code><span id="__span-72-1"><a id="__codelineno-72-1" name="__codelineno-72-1" href="#__codelineno-72-1"></a><span class="kc">null</span><span class="w"> </span><span class="o">??</span><span class="w"> </span><span class="s2">&quot;default&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// &quot;default&quot;</span>
+</span></code></pre></div>
+  <div class="language-js highlight"><pre><span></span><code><span id="__span-73-1"><a id="__codelineno-73-1" name="__codelineno-73-1" href="#__codelineno-73-1"></a><span class="s2">&quot;hello&quot;</span><span class="w"> </span><span class="o">??</span><span class="w"> </span><span class="s2">&quot;default&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// &quot;hello&quot;</span>
+</span></code></pre></div></li>
+<li>字串運算子(String operators)</li>
+<li>串接(Concatenation) <code>+</code>
+  <div class="language-js highlight"><pre><span></span><code><span id="__span-74-1"><a id="__codelineno-74-1" name="__codelineno-74-1" href="#__codelineno-74-1"></a><span class="s2">&quot;Hello &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;World!&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// &quot;Hello World!&quot;</span>
+</span></code></pre></div></li>
+<li>條件運算子(Conditional operator) <code>?:</code></li>
+</ul>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-75-1"><a id="__codelineno-75-1" name="__codelineno-75-1" href="#__codelineno-75-1"></a><span class="mf">6</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">4</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s2">&quot;Yes&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;No&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// &quot;Yes&quot;</span>
+</span><span id="__span-75-2"><a id="__codelineno-75-2" name="__codelineno-75-2" href="#__codelineno-75-2"></a><span class="mf">2</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">6</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s2">&quot;Yes&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;No&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// &quot;No&quot;</span>
+</span></code></pre></div>
+<ul>
+<li>逗點運算子(Comma operator) <code>,</code></li>
+</ul>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-76-1"><a id="__codelineno-76-1" name="__codelineno-76-1" href="#__codelineno-76-1"></a><span class="s2">&quot;Front&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;End&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// &quot;End&quot;</span>
+</span><span id="__span-76-2"><a id="__codelineno-76-2" name="__codelineno-76-2" href="#__codelineno-76-2"></a><span class="mf">5</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span><span class="w"> </span><span class="c1">// 1</span>
+</span></code></pre></div>
+<ul>
+<li>一元運算子(Unary operators)</li>
+<li>delete
+  <div class="language-js highlight"><pre><span></span><code><span id="__span-77-1"><a id="__codelineno-77-1" name="__codelineno-77-1" href="#__codelineno-77-1"></a><span class="nx">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span>
+</span><span id="__span-77-2"><a id="__codelineno-77-2" name="__codelineno-77-2" href="#__codelineno-77-2"></a><span class="ow">delete</span><span class="w"> </span><span class="nx">x</span><span class="p">;</span><span class="w"> </span><span class="c1">// true (可刪除隱式宣告變數)</span>
+</span><span id="__span-77-3"><a id="__codelineno-77-3" name="__codelineno-77-3" href="#__codelineno-77-3"></a><span class="kd">var</span><span class="w"> </span><span class="nx">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span>
+</span><span id="__span-77-4"><a id="__codelineno-77-4" name="__codelineno-77-4" href="#__codelineno-77-4"></a><span class="ow">delete</span><span class="w"> </span><span class="nx">y</span><span class="p">;</span><span class="w"> </span><span class="c1">// false (無法刪除 var 宣告變數)</span>
+</span><span id="__span-77-5"><a id="__codelineno-77-5" name="__codelineno-77-5" href="#__codelineno-77-5"></a><span class="ow">delete</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span><span class="p">;</span><span class="w"> </span><span class="c1">// false (無法刪除內建定義)</span>
+</span></code></pre></div></li>
+<li>typeof
+  <div class="language-js highlight"><pre><span></span><code><span id="__span-78-1"><a id="__codelineno-78-1" name="__codelineno-78-1" href="#__codelineno-78-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span>
+</span><span id="__span-78-2"><a id="__codelineno-78-2" name="__codelineno-78-2" href="#__codelineno-78-2"></a><span class="ow">typeof</span><span class="w"> </span><span class="nx">num</span><span class="p">;</span><span class="w"> </span><span class="c1">// number</span>
+</span><span id="__span-78-3"><a id="__codelineno-78-3" name="__codelineno-78-3" href="#__codelineno-78-3"></a><span class="kd">var</span><span class="w"> </span><span class="nx">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">;</span>
+</span><span id="__span-78-4"><a id="__codelineno-78-4" name="__codelineno-78-4" href="#__codelineno-78-4"></a><span class="ow">typeof</span><span class="w"> </span><span class="nx">str</span><span class="p">;</span><span class="w"> </span><span class="c1">// string</span>
+</span></code></pre></div></li>
+<li>void
+  <div class="language-js highlight"><pre><span></span><code><span id="__span-79-1"><a id="__codelineno-79-1" name="__codelineno-79-1" href="#__codelineno-79-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">doAnything</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
+</span><span id="__span-79-2"><a id="__codelineno-79-2" name="__codelineno-79-2" href="#__codelineno-79-2"></a><span class="ow">void</span><span class="w"> </span><span class="s2">&quot;doAnything()&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// undefined</span>
+</span><span id="__span-79-3"><a id="__codelineno-79-3" name="__codelineno-79-3" href="#__codelineno-79-3"></a><span class="ow">void</span><span class="w"> </span><span class="s2">&quot;doAnything()&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// undefined</span>
+</span></code></pre></div></li>
+<li>關係運算子(Relational operators)</li>
+<li>in
+  <div class="language-js highlight"><pre><span></span><code><span id="__span-80-1"><a id="__codelineno-80-1" name="__codelineno-80-1" href="#__codelineno-80-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">person</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="mf">25</span><span class="p">,</span><span class="w"> </span><span class="nx">sex</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Male&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">height</span><span class="o">:</span><span class="w"> </span><span class="mf">182</span><span class="p">,</span><span class="w"> </span><span class="nx">weight</span><span class="o">:</span><span class="w"> </span><span class="mf">75</span><span class="w"> </span><span class="p">};</span>
+</span><span id="__span-80-2"><a id="__codelineno-80-2" name="__codelineno-80-2" href="#__codelineno-80-2"></a><span class="s2">&quot;age&quot;</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">person</span><span class="p">;</span><span class="w"> </span><span class="c1">// true</span>
+</span></code></pre></div></li>
+<li>instanceof
+  <div class="language-js highlight"><pre><span></span><code><span id="__span-81-1"><a id="__codelineno-81-1" name="__codelineno-81-1" href="#__codelineno-81-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">happyNewYear</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">(</span><span class="mf">2024</span><span class="p">,</span><span class="w"> </span><span class="mo">01</span><span class="p">,</span><span class="w"> </span><span class="mo">01</span><span class="p">);</span>
+</span><span id="__span-81-2"><a id="__codelineno-81-2" name="__codelineno-81-2" href="#__codelineno-81-2"></a><span class="nx">happyNewYear</span><span class="w"> </span><span class="ow">instanceof</span><span class="w"> </span><span class="nb">Date</span><span class="p">;</span><span class="w"> </span><span class="c1">// true</span>
+</span></code></pre></div></li>
+</ul>
+<h3 id="functions">函式(Functions)</h3>
+<ol>
+<li>
+<p>定義函式(Defining functions)</p>
+</li>
+<li>
+<p>一個函式由下列元件組成</p>
+<ul>
+<li>函式名稱</li>
+<li>包圍在小括號(<code>()</code>)中，並由逗號(<code>,</code>)區隔的函式參數列表</li>
+<li>包圍在大括號(<code>{}</code>)中，定義函式功能的 <a href="#statements">陳述式(statements)</a></li>
+</ul>
+</li>
+</ol>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-82-1"><a id="__codelineno-82-1" name="__codelineno-82-1" href="#__codelineno-82-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">calcHypotenuse</span><span class="p">(</span><span class="nx">leg1</span><span class="p">,</span><span class="w"> </span><span class="nx">leg2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-82-2"><a id="__codelineno-82-2" name="__codelineno-82-2" href="#__codelineno-82-2"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">sqrt</span><span class="p">(</span><span class="nx">leg1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">leg1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">leg2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">leg2</span><span class="p">);</span>
+</span><span id="__span-82-3"><a id="__codelineno-82-3" name="__codelineno-82-3" href="#__codelineno-82-3"></a><span class="p">}</span>
+</span></code></pre></div>
+<ol>
+<li>呼叫函式(Calling functions)</li>
+</ol>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-83-1"><a id="__codelineno-83-1" name="__codelineno-83-1" href="#__codelineno-83-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">calcHypotenuse</span><span class="p">(</span><span class="nx">leg1</span><span class="p">,</span><span class="w"> </span><span class="nx">leg2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-83-2"><a id="__codelineno-83-2" name="__codelineno-83-2" href="#__codelineno-83-2"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">sqrt</span><span class="p">(</span><span class="nx">leg1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">leg1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">leg2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">leg2</span><span class="p">);</span>
+</span><span id="__span-83-3"><a id="__codelineno-83-3" name="__codelineno-83-3" href="#__codelineno-83-3"></a><span class="p">}</span>
+</span><span id="__span-83-4"><a id="__codelineno-83-4" name="__codelineno-83-4" href="#__codelineno-83-4"></a>
+</span><span id="__span-83-5"><a id="__codelineno-83-5" name="__codelineno-83-5" href="#__codelineno-83-5"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">calcHypotenuse</span><span class="p">(</span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">));</span><span class="w"> </span><span class="c1">// 5</span>
+</span></code></pre></div>
+<h3 id="expressions">表達式(Expressions)</h3>
+<ul>
+<li>表達式由 <a href="#values">數值(values)</a> 和 <a href="#operators">運算子(operators)</a> 組合而成，並回傳 計算結果(evaluation)</li>
+</ul>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-84-1"><a id="__codelineno-84-1" name="__codelineno-84-1" href="#__codelineno-84-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span>
+</span><span id="__span-84-2"><a id="__codelineno-84-2" name="__codelineno-84-2" href="#__codelineno-84-2"></a><span class="p">((</span><span class="nx">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">8</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">2</span><span class="p">)</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span><span class="w"> </span><span class="c1">// 25</span>
+</span></code></pre></div>
+<h3 id="declarations">宣告式(Declarations)</h3>
+<ul>
+<li>
+<p>宣告變數(Declaring variables)</p>
+</li>
+<li>
+<p><code>var</code>
+    宣告函式範圍或全域範圍變數</p>
+</li>
+</ul>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-85-1"><a id="__codelineno-85-1" name="__codelineno-85-1" href="#__codelineno-85-1"></a><span class="c1">// 宣告全域範圍變數</span>
+</span><span id="__span-85-2"><a id="__codelineno-85-2" name="__codelineno-85-2" href="#__codelineno-85-2"></a><span class="kd">var</span><span class="w"> </span><span class="nx">globalScope</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span>
+</span><span id="__span-85-3"><a id="__codelineno-85-3" name="__codelineno-85-3" href="#__codelineno-85-3"></a>
+</span><span id="__span-85-4"><a id="__codelineno-85-4" name="__codelineno-85-4" href="#__codelineno-85-4"></a><span class="kd">function</span><span class="w"> </span><span class="nx">func</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-85-5"><a id="__codelineno-85-5" name="__codelineno-85-5" href="#__codelineno-85-5"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="kc">true</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-85-6"><a id="__codelineno-85-6" name="__codelineno-85-6" href="#__codelineno-85-6"></a><span class="w">    </span><span class="c1">// 宣告函式範圍變數</span>
+</span><span id="__span-85-7"><a id="__codelineno-85-7" name="__codelineno-85-7" href="#__codelineno-85-7"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">funcScope</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">8</span><span class="p">;</span>
+</span><span id="__span-85-8"><a id="__codelineno-85-8" name="__codelineno-85-8" href="#__codelineno-85-8"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">globalScope</span><span class="p">);</span><span class="w"> </span><span class="c1">// 5</span>
+</span><span id="__span-85-9"><a id="__codelineno-85-9" name="__codelineno-85-9" href="#__codelineno-85-9"></a><span class="w">    </span><span class="o">++</span><span class="nx">globalScope</span><span class="p">;</span>
+</span><span id="__span-85-10"><a id="__codelineno-85-10" name="__codelineno-85-10" href="#__codelineno-85-10"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">funcScope</span><span class="p">);</span><span class="w"> </span><span class="c1">// 8</span>
+</span><span id="__span-85-11"><a id="__codelineno-85-11" name="__codelineno-85-11" href="#__codelineno-85-11"></a><span class="w">    </span><span class="o">++</span><span class="nx">funcScope</span><span class="p">;</span>
+</span><span id="__span-85-12"><a id="__codelineno-85-12" name="__codelineno-85-12" href="#__codelineno-85-12"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-85-13"><a id="__codelineno-85-13" name="__codelineno-85-13" href="#__codelineno-85-13"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">globalScope</span><span class="p">);</span><span class="w"> </span><span class="c1">// 6</span>
+</span><span id="__span-85-14"><a id="__codelineno-85-14" name="__codelineno-85-14" href="#__codelineno-85-14"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">funcScope</span><span class="p">);</span><span class="w"> </span><span class="c1">// 9</span>
+</span><span id="__span-85-15"><a id="__codelineno-85-15" name="__codelineno-85-15" href="#__codelineno-85-15"></a><span class="p">}</span>
+</span><span id="__span-85-16"><a id="__codelineno-85-16" name="__codelineno-85-16" href="#__codelineno-85-16"></a>
+</span><span id="__span-85-17"><a id="__codelineno-85-17" name="__codelineno-85-17" href="#__codelineno-85-17"></a><span class="nx">func</span><span class="p">();</span>
+</span><span id="__span-85-18"><a id="__codelineno-85-18" name="__codelineno-85-18" href="#__codelineno-85-18"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">globalScope</span><span class="p">);</span><span class="w"> </span><span class="c1">// 6</span>
+</span><span id="__span-85-19"><a id="__codelineno-85-19" name="__codelineno-85-19" href="#__codelineno-85-19"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">funcScope</span><span class="p">);</span><span class="w"> </span><span class="c1">// ReferenceError: funcScope is not defined</span>
+</span></code></pre></div>
+<ul>
+<li><code>let</code>
+    宣告區塊範圍變數</li>
+</ul>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-86-1"><a id="__codelineno-86-1" name="__codelineno-86-1" href="#__codelineno-86-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">func</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-86-2"><a id="__codelineno-86-2" name="__codelineno-86-2" href="#__codelineno-86-2"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="kc">true</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-86-3"><a id="__codelineno-86-3" name="__codelineno-86-3" href="#__codelineno-86-3"></a><span class="w">    </span><span class="c1">// 宣告區塊範圍變數</span>
+</span><span id="__span-86-4"><a id="__codelineno-86-4" name="__codelineno-86-4" href="#__codelineno-86-4"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">blockScope</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span>
+</span><span id="__span-86-5"><a id="__codelineno-86-5" name="__codelineno-86-5" href="#__codelineno-86-5"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">blockScope</span><span class="p">);</span><span class="w"> </span><span class="c1">// 5</span>
+</span><span id="__span-86-6"><a id="__codelineno-86-6" name="__codelineno-86-6" href="#__codelineno-86-6"></a><span class="w">    </span><span class="o">++</span><span class="nx">blockScope</span><span class="p">;</span>
+</span><span id="__span-86-7"><a id="__codelineno-86-7" name="__codelineno-86-7" href="#__codelineno-86-7"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-86-8"><a id="__codelineno-86-8" name="__codelineno-86-8" href="#__codelineno-86-8"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">blockScope</span><span class="p">);</span><span class="w"> </span><span class="c1">// ReferenceError: blockScope is not defined</span>
+</span><span id="__span-86-9"><a id="__codelineno-86-9" name="__codelineno-86-9" href="#__codelineno-86-9"></a><span class="p">}</span>
+</span><span id="__span-86-10"><a id="__codelineno-86-10" name="__codelineno-86-10" href="#__codelineno-86-10"></a>
+</span><span id="__span-86-11"><a id="__codelineno-86-11" name="__codelineno-86-11" href="#__codelineno-86-11"></a><span class="nx">func</span><span class="p">();</span>
+</span><span id="__span-86-12"><a id="__codelineno-86-12" name="__codelineno-86-12" href="#__codelineno-86-12"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">blockScope</span><span class="p">);</span><span class="w"> </span><span class="c1">// ReferenceError: blockScope is not defined</span>
+</span></code></pre></div>
+<ul>
+<li><code>const</code>
+    宣告區塊範圍常數</li>
+</ul>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-87-1"><a id="__codelineno-87-1" name="__codelineno-87-1" href="#__codelineno-87-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">func</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-87-2"><a id="__codelineno-87-2" name="__codelineno-87-2" href="#__codelineno-87-2"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="kc">true</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-87-3"><a id="__codelineno-87-3" name="__codelineno-87-3" href="#__codelineno-87-3"></a><span class="w">    </span><span class="c1">// 宣告區塊範圍常數</span>
+</span><span id="__span-87-4"><a id="__codelineno-87-4" name="__codelineno-87-4" href="#__codelineno-87-4"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">readOnlyBlockScope</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span>
+</span><span id="__span-87-5"><a id="__codelineno-87-5" name="__codelineno-87-5" href="#__codelineno-87-5"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">readOnlyBlockScope</span><span class="p">);</span><span class="w"> </span><span class="c1">// 5</span>
+</span><span id="__span-87-6"><a id="__codelineno-87-6" name="__codelineno-87-6" href="#__codelineno-87-6"></a><span class="w">    </span><span class="o">++</span><span class="nx">readOnlyBlockScope</span><span class="p">;</span><span class="w"> </span><span class="c1">// TypeError: Assignment to constant variable</span>
+</span><span id="__span-87-7"><a id="__codelineno-87-7" name="__codelineno-87-7" href="#__codelineno-87-7"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-87-8"><a id="__codelineno-87-8" name="__codelineno-87-8" href="#__codelineno-87-8"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">readOnlyBlockScope</span><span class="p">);</span><span class="w"> </span><span class="c1">// ReferenceError: readOnlyBlockScope is not defined</span>
+</span><span id="__span-87-9"><a id="__codelineno-87-9" name="__codelineno-87-9" href="#__codelineno-87-9"></a><span class="p">}</span>
+</span><span id="__span-87-10"><a id="__codelineno-87-10" name="__codelineno-87-10" href="#__codelineno-87-10"></a>
+</span><span id="__span-87-11"><a id="__codelineno-87-11" name="__codelineno-87-11" href="#__codelineno-87-11"></a><span class="nx">func</span><span class="p">();</span>
+</span><span id="__span-87-12"><a id="__codelineno-87-12" name="__codelineno-87-12" href="#__codelineno-87-12"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">readOnlyBlockScope</span><span class="p">);</span><span class="w"> </span><span class="c1">// ReferenceError: readOnlyBlockScope is not defined</span>
+</span></code></pre></div>
+<ul>
+<li>
+<p>宣告函式與類別(Declaring functions and classes)</p>
+</li>
+<li>
+<p><code>function</code>
+    宣告 <a href="#functions">函式(Functions)</a></p>
+</li>
+</ul>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-88-1"><a id="__codelineno-88-1" name="__codelineno-88-1" href="#__codelineno-88-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">calcHypotenuse</span><span class="p">(</span><span class="nx">leg1</span><span class="p">,</span><span class="w"> </span><span class="nx">leg2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-88-2"><a id="__codelineno-88-2" name="__codelineno-88-2" href="#__codelineno-88-2"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">sqrt</span><span class="p">(</span><span class="nx">leg1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">leg1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">leg2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">leg2</span><span class="p">);</span>
+</span><span id="__span-88-3"><a id="__codelineno-88-3" name="__codelineno-88-3" href="#__codelineno-88-3"></a><span class="p">}</span>
+</span><span id="__span-88-4"><a id="__codelineno-88-4" name="__codelineno-88-4" href="#__codelineno-88-4"></a>
+</span><span id="__span-88-5"><a id="__codelineno-88-5" name="__codelineno-88-5" href="#__codelineno-88-5"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">calcHypotenuse</span><span class="p">(</span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">));</span><span class="w"> </span><span class="c1">// 5</span>
+</span></code></pre></div>
+<ul>
+<li><code>function*</code>
+    宣告生成器函式，與 <code>yield</code> 結合能簡單編寫迭代器</li>
+</ul>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-89-1"><a id="__codelineno-89-1" name="__codelineno-89-1" href="#__codelineno-89-1"></a><span class="kd">function</span><span class="o">*</span><span class="w"> </span><span class="nx">generator</span><span class="p">(</span><span class="nx">upperBound</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-89-2"><a id="__codelineno-89-2" name="__codelineno-89-2" href="#__codelineno-89-2"></a><span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="nx">upperBound</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="nx">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-89-3"><a id="__codelineno-89-3" name="__codelineno-89-3" href="#__codelineno-89-3"></a><span class="w">    </span><span class="k">yield</span><span class="w"> </span><span class="nx">i</span><span class="p">;</span>
+</span><span id="__span-89-4"><a id="__codelineno-89-4" name="__codelineno-89-4" href="#__codelineno-89-4"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-89-5"><a id="__codelineno-89-5" name="__codelineno-89-5" href="#__codelineno-89-5"></a><span class="p">}</span>
+</span><span id="__span-89-6"><a id="__codelineno-89-6" name="__codelineno-89-6" href="#__codelineno-89-6"></a>
+</span><span id="__span-89-7"><a id="__codelineno-89-7" name="__codelineno-89-7" href="#__codelineno-89-7"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">const</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">generator</span><span class="p">(</span><span class="mf">5</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-89-8"><a id="__codelineno-89-8" name="__codelineno-89-8" href="#__codelineno-89-8"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span><span class="w"> </span><span class="c1">// 0 -&gt; 1 -&gt; 2 -&gt; 3 -&gt; 4 -&gt; 5</span>
+</span><span id="__span-89-9"><a id="__codelineno-89-9" name="__codelineno-89-9" href="#__codelineno-89-9"></a><span class="p">}</span>
+</span></code></pre></div>
+<ul>
+<li><code>async function</code>
+    宣告非同步函式</li>
+</ul>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-90-1"><a id="__codelineno-90-1" name="__codelineno-90-1" href="#__codelineno-90-1"></a><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">awaitFunc</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-90-2"><a id="__codelineno-90-2" name="__codelineno-90-2" href="#__codelineno-90-2"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span>
+</span><span id="__span-90-3"><a id="__codelineno-90-3" name="__codelineno-90-3" href="#__codelineno-90-3"></a><span class="p">}</span>
+</span><span id="__span-90-4"><a id="__codelineno-90-4" name="__codelineno-90-4" href="#__codelineno-90-4"></a>
+</span><span id="__span-90-5"><a id="__codelineno-90-5" name="__codelineno-90-5" href="#__codelineno-90-5"></a><span class="p">(</span><span class="k">async</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-90-6"><a id="__codelineno-90-6" name="__codelineno-90-6" href="#__codelineno-90-6"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">await</span><span class="w"> </span><span class="nx">awaitFunc</span><span class="p">());</span><span class="w"> </span><span class="c1">// 5</span>
+</span><span id="__span-90-7"><a id="__codelineno-90-7" name="__codelineno-90-7" href="#__codelineno-90-7"></a><span class="p">})();</span>
+</span></code></pre></div>
+<ul>
+<li><code>async function*</code>
+    宣告非同步生成器函式，與 <code>yield</code> 結合能簡單編寫迭代器</li>
+</ul>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-91-1"><a id="__codelineno-91-1" name="__codelineno-91-1" href="#__codelineno-91-1"></a><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="o">*</span><span class="w"> </span><span class="nx">awaitIterFunc</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-91-2"><a id="__codelineno-91-2" name="__codelineno-91-2" href="#__codelineno-91-2"></a><span class="w">  </span><span class="k">yield</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span>
+</span><span id="__span-91-3"><a id="__codelineno-91-3" name="__codelineno-91-3" href="#__codelineno-91-3"></a><span class="w">  </span><span class="k">yield</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="mf">7</span><span class="p">;</span>
+</span><span id="__span-91-4"><a id="__codelineno-91-4" name="__codelineno-91-4" href="#__codelineno-91-4"></a><span class="w">  </span><span class="k">yield</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="mf">9</span><span class="p">;</span>
+</span><span id="__span-91-5"><a id="__codelineno-91-5" name="__codelineno-91-5" href="#__codelineno-91-5"></a><span class="p">}</span>
+</span><span id="__span-91-6"><a id="__codelineno-91-6" name="__codelineno-91-6" href="#__codelineno-91-6"></a>
+</span><span id="__span-91-7"><a id="__codelineno-91-7" name="__codelineno-91-7" href="#__codelineno-91-7"></a><span class="p">(</span><span class="k">async</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-91-8"><a id="__codelineno-91-8" name="__codelineno-91-8" href="#__codelineno-91-8"></a><span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="p">(</span><span class="kd">const</span><span class="w"> </span><span class="nx">num</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">asyncIterfunc</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-91-9"><a id="__codelineno-91-9" name="__codelineno-91-9" href="#__codelineno-91-9"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">num</span><span class="p">);</span><span class="w"> </span><span class="c1">// 5 -&gt; 7 -&gt; 9</span>
+</span><span id="__span-91-10"><a id="__codelineno-91-10" name="__codelineno-91-10" href="#__codelineno-91-10"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-91-11"><a id="__codelineno-91-11" name="__codelineno-91-11" href="#__codelineno-91-11"></a><span class="p">})();</span>
+</span></code></pre></div>
+<ul>
+<li><code>class</code>
+    宣告類別</li>
+</ul>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-92-1"><a id="__codelineno-92-1" name="__codelineno-92-1" href="#__codelineno-92-1"></a><span class="kd">class</span><span class="w"> </span><span class="nx">Person</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-92-2"><a id="__codelineno-92-2" name="__codelineno-92-2" href="#__codelineno-92-2"></a><span class="w">  </span><span class="c1">// Static Method</span>
+</span><span id="__span-92-3"><a id="__codelineno-92-3" name="__codelineno-92-3" href="#__codelineno-92-3"></a><span class="w">  </span><span class="k">static</span><span class="w"> </span><span class="nx">introStr</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span><span class="w"> </span><span class="nx">age</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-92-4"><a id="__codelineno-92-4" name="__codelineno-92-4" href="#__codelineno-92-4"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s2">&quot;Hello! My name is &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;. I&#39;m &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">age</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot; years old.&quot;</span><span class="p">;</span>
+</span><span id="__span-92-5"><a id="__codelineno-92-5" name="__codelineno-92-5" href="#__codelineno-92-5"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-92-6"><a id="__codelineno-92-6" name="__codelineno-92-6" href="#__codelineno-92-6"></a>
+</span><span id="__span-92-7"><a id="__codelineno-92-7" name="__codelineno-92-7" href="#__codelineno-92-7"></a><span class="w">  </span><span class="c1">// Constructor</span>
+</span><span id="__span-92-8"><a id="__codelineno-92-8" name="__codelineno-92-8" href="#__codelineno-92-8"></a><span class="w">  </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">height</span><span class="p">,</span><span class="w"> </span><span class="nx">weight</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-92-9"><a id="__codelineno-92-9" name="__codelineno-92-9" href="#__codelineno-92-9"></a><span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">height</span><span class="p">;</span>
+</span><span id="__span-92-10"><a id="__codelineno-92-10" name="__codelineno-92-10" href="#__codelineno-92-10"></a><span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">weight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">weight</span><span class="p">;</span>
+</span><span id="__span-92-11"><a id="__codelineno-92-11" name="__codelineno-92-11" href="#__codelineno-92-11"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-92-12"><a id="__codelineno-92-12" name="__codelineno-92-12" href="#__codelineno-92-12"></a>
+</span><span id="__span-92-13"><a id="__codelineno-92-13" name="__codelineno-92-13" href="#__codelineno-92-13"></a><span class="w">  </span><span class="c1">// Getter</span>
+</span><span id="__span-92-14"><a id="__codelineno-92-14" name="__codelineno-92-14" href="#__codelineno-92-14"></a><span class="w">  </span><span class="nx">get</span><span class="w"> </span><span class="nx">bmi</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-92-15"><a id="__codelineno-92-15" name="__codelineno-92-15" href="#__codelineno-92-15"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">calcBmi</span><span class="p">();</span>
+</span><span id="__span-92-16"><a id="__codelineno-92-16" name="__codelineno-92-16" href="#__codelineno-92-16"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-92-17"><a id="__codelineno-92-17" name="__codelineno-92-17" href="#__codelineno-92-17"></a>
+</span><span id="__span-92-18"><a id="__codelineno-92-18" name="__codelineno-92-18" href="#__codelineno-92-18"></a><span class="w">  </span><span class="c1">// Method</span>
+</span><span id="__span-92-19"><a id="__codelineno-92-19" name="__codelineno-92-19" href="#__codelineno-92-19"></a><span class="w">  </span><span class="nx">calcBmi</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-92-20"><a id="__codelineno-92-20" name="__codelineno-92-20" href="#__codelineno-92-20"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">weight</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">((</span><span class="k">this</span><span class="p">.</span><span class="nx">height</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">height</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">10000</span><span class="p">);</span>
+</span><span id="__span-92-21"><a id="__codelineno-92-21" name="__codelineno-92-21" href="#__codelineno-92-21"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-92-22"><a id="__codelineno-92-22" name="__codelineno-92-22" href="#__codelineno-92-22"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="statements">陳述式(Statements)</h3>
+<ul>
+<li>
+<p>控制流程(Control flow)</p>
+</li>
+<li>
+<p><code>if...else</code>
+    根據條件執行的語句區塊</p>
+</li>
+</ul>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-93-1"><a id="__codelineno-93-1" name="__codelineno-93-1" href="#__codelineno-93-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">160</span><span class="p">;</span>
+</span><span id="__span-93-2"><a id="__codelineno-93-2" name="__codelineno-93-2" href="#__codelineno-93-2"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">height</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">170</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-93-3"><a id="__codelineno-93-3" name="__codelineno-93-3" href="#__codelineno-93-3"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Tall&quot;</span><span class="p">);</span>
+</span><span id="__span-93-4"><a id="__codelineno-93-4" name="__codelineno-93-4" href="#__codelineno-93-4"></a><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-93-5"><a id="__codelineno-93-5" name="__codelineno-93-5" href="#__codelineno-93-5"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Short&quot;</span><span class="p">);</span>
+</span><span id="__span-93-6"><a id="__codelineno-93-6" name="__codelineno-93-6" href="#__codelineno-93-6"></a><span class="p">}</span>
+</span></code></pre></div>
+<ul>
+<li><code>switch</code>
+    在不同條件下執行的語句區塊</li>
+</ul>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-94-1"><a id="__codelineno-94-1" name="__codelineno-94-1" href="#__codelineno-94-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">job</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Software engineer&quot;</span><span class="p">;</span>
+</span><span id="__span-94-2"><a id="__codelineno-94-2" name="__codelineno-94-2" href="#__codelineno-94-2"></a><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="nx">job</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-94-3"><a id="__codelineno-94-3" name="__codelineno-94-3" href="#__codelineno-94-3"></a><span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;Software engineer&quot;</span><span class="o">:</span>
+</span><span id="__span-94-4"><a id="__codelineno-94-4" name="__codelineno-94-4" href="#__codelineno-94-4"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Coding&quot;</span><span class="p">);</span>
+</span><span id="__span-94-5"><a id="__codelineno-94-5" name="__codelineno-94-5" href="#__codelineno-94-5"></a><span class="w">    </span><span class="k">break</span><span class="p">;</span>
+</span><span id="__span-94-6"><a id="__codelineno-94-6" name="__codelineno-94-6" href="#__codelineno-94-6"></a><span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;Police&quot;</span><span class="o">:</span>
+</span><span id="__span-94-7"><a id="__codelineno-94-7" name="__codelineno-94-7" href="#__codelineno-94-7"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Patrol&quot;</span><span class="p">);</span>
+</span><span id="__span-94-8"><a id="__codelineno-94-8" name="__codelineno-94-8" href="#__codelineno-94-8"></a><span class="w">    </span><span class="k">break</span><span class="p">;</span>
+</span><span id="__span-94-9"><a id="__codelineno-94-9" name="__codelineno-94-9" href="#__codelineno-94-9"></a><span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;Doctor&quot;</span><span class="o">:</span>
+</span><span id="__span-94-10"><a id="__codelineno-94-10" name="__codelineno-94-10" href="#__codelineno-94-10"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Surgery&quot;</span><span class="p">);</span>
+</span><span id="__span-94-11"><a id="__codelineno-94-11" name="__codelineno-94-11" href="#__codelineno-94-11"></a><span class="w">    </span><span class="k">break</span><span class="p">;</span>
+</span><span id="__span-94-12"><a id="__codelineno-94-12" name="__codelineno-94-12" href="#__codelineno-94-12"></a><span class="w">  </span><span class="k">default</span><span class="o">:</span>
+</span><span id="__span-94-13"><a id="__codelineno-94-13" name="__codelineno-94-13" href="#__codelineno-94-13"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Unemployed&quot;</span><span class="p">);</span>
+</span><span id="__span-94-14"><a id="__codelineno-94-14" name="__codelineno-94-14" href="#__codelineno-94-14"></a><span class="p">}</span>
+</span></code></pre></div>
+<ul>
+<li><code>return</code>
+    指定函式回傳值並退出函式</li>
+</ul>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-95-1"><a id="__codelineno-95-1" name="__codelineno-95-1" href="#__codelineno-95-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">sayHello</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-95-2"><a id="__codelineno-95-2" name="__codelineno-95-2" href="#__codelineno-95-2"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="s2">&quot;hello&quot;</span><span class="p">;</span>
+</span><span id="__span-95-3"><a id="__codelineno-95-3" name="__codelineno-95-3" href="#__codelineno-95-3"></a><span class="p">}</span>
+</span></code></pre></div>
+<ul>
+<li><code>break</code>
+    中斷當前 loop 、 switch 或 label 的陳述式並將程式控制權轉移到被終止陳述式後的陳述式</li>
+</ul>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-96-1"><a id="__codelineno-96-1" name="__codelineno-96-1" href="#__codelineno-96-1"></a><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="kc">true</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-96-2"><a id="__codelineno-96-2" name="__codelineno-96-2" href="#__codelineno-96-2"></a><span class="w">  </span><span class="k">break</span><span class="p">;</span>
+</span><span id="__span-96-3"><a id="__codelineno-96-3" name="__codelineno-96-3" href="#__codelineno-96-3"></a><span class="p">}</span>
+</span></code></pre></div>
+<ul>
+<li><code>continue</code>
+    中斷執行當前(或標記 *optional) loop 中該次所迭代的陳述式，並繼續執行 loop 中的下次迭代</li>
+</ul>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-97-1"><a id="__codelineno-97-1" name="__codelineno-97-1" href="#__codelineno-97-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">times</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span>
+</span><span id="__span-97-2"><a id="__codelineno-97-2" name="__codelineno-97-2" href="#__codelineno-97-2"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">times</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="nx">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-97-3"><a id="__codelineno-97-3" name="__codelineno-97-3" href="#__codelineno-97-3"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">i</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mf">3</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-97-4"><a id="__codelineno-97-4" name="__codelineno-97-4" href="#__codelineno-97-4"></a><span class="w">    </span><span class="k">continue</span><span class="p">;</span>
+</span><span id="__span-97-5"><a id="__codelineno-97-5" name="__codelineno-97-5" href="#__codelineno-97-5"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-97-6"><a id="__codelineno-97-6" name="__codelineno-97-6" href="#__codelineno-97-6"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span><span class="w"> </span><span class="c1">// 0 -&gt; 1 -&gt; 2 -&gt; 4</span>
+</span><span id="__span-97-7"><a id="__codelineno-97-7" name="__codelineno-97-7" href="#__codelineno-97-7"></a><span class="p">}</span>
+</span></code></pre></div>
+<ul>
+<li><code>throw</code>
+    拋出使用者所定義的例外狀況</li>
+</ul>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-98-1"><a id="__codelineno-98-1" name="__codelineno-98-1" href="#__codelineno-98-1"></a><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s2">&quot;I&#39;m Error&quot;</span><span class="p">);</span>
+</span></code></pre></div>
+<ul>
+<li><code>try...catch</code>
+    指定例外狀況捕捉範圍與回應的語句區塊</li>
+</ul>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-99-1"><a id="__codelineno-99-1" name="__codelineno-99-1" href="#__codelineno-99-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">errorFunc</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-99-2"><a id="__codelineno-99-2" name="__codelineno-99-2" href="#__codelineno-99-2"></a><span class="w">  </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s2">&quot;I&#39;m Error&quot;</span><span class="p">);</span>
+</span><span id="__span-99-3"><a id="__codelineno-99-3" name="__codelineno-99-3" href="#__codelineno-99-3"></a><span class="p">}</span>
+</span><span id="__span-99-4"><a id="__codelineno-99-4" name="__codelineno-99-4" href="#__codelineno-99-4"></a>
+</span><span id="__span-99-5"><a id="__codelineno-99-5" name="__codelineno-99-5" href="#__codelineno-99-5"></a><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-99-6"><a id="__codelineno-99-6" name="__codelineno-99-6" href="#__codelineno-99-6"></a><span class="w">  </span><span class="c1">// tryStatements</span>
+</span><span id="__span-99-7"><a id="__codelineno-99-7" name="__codelineno-99-7" href="#__codelineno-99-7"></a><span class="w">  </span><span class="nx">errorFunc</span><span class="p">();</span>
+</span><span id="__span-99-8"><a id="__codelineno-99-8" name="__codelineno-99-8" href="#__codelineno-99-8"></a><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">exception</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-99-9"><a id="__codelineno-99-9" name="__codelineno-99-9" href="#__codelineno-99-9"></a><span class="w">  </span><span class="c1">// catchStatements</span>
+</span><span id="__span-99-10"><a id="__codelineno-99-10" name="__codelineno-99-10" href="#__codelineno-99-10"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">exception</span><span class="p">);</span>
+</span><span id="__span-99-11"><a id="__codelineno-99-11" name="__codelineno-99-11" href="#__codelineno-99-11"></a><span class="p">}</span><span class="w"> </span><span class="k">finally</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-99-12"><a id="__codelineno-99-12" name="__codelineno-99-12" href="#__codelineno-99-12"></a><span class="w">  </span><span class="c1">// finallyStatements</span>
+</span><span id="__span-99-13"><a id="__codelineno-99-13" name="__codelineno-99-13" href="#__codelineno-99-13"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;End of run.&quot;</span><span class="p">);</span>
+</span><span id="__span-99-14"><a id="__codelineno-99-14" name="__codelineno-99-14" href="#__codelineno-99-14"></a><span class="p">}</span>
+</span><span id="__span-99-15"><a id="__codelineno-99-15" name="__codelineno-99-15" href="#__codelineno-99-15"></a>
+</span><span id="__span-99-16"><a id="__codelineno-99-16" name="__codelineno-99-16" href="#__codelineno-99-16"></a><span class="c1">// catch 的參數可省略、 finally 區塊亦可省略</span>
+</span><span id="__span-99-17"><a id="__codelineno-99-17" name="__codelineno-99-17" href="#__codelineno-99-17"></a><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-99-18"><a id="__codelineno-99-18" name="__codelineno-99-18" href="#__codelineno-99-18"></a><span class="w">  </span><span class="c1">// tryStatements</span>
+</span><span id="__span-99-19"><a id="__codelineno-99-19" name="__codelineno-99-19" href="#__codelineno-99-19"></a><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-99-20"><a id="__codelineno-99-20" name="__codelineno-99-20" href="#__codelineno-99-20"></a><span class="w">  </span><span class="c1">// catchStatements</span>
+</span><span id="__span-99-21"><a id="__codelineno-99-21" name="__codelineno-99-21" href="#__codelineno-99-21"></a><span class="p">}</span>
+</span></code></pre></div>
+<ul>
+<li>
+<p>迭代(Iterations)</p>
+</li>
+<li>
+<p><code>for</code>
+    由三個可選表達式組成的迴圈</p>
+</li>
+</ul>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-100-1"><a id="__codelineno-100-1" name="__codelineno-100-1" href="#__codelineno-100-1"></a><span class="cm">/*</span>
+</span><span id="__span-100-2"><a id="__codelineno-100-2" name="__codelineno-100-2" href="#__codelineno-100-2"></a><span class="cm">    initialization: 在迴圈開始之前計算一次的表達式(含賦值表達式)或變數宣告式</span>
+</span><span id="__span-100-3"><a id="__codelineno-100-3" name="__codelineno-100-3" href="#__codelineno-100-3"></a><span class="cm">    condition: 每次迴圈迭代前要計算的表達式。若為true則執行該次迭代，否則中斷迴圈</span>
+</span><span id="__span-100-4"><a id="__codelineno-100-4" name="__codelineno-100-4" href="#__codelineno-100-4"></a><span class="cm">    afterthought: 在迴圈迭代結束時計算的表達式</span>
+</span><span id="__span-100-5"><a id="__codelineno-100-5" name="__codelineno-100-5" href="#__codelineno-100-5"></a><span class="cm">*/</span>
+</span><span id="__span-100-6"><a id="__codelineno-100-6" name="__codelineno-100-6" href="#__codelineno-100-6"></a><span class="c1">// for (initialization; condition; afterthought)</span>
+</span><span id="__span-100-7"><a id="__codelineno-100-7" name="__codelineno-100-7" href="#__codelineno-100-7"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="nx">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-100-8"><a id="__codelineno-100-8" name="__codelineno-100-8" href="#__codelineno-100-8"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span><span class="w"> </span><span class="c1">// 0 -&gt; 1 -&gt; 2 -&gt; 3 -&gt; 4</span>
+</span><span id="__span-100-9"><a id="__codelineno-100-9" name="__codelineno-100-9" href="#__codelineno-100-9"></a><span class="p">}</span>
+</span></code></pre></div>
+<ul>
+<li><code>while</code>
+    由條件判斷的迴圈</li>
+</ul>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-101-1"><a id="__codelineno-101-1" name="__codelineno-101-1" href="#__codelineno-101-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+</span><span id="__span-101-2"><a id="__codelineno-101-2" name="__codelineno-101-2" href="#__codelineno-101-2"></a><span class="cm">/*</span>
+</span><span id="__span-101-3"><a id="__codelineno-101-3" name="__codelineno-101-3" href="#__codelineno-101-3"></a><span class="cm">    condition: 每次迴圈迭代前要計算的表達式。若為true則執行該次迭代，否則中斷迴圈</span>
+</span><span id="__span-101-4"><a id="__codelineno-101-4" name="__codelineno-101-4" href="#__codelineno-101-4"></a><span class="cm">*/</span>
+</span><span id="__span-101-5"><a id="__codelineno-101-5" name="__codelineno-101-5" href="#__codelineno-101-5"></a><span class="c1">// while (condition)</span>
+</span><span id="__span-101-6"><a id="__codelineno-101-6" name="__codelineno-101-6" href="#__codelineno-101-6"></a><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">5</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-101-7"><a id="__codelineno-101-7" name="__codelineno-101-7" href="#__codelineno-101-7"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span><span class="w"> </span><span class="c1">// 0 -&gt; 1 -&gt; 2 -&gt; 3 -&gt; 4</span>
+</span><span id="__span-101-8"><a id="__codelineno-101-8" name="__codelineno-101-8" href="#__codelineno-101-8"></a><span class="w">  </span><span class="o">++</span><span class="nx">i</span><span class="p">;</span>
+</span><span id="__span-101-9"><a id="__codelineno-101-9" name="__codelineno-101-9" href="#__codelineno-101-9"></a><span class="p">}</span>
+</span></code></pre></div>
+<ul>
+<li><code>for...in</code>
+    以任意順序迭代物件的可枚舉屬性(enumerable properties)</li>
+</ul>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-102-1"><a id="__codelineno-102-1" name="__codelineno-102-1" href="#__codelineno-102-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">object</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Cindy&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="mf">31</span><span class="w"> </span><span class="p">};</span>
+</span><span id="__span-102-2"><a id="__codelineno-102-2" name="__codelineno-102-2" href="#__codelineno-102-2"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">const</span><span class="w"> </span><span class="nx">property</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">object</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-102-3"><a id="__codelineno-102-3" name="__codelineno-102-3" href="#__codelineno-102-3"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">property</span><span class="si">}</span><span class="sb">: </span><span class="si">${</span><span class="nx">object</span><span class="p">[</span><span class="nx">property</span><span class="p">]</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span><span class="w"> </span><span class="c1">// name: Cindy -&gt; age: 31</span>
+</span><span id="__span-102-4"><a id="__codelineno-102-4" name="__codelineno-102-4" href="#__codelineno-102-4"></a><span class="p">}</span>
+</span></code></pre></div>
+<ul>
+<li><code>for...of</code>
+    迭代可迭代物件(包括陣列、類 ​​ 別數組物件、迭代器和生成器)</li>
+</ul>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-103-1"><a id="__codelineno-103-1" name="__codelineno-103-1" href="#__codelineno-103-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">array1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">5</span><span class="p">,</span><span class="w"> </span><span class="mf">7</span><span class="p">,</span><span class="w"> </span><span class="mf">9</span><span class="p">];</span>
+</span><span id="__span-103-2"><a id="__codelineno-103-2" name="__codelineno-103-2" href="#__codelineno-103-2"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">const</span><span class="w"> </span><span class="nx">element</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">array1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-103-3"><a id="__codelineno-103-3" name="__codelineno-103-3" href="#__codelineno-103-3"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">element</span><span class="p">);</span><span class="w"> </span><span class="c1">// 5 -&gt; 7 -&gt; 9</span>
+</span><span id="__span-103-4"><a id="__codelineno-103-4" name="__codelineno-103-4" href="#__codelineno-103-4"></a><span class="p">}</span>
+</span></code></pre></div>
+<ul>
+<li><code>for await...of</code>
+    迭代非同步可迭代物件</li>
+</ul>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-104-1"><a id="__codelineno-104-1" name="__codelineno-104-1" href="#__codelineno-104-1"></a><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="o">*</span><span class="w"> </span><span class="nx">asyncIterfunc</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-104-2"><a id="__codelineno-104-2" name="__codelineno-104-2" href="#__codelineno-104-2"></a><span class="w">  </span><span class="k">yield</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span>
+</span><span id="__span-104-3"><a id="__codelineno-104-3" name="__codelineno-104-3" href="#__codelineno-104-3"></a><span class="w">  </span><span class="k">yield</span><span class="w"> </span><span class="mf">7</span><span class="p">;</span>
+</span><span id="__span-104-4"><a id="__codelineno-104-4" name="__codelineno-104-4" href="#__codelineno-104-4"></a><span class="w">  </span><span class="k">yield</span><span class="w"> </span><span class="mf">9</span><span class="p">;</span>
+</span><span id="__span-104-5"><a id="__codelineno-104-5" name="__codelineno-104-5" href="#__codelineno-104-5"></a><span class="p">}</span>
+</span><span id="__span-104-6"><a id="__codelineno-104-6" name="__codelineno-104-6" href="#__codelineno-104-6"></a>
+</span><span id="__span-104-7"><a id="__codelineno-104-7" name="__codelineno-104-7" href="#__codelineno-104-7"></a><span class="p">(</span><span class="k">async</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-104-8"><a id="__codelineno-104-8" name="__codelineno-104-8" href="#__codelineno-104-8"></a><span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="p">(</span><span class="kd">const</span><span class="w"> </span><span class="nx">num</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">asyncIterfunc</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-104-9"><a id="__codelineno-104-9" name="__codelineno-104-9" href="#__codelineno-104-9"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">num</span><span class="p">);</span><span class="w"> </span><span class="c1">// 5 -&gt; 7 -&gt; 9</span>
+</span><span id="__span-104-10"><a id="__codelineno-104-10" name="__codelineno-104-10" href="#__codelineno-104-10"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-104-11"><a id="__codelineno-104-11" name="__codelineno-104-11" href="#__codelineno-104-11"></a><span class="p">})();</span>
+</span></code></pre></div>
+<ul>
+<li><code>do...while</code>
+    由條件判斷的迴圈，至少執行一次</li>
+</ul>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-105-1"><a id="__codelineno-105-1" name="__codelineno-105-1" href="#__codelineno-105-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+</span><span id="__span-105-2"><a id="__codelineno-105-2" name="__codelineno-105-2" href="#__codelineno-105-2"></a><span class="k">do</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-105-3"><a id="__codelineno-105-3" name="__codelineno-105-3" href="#__codelineno-105-3"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span><span class="w"> </span><span class="c1">// 0 -&gt; 1 -&gt; 2 -&gt; 3 -&gt; 4 -&gt; 5</span>
+</span><span id="__span-105-4"><a id="__codelineno-105-4" name="__codelineno-105-4" href="#__codelineno-105-4"></a><span class="w">  </span><span class="o">++</span><span class="nx">i</span><span class="p">;</span>
+</span><span id="__span-105-5"><a id="__codelineno-105-5" name="__codelineno-105-5" href="#__codelineno-105-5"></a><span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">5</span><span class="p">);</span>
+</span></code></pre></div>
+<h3 id="hoisting">提升(Hoisting)</h3>
+<ul>
+<li>讓變數和函數的 <strong>宣告</strong> 在編譯階段就被放入記憶體，但初始化的實際位置和程式碼中完全一樣</li>
+</ul>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-106-1"><a id="__codelineno-106-1" name="__codelineno-106-1" href="#__codelineno-106-1"></a><span class="c1">// 因為 calcHypotenuse 在編譯階段被 Hoisting，所以能被正常執行而不報錯</span>
+</span><span id="__span-106-2"><a id="__codelineno-106-2" name="__codelineno-106-2" href="#__codelineno-106-2"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">calcHypotenuse</span><span class="p">(</span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">));</span><span class="w"> </span><span class="c1">// 5</span>
+</span><span id="__span-106-3"><a id="__codelineno-106-3" name="__codelineno-106-3" href="#__codelineno-106-3"></a>
+</span><span id="__span-106-4"><a id="__codelineno-106-4" name="__codelineno-106-4" href="#__codelineno-106-4"></a><span class="kd">function</span><span class="w"> </span><span class="nx">calcHypotenuse</span><span class="p">(</span><span class="nx">leg1</span><span class="p">,</span><span class="w"> </span><span class="nx">leg2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-106-5"><a id="__codelineno-106-5" name="__codelineno-106-5" href="#__codelineno-106-5"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">sqrt</span><span class="p">(</span><span class="nx">leg1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">leg1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">leg2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">leg2</span><span class="p">);</span>
+</span><span id="__span-106-6"><a id="__codelineno-106-6" name="__codelineno-106-6" href="#__codelineno-106-6"></a><span class="p">}</span>
+</span></code></pre></div>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-107-1"><a id="__codelineno-107-1" name="__codelineno-107-1" href="#__codelineno-107-1"></a><span class="c1">// 因為 num1, num2 在編譯階段被 Hoisting，所以能被正常執行而不報錯</span>
+</span><span id="__span-107-2"><a id="__codelineno-107-2" name="__codelineno-107-2" href="#__codelineno-107-2"></a><span class="c1">// 但由於 num2 初始化的位置在打印之後，因此為預設的 undefined</span>
+</span><span id="__span-107-3"><a id="__codelineno-107-3" name="__codelineno-107-3" href="#__codelineno-107-3"></a><span class="nx">num1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3</span><span class="p">;</span>
+</span><span id="__span-107-4"><a id="__codelineno-107-4" name="__codelineno-107-4" href="#__codelineno-107-4"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">num1</span><span class="p">,</span><span class="w"> </span><span class="nx">num2</span><span class="p">);</span><span class="w"> </span><span class="c1">// 3 undefined</span>
+</span><span id="__span-107-5"><a id="__codelineno-107-5" name="__codelineno-107-5" href="#__codelineno-107-5"></a><span class="kd">var</span><span class="w"> </span><span class="nx">num1</span><span class="p">;</span>
+</span><span id="__span-107-6"><a id="__codelineno-107-6" name="__codelineno-107-6" href="#__codelineno-107-6"></a><span class="kd">var</span><span class="w"> </span><span class="nx">num2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span>
+</span></code></pre></div>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>Reserved as future keywords by older ECMAScript specifications (ES1 ~ ES3), 盡量不要作為變數名稱使用.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref9:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref10:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref11:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref12:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref13:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref14:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref15:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref16:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>New Features in ES5 and ES6.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref9:2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref10:2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref11:2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref12:2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref13:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.instant", "navigation.top", "navigation.expand", "navigation.tabs.sticky", "content.code.annotate", "content.code.copy", "content.code.select", "content.footnote.tooltips", "search.highlight", "search.share", "search.suggest"], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.aecac24b.min.js"></script>
+      
+        <script src="../../../javascripts/highlight.min.js"></script>
+      
+        <script src="../../../javascripts/cpp.min.js"></script>
+      
+        <script src="../../../javascripts/bash.min.js"></script>
+      
+        <script src="../../../javascripts/diff.min.js"></script>
+      
+        <script src="../../../javascripts/markdown.min.js"></script>
+      
+        <script src="../../../javascripts/llvm.min.js"></script>
+      
+        <script src="../../../javascripts/http.min.js"></script>
+      
+        <script src="../../../javascripts/javascript.min.js"></script>
+      
+        <script src="../../../javascripts/typescript.min.js"></script>
+      
+        <script src="../../../javascripts/loader.js"></script>
+      
+    
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>
