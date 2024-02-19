@@ -12,19 +12,19 @@
         <link rel="prev" href="../../sound/audio-source/">
       
       
-        <link rel="next" href="../dynamic-load/">
+        <link rel="next" href="../load-scene/">
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.7">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.11">
     
     
       
-        <title>Prefab - mkdocs</title>
+        <title>節點池與預製體 - mkdocs</title>
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.4b4a2bd9.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.fad675c6.min.css">
       
       
 
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#prefab" class="md-skip">
+        <a href="#nodepool-prefab" class="md-skip">
           Skip to content
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Prefab
+              節點池與預製體
             
           </span>
         </div>
@@ -162,7 +162,7 @@
         <a href="../../../" class="md-tabs__link">
           
   
-  網頁遊戲引擎原理與實做
+  網頁遊戲引擎原理與實作
 
         </a>
       </li>
@@ -304,7 +304,7 @@
             
   
   <span class="md-ellipsis">
-    網頁遊戲引擎原理與實做
+    網頁遊戲引擎原理與實作
   </span>
   
 
@@ -314,7 +314,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
-            網頁遊戲引擎原理與實做
+            網頁遊戲引擎原理與實作
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -362,7 +362,7 @@
             
   
   <span class="md-ellipsis">
-    課程總覽
+    環境安裝
   </span>
   
 
@@ -372,7 +372,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
-            課程總覽
+            環境安裝
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -406,7 +406,7 @@
         
   
   <span class="md-ellipsis">
-    JavaScript 與 TypeScript 環境安裝
+    JavaScript
   </span>
   
 
@@ -426,7 +426,7 @@
         
   
   <span class="md-ellipsis">
-    Git 環境安裝
+    Git
   </span>
   
 
@@ -446,7 +446,7 @@
         
   
   <span class="md-ellipsis">
-    Prettier & ESLint
+    Code Format
   </span>
   
 
@@ -572,7 +572,7 @@
         
   
   <span class="md-ellipsis">
-    進階：深入型別
+    進階：型別系統
   </span>
   
 
@@ -632,7 +632,7 @@
         
   
   <span class="md-ellipsis">
-    Task Schedule
+    事件循環
   </span>
   
 
@@ -652,7 +652,7 @@
         
   
   <span class="md-ellipsis">
-    非同步程式設計
+    非同步處理
   </span>
   
 
@@ -672,7 +672,7 @@
         
   
   <span class="md-ellipsis">
-    None
+    生成器與協程
   </span>
   
 
@@ -692,7 +692,7 @@
         
   
   <span class="md-ellipsis">
-    HTTP request
+    HTTP & RESTful API
   </span>
   
 
@@ -712,7 +712,7 @@
         
   
   <span class="md-ellipsis">
-    Websocket 介紹
+    Websocket
   </span>
   
 
@@ -900,31 +900,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../basic/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Component 基本介紹
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../node-and-coord/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Node & 坐標系統
+    Node與坐標系統
   </span>
   
 
@@ -945,6 +925,26 @@
   
   <span class="md-ellipsis">
     事件系統
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    元件介紹
   </span>
   
 
@@ -1288,7 +1288,7 @@
         
   
   <span class="md-ellipsis">
-    Tween
+    緩動系統
   </span>
   
 
@@ -1308,7 +1308,7 @@
         
   
   <span class="md-ellipsis">
-    Animation
+    Cocos 動畫系統
   </span>
   
 
@@ -1328,7 +1328,7 @@
         
   
   <span class="md-ellipsis">
-    Spine
+    Spine 骨骼動畫
   </span>
   
 
@@ -1348,7 +1348,7 @@
         
   
   <span class="md-ellipsis">
-    Particle System
+    粒子系統
   </span>
   
 
@@ -1509,7 +1509,7 @@
           
   
   <span class="md-ellipsis">
-    Prefab
+    節點池與預製體
   </span>
   
 
@@ -1520,7 +1520,7 @@
         
   
   <span class="md-ellipsis">
-    Prefab
+    節點池與預製體
   </span>
   
 
@@ -1542,66 +1542,84 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#prefab_1" class="md-nav__link">
-    Prefab
+  <a href="#prefab" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prefab
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="Prefab">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#prefab_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      建立 Prefab 資源
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#prefab_2" class="md-nav__link">
-    建立Prefab資源
+    <span class="md-ellipsis">
+      使用 Prefab 資源
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#prefab_3" class="md-nav__link">
-    使用Prefab資源
+    <span class="md-ellipsis">
+      編輯 Prefab 資源
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#prefab_4" class="md-nav__link">
-    編輯Prefab資源
+    <span class="md-ellipsis">
+      編輯 Prefab 實例
+    </span>
   </a>
   
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#prefab_5" class="md-nav__link">
-    編輯Prefab實例
-  </a>
-  
-    <nav class="md-nav" aria-label="編輯Prefab實例">
+    <nav class="md-nav" aria-label="編輯 Prefab 實例">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    通用操作
+    <span class="md-ellipsis">
+      通用操作
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    新增節點
+    <span class="md-ellipsis">
+      新增節點
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    新增元件
+    <span class="md-ellipsis">
+      新增元件
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
-    刪除元件
+    <span class="md-ellipsis">
+      刪除元件
+    </span>
   </a>
   
 </li>
@@ -1618,7 +1636,9 @@
       
         <li class="md-nav__item">
   <a href="#nodepool" class="md-nav__link">
-    NodePool
+    <span class="md-ellipsis">
+      NodePool
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="NodePool">
@@ -1626,7 +1646,9 @@
         
           <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
-    使用方法
+    <span class="md-ellipsis">
+      使用方法
+    </span>
   </a>
   
 </li>
@@ -1651,11 +1673,31 @@
   
   
     <li class="md-nav__item">
+      <a href="../load-scene/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    場景加載與切換
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../dynamic-load/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Dynamic load
+    動態載入
   </span>
   
 
@@ -1675,27 +1717,7 @@
         
   
   <span class="md-ellipsis">
-    Bundle
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../load-scene/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Load scene
+    資源包
   </span>
   
 
@@ -1755,66 +1777,84 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#prefab_1" class="md-nav__link">
-    Prefab
+  <a href="#prefab" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prefab
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="Prefab">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#prefab_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      建立 Prefab 資源
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#prefab_2" class="md-nav__link">
-    建立Prefab資源
+    <span class="md-ellipsis">
+      使用 Prefab 資源
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#prefab_3" class="md-nav__link">
-    使用Prefab資源
+    <span class="md-ellipsis">
+      編輯 Prefab 資源
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#prefab_4" class="md-nav__link">
-    編輯Prefab資源
+    <span class="md-ellipsis">
+      編輯 Prefab 實例
+    </span>
   </a>
   
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#prefab_5" class="md-nav__link">
-    編輯Prefab實例
-  </a>
-  
-    <nav class="md-nav" aria-label="編輯Prefab實例">
+    <nav class="md-nav" aria-label="編輯 Prefab 實例">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    通用操作
+    <span class="md-ellipsis">
+      通用操作
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    新增節點
+    <span class="md-ellipsis">
+      新增節點
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    新增元件
+    <span class="md-ellipsis">
+      新增元件
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
-    刪除元件
+    <span class="md-ellipsis">
+      刪除元件
+    </span>
   </a>
   
 </li>
@@ -1831,7 +1871,9 @@
       
         <li class="md-nav__item">
   <a href="#nodepool" class="md-nav__link">
-    NodePool
+    <span class="md-ellipsis">
+      NodePool
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="NodePool">
@@ -1839,7 +1881,9 @@
         
           <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
-    使用方法
+    <span class="md-ellipsis">
+      使用方法
+    </span>
   </a>
   
 </li>
@@ -1864,26 +1908,27 @@
                   
 
 
-<h1 id="prefab"><strong>Prefab</strong></h1>
-<h2 id="prefab_1"><strong>Prefab</strong></h2>
-<p>Prefab是一種可重複使用的物件模板。使用Prefab的好處在於，你可以在場景中多次使用相同的物件，而不必每次都從頭開始創建。這使得遊戲開發更加高效，特別是當你需要多次使用相同物件時，例如重複的敵人、道具或UI元素。</p>
-<p>由Prefab資源(Prefab Asset)生成的實例(Prefab Instance)可以繼承模板的數據，又可以有自己客製化的數據修改。</p>
-<h3 id="prefab_2"><strong>建立Prefab資源</strong></h3>
-<p>有兩個方法能建立Prefab資源</p>
+<h1 id="nodepool-prefab">節點池 NodePool 與 預製體 Prefab</h1>
+<h2 id="prefab">Prefab</h2>
+<p>Prefab 是一種可重複使用的物件模板。使用 Prefab 的好處在於，你可以在場景中多次使用相同的物件，而不必每次都從頭開始創建。這使得遊戲開發更加高效，特別是當你需要多次使用相同物件時，例如重複的敵人、道具或 UI 元素。</p>
+<p>由 Prefab 資源（Prefab Asset）生成的實例（Prefab Instance）可以繼承模板的數據，又可以有自己客製化的數據修改。</p>
+<h3 id="prefab_1">建立 Prefab 資源</h3>
+<p>有兩個方法能建立 Prefab 資源</p>
 <ol>
 <li>
-<p><strong>使用場景中現有節點建立</strong></p>
-<p>在場景中將節點編輯好之後，直接將節點從 <strong>層級管理器</strong> 拖曳到 <strong>資源管理器</strong> 中即可完成Prefab資源的建立。</p>
-<blockquote>
-<p>建立完成後，原節點將自動變成該Prefab資源的實例</p>
-</blockquote>
+<p>使用場景中現有節點建立</p>
+<p>在場景中將節點編輯好之後，直接將節點從 <strong>層級管理器</strong> 拖曳到 <strong>資源管理器</strong> 中即可完成 Prefab 資源的建立。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>建立完成後，原節點將自動變成該 Prefab 資源的實例</p>
+</div>
 <p><figure>
     <a class="glightbox" href="/webgame-engine/assets/prefab/create-prefab.gif" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="/webgame-engine/assets/prefab/create-prefab.gif" alt="使用場景中現有節點建立"/></a>
     <figcaption>使用場景中現有節點建立<sup id="fnref2:note1"><a class="footnote-ref" href="#fn:note1">1</a></sup></figcaption>
 </figure></p>
 </li>
 <li>
-<p><strong>於資源管理器建立</strong></p>
+<p>於資源管理器建立</p>
 <p>點選 <strong>資源管理器</strong> 左上方的 <strong>+</strong> 按鈕，選擇 <strong>Node Prefab</strong> 建立；</p>
 <p>或於 <strong>資源管理器</strong> 空白處右鍵，選擇 <strong>create</strong> ，然後選擇 <strong>Node Prefab</strong> 。</p>
 <p><figure>
@@ -1892,30 +1937,32 @@
 </figure></p>
 </li>
 </ol>
-<h3 id="prefab_3"><strong>使用Prefab資源</strong></h3>
-<p>將Prefab資源從 <strong>資源管理器</strong> 拖曳到 <strong>層級管理器</strong> 或 <strong>場景編輯器</strong> ，即可在場景中產生一個Prefab實例。</p>
-<blockquote>
-<p>使用Prefab資源建立的實例在 <strong>層級管理器</strong> 中以綠色呈現</p>
-</blockquote>
+<h3 id="prefab_2">使用 Prefab 資源</h3>
+<p>將 Prefab 資源從 <strong>資源管理器</strong> 拖曳到 <strong>層級管理器</strong> 或 <strong>場景編輯器</strong> ，即可在場景中產生一個 Prefab 實例。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>使用 Prefab 資源建立的實例在 <strong>層級管理器</strong> 中以<strong>綠色文字</strong>表示</p>
+</div>
 <figure>
     <a class="glightbox" href="/webgame-engine/assets/prefab/use-prefab.gif" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="/webgame-engine/assets/prefab/use-prefab.gif" alt="使用Prefab資源"/></a>
     <figcaption>使用Prefab資源<sup id="fnref3:note1"><a class="footnote-ref" href="#fn:note1" role="doc-noteref">1</a></sup></figcaption>
 </figure>
 
-<h3 id="prefab_4"><strong>編輯Prefab資源</strong></h3>
-<p>在 <strong>資源管理器</strong> 中按兩下Prefab資源即可從場景編輯模式切換到Prefab編輯模式(左上方顯示PREFAB字樣)。</p>
-<p>編輯完成後，點選左上方的 <strong>Save</strong> 按鈕即可儲存編輯後的Prefab資源，之後點選 <strong>Close</strong> 按鈕即可返回場景編輯模式。</p>
-<blockquote>
-<p>對Prefab資源的更動會套用至所有關聯的實例。</p>
-</blockquote>
+<h3 id="prefab_3">編輯 Prefab 資源</h3>
+<p>在 <strong>資源管理器</strong> 中按兩下 Prefab 資源即可從場景編輯模式切換到 Prefab 編輯模式(左上方顯示 PREFAB 字樣)。</p>
+<p>編輯完成後，點選左上方的 <strong>Save</strong> 按鈕即可儲存編輯後的 Prefab 資源，之後點選 <strong>Close</strong> 按鈕即可返回場景編輯模式。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>對 Prefab 資源的更動會套用至所有關聯的實例。</p>
+</div>
 <figure>
     <a class="glightbox" href="/webgame-engine/assets/prefab/prefab-edit-mode.gif" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="/webgame-engine/assets/prefab/prefab-edit-mode.gif" alt="編輯Prefab資源"/></a>
     <figcaption>編輯Prefab資源<sup id="fnref4:note1"><a class="footnote-ref" href="#fn:note1" role="doc-noteref">1</a></sup></figcaption>
 </figure>
 
-<h3 id="prefab_5"><strong>編輯Prefab實例</strong></h3>
+<h3 id="prefab_4">編輯 Prefab 實例</h3>
 <h4 id="_1">通用操作</h4>
-<p>在 <strong>層級管理器</strong> 中點選Prefab實例，<strong>屬性檢查器</strong> 的頂部會出現5個可操作的按鈕。</p>
+<p>在 <strong>層級管理器</strong> 中點選 Prefab 實例，<strong>屬性檢查器</strong> 的頂部會出現 5 個可操作的按鈕。</p>
 <figure>
     <a class="glightbox" href="/webgame-engine/assets/prefab/edit-prefab.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="/webgame-engine/assets/prefab/edit-prefab.png" alt="Prefab實例通用操作"/></a>
     <figcaption>Prefab實例通用操作</figcaption>
@@ -1931,42 +1978,42 @@
 <tbody>
 <tr>
 <td><a class="glightbox" href="/webgame-engine/assets/prefab/edit.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="edit" src="/webgame-engine/assets/prefab/edit.png" /></a></td>
-<td>進入Prefab資源編輯模式。</td>
+<td>進入 Prefab 資源編輯模式。</td>
 </tr>
 <tr>
 <td><a class="glightbox" href="/webgame-engine/assets/prefab/disconnect.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="disconnect" src="/webgame-engine/assets/prefab/disconnect.png" /></a></td>
-<td>斷開實例與Prefab資源的關聯。</td>
+<td>斷開實例與 Prefab 資源的關聯。</td>
 </tr>
 <tr>
 <td><a class="glightbox" href="/webgame-engine/assets/prefab/location.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="location" src="/webgame-engine/assets/prefab/location.png" /></a></td>
-<td>在 <strong>資源管理器</strong> 中標示出Prefab資源的位置。</td>
+<td>在 <strong>資源管理器</strong> 中標示出 Prefab 資源的位置。</td>
 </tr>
 <tr>
 <td><a class="glightbox" href="/webgame-engine/assets/prefab/reset.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="reset" src="/webgame-engine/assets/prefab/reset.png" /></a></td>
-<td>將目前實例還原回與Prefab資源相同，其中名字、位置和旋轉不會還原回Prefab資源的設定。</td>
+<td>將目前實例還原回與 Prefab 資源相同，其中名字、位置和旋轉不會還原回 Prefab 資源的設定。</td>
 </tr>
 <tr>
 <td><a class="glightbox" href="/webgame-engine/assets/prefab/update.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="update" src="/webgame-engine/assets/prefab/update.png" /></a></td>
-<td>將目前實例的所有資料更新到所關聯的Prefab資源。</td>
+<td>將目前實例的所有資料更新到所關聯的 Prefab 資源。</td>
 </tr>
 </tbody>
 </table>
 <h4 id="_2">新增節點</h4>
-<p>在Prefab實例下新增節點，在節點名字的右側會有一個 <strong>+</strong> ，它的資料儲存在Prefab實例下，不會影響關聯的Prefab資源的資料。</p>
+<p>在 Prefab 實例下新增節點，在節點名字的右側會有一個 <strong>+</strong> ，它的資料儲存在 Prefab 實例下，不會影響關聯的 Prefab 資源的資料。</p>
 <figure>
     <a class="glightbox" href="/webgame-engine/assets/prefab/prefab-mounted-children.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="/webgame-engine/assets/prefab/prefab-mounted-children.png" alt="Prefab實例新增節點"/></a>
     <figcaption>Prefab實例新增節點<sup id="fnref5:note1"><a class="footnote-ref" href="#fn:note1" role="doc-noteref">1</a></sup></figcaption>
 </figure>
 
 <h4 id="_3">新增元件</h4>
-<p>在Prefab實例下新增元件，在元件名字的右側會有一個 <strong>+</strong> ，它的資料儲存在Prefab實例下，不會影響關聯的Prefab資源的資料。</p>
+<p>在 Prefab 實例下新增元件，在元件名字的右側會有一個 <strong>+</strong> ，它的資料儲存在 Prefab 實例下，不會影響關聯的 Prefab 資源的資料。</p>
 <figure>
     <a class="glightbox" href="/webgame-engine/assets/prefab/instance-add-component.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="/webgame-engine/assets/prefab/instance-add-component.png" alt="Prefab實例新增元件"/></a>
     <figcaption>Prefab實例新增元件<sup id="fnref6:note1"><a class="footnote-ref" href="#fn:note1" role="doc-noteref">1</a></sup></figcaption>
 </figure>
 
 <h4 id="_4">刪除元件</h4>
-<p>在Prefab實例下刪除包含在Prefab資源的元件，會在 <strong>屬性檢查器</strong> 上增加一條刪除元件的資料，它的資料儲存在Prefab實例下，不會影響關聯的Prefab資源的資料。</p>
+<p>在 Prefab 實例下刪除包含在 Prefab 資源的元件，會在 <strong>屬性檢查器</strong> 上增加一條刪除元件的資料，它的資料儲存在 Prefab 實例下，不會影響關聯的 Prefab 資源的資料。</p>
 <figure>
     <a class="glightbox" href="/webgame-engine/assets/prefab/instance-remove-component.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="/webgame-engine/assets/prefab/instance-remove-component.png" alt="Prefab實例刪除元件"/></a>
     <figcaption>Prefab實例刪除元件</figcaption>
@@ -1987,50 +2034,49 @@
 </tr>
 <tr>
 <td><a class="glightbox" href="/webgame-engine/assets/prefab/update.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="update" src="/webgame-engine/assets/prefab/update.png" /></a></td>
-<td>將該刪除的元件在Prefab資源中同步刪除。</td>
+<td>將該刪除的元件在 Prefab 資源中同步刪除。</td>
 </tr>
 </tbody>
 </table>
-<h2 id="nodepool"><strong>NodePool</strong></h2>
-<p>NodePool用於節點管理，將不需要的節點回收進NodePool，需要使用時再從NodePool中取出，避免反覆創建及銷毀。</p>
-<p>NodePool特別適用於節點需要反覆創建和刪除的場景，如遊戲中的子彈。</p>
-<blockquote>
-<p>不同的節點應使用不同的NodePool存放</p>
-</blockquote>
-<h3 id="_5"><strong>使用方法</strong></h3>
+<h2 id="nodepool">NodePool</h2>
+<p>NodePool 用於節點管理，將不需要的節點回收進 NodePool，需要使用時再從 NodePool 中取出，避免反覆創建及銷毀。</p>
+<p>NodePool 特別適用於節點需要反覆創建和刪除的場景，如遊戲中的子彈。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>不同的節點應使用不同的 NodePool 存放</p>
+</div>
+<h3 id="_5">使用方法</h3>
 <ul>
-<li>
-<p>import</p>
+<li>import</li>
+</ul>
 <p><a class="glightbox" href="/webgame-engine/assets/prefab/NodePool/import.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="import" src="/webgame-engine/assets/prefab/NodePool/import.png" /></a></p>
-</li>
-<li>
-<p>constructors</p>
+<ul>
+<li>constructors</li>
+</ul>
 <p><a class="glightbox" href="/webgame-engine/assets/prefab/NodePool/constructors.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="constructors" src="/webgame-engine/assets/prefab/NodePool/constructors.png" /></a></p>
-</li>
-<li>
-<p>.get()</p>
-<p>從NodePool中取出節點。</p>
+<ul>
+<li>.get()</li>
+</ul>
+<p>從 NodePool 中取出節點。</p>
 <blockquote>
-<p>如果NodePool中沒有節點則回傳null。</p>
+<p>如果 NodePool 中沒有節點則回傳 null。</p>
 </blockquote>
 <p><a class="glightbox" href="/webgame-engine/assets/prefab/NodePool/get.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="get()" src="/webgame-engine/assets/prefab/NodePool/get.png" /></a></p>
-</li>
-<li>
-<p>.put()</p>
-<p>將節點放入NodePool中。</p>
-<p><a class="glightbox" href="/webgame-engine/assets/prefab/NodePool/put.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="put()" src="/webgame-engine/assets/prefab/NodePool/put.png" /></a></p>
-</li>
-<li>
-<p>.size()</p>
-<p>取得目前NodePool中的節點數量。</p>
-<p><a class="glightbox" href="/webgame-engine/assets/prefab/NodePool/size.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="size()" src="/webgame-engine/assets/prefab/NodePool/size.png" /></a></p>
-</li>
-<li>
-<p>.clear() </p>
-<p>清空NodePool中的節點。</p>
-<p><a class="glightbox" href="/webgame-engine/assets/prefab/NodePool/clear.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="clear()" src="/webgame-engine/assets/prefab/NodePool/clear.png" /></a></p>
-</li>
+<ul>
+<li>.put()</li>
 </ul>
+<p>將節點放入 NodePool 中。</p>
+<p><a class="glightbox" href="/webgame-engine/assets/prefab/NodePool/put.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="put()" src="/webgame-engine/assets/prefab/NodePool/put.png" /></a></p>
+<ul>
+<li>.size()</li>
+</ul>
+<p>取得目前 NodePool 中的節點數量。</p>
+<p><a class="glightbox" href="/webgame-engine/assets/prefab/NodePool/size.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="size()" src="/webgame-engine/assets/prefab/NodePool/size.png" /></a></p>
+<ul>
+<li>.clear()</li>
+</ul>
+<p>清空 NodePool 中的節點。</p>
+<p><a class="glightbox" href="/webgame-engine/assets/prefab/NodePool/clear.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="clear()" src="/webgame-engine/assets/prefab/NodePool/clear.png" /></a></p>
 <div class="footnote">
 <hr />
 <ol>
@@ -2089,7 +2135,7 @@
     <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.instant", "navigation.top", "navigation.expand", "navigation.tabs.sticky", "content.code.annotate", "content.code.copy", "content.code.select", "content.footnote.tooltips", "search.highlight", "search.share", "search.suggest"], "search": "../../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.aecac24b.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.6c14ae12.min.js"></script>
       
         <script src="../../../../javascripts/highlight.min.js"></script>
       

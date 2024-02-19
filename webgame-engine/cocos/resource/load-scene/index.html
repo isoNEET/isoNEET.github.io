@@ -9,20 +9,22 @@
       
       
       
-        <link rel="prev" href="../bundle/">
+        <link rel="prev" href="../prefab/">
       
+      
+        <link rel="next" href="../dynamic-load/">
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.7">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.11">
     
     
       
-        <title>Load scene - mkdocs</title>
+        <title>場景加載與切換 - mkdocs</title>
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.4b4a2bd9.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.fad675c6.min.css">
       
       
 
@@ -76,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#load-scene" class="md-skip">
+        <a href="#_1" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Load scene
+              場景加載與切換
             
           </span>
         </div>
@@ -160,7 +162,7 @@
         <a href="../../../" class="md-tabs__link">
           
   
-  網頁遊戲引擎原理與實做
+  網頁遊戲引擎原理與實作
 
         </a>
       </li>
@@ -302,7 +304,7 @@
             
   
   <span class="md-ellipsis">
-    網頁遊戲引擎原理與實做
+    網頁遊戲引擎原理與實作
   </span>
   
 
@@ -312,7 +314,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
-            網頁遊戲引擎原理與實做
+            網頁遊戲引擎原理與實作
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -360,7 +362,7 @@
             
   
   <span class="md-ellipsis">
-    課程總覽
+    環境安裝
   </span>
   
 
@@ -370,7 +372,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
-            課程總覽
+            環境安裝
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -404,7 +406,7 @@
         
   
   <span class="md-ellipsis">
-    JavaScript 與 TypeScript 環境安裝
+    JavaScript
   </span>
   
 
@@ -424,7 +426,7 @@
         
   
   <span class="md-ellipsis">
-    Git 環境安裝
+    Git
   </span>
   
 
@@ -444,7 +446,7 @@
         
   
   <span class="md-ellipsis">
-    Prettier & ESLint
+    Code Format
   </span>
   
 
@@ -570,7 +572,7 @@
         
   
   <span class="md-ellipsis">
-    進階：深入型別
+    進階：型別系統
   </span>
   
 
@@ -630,7 +632,7 @@
         
   
   <span class="md-ellipsis">
-    Task Schedule
+    事件循環
   </span>
   
 
@@ -650,7 +652,7 @@
         
   
   <span class="md-ellipsis">
-    非同步程式設計
+    非同步處理
   </span>
   
 
@@ -670,7 +672,7 @@
         
   
   <span class="md-ellipsis">
-    None
+    生成器與協程
   </span>
   
 
@@ -690,7 +692,7 @@
         
   
   <span class="md-ellipsis">
-    HTTP request
+    HTTP & RESTful API
   </span>
   
 
@@ -710,7 +712,7 @@
         
   
   <span class="md-ellipsis">
-    Websocket 介紹
+    Websocket
   </span>
   
 
@@ -898,31 +900,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../basic/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Component 基本介紹
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../node-and-coord/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Node & 坐標系統
+    Node與坐標系統
   </span>
   
 
@@ -943,6 +925,26 @@
   
   <span class="md-ellipsis">
     事件系統
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    元件介紹
   </span>
   
 
@@ -1286,7 +1288,7 @@
         
   
   <span class="md-ellipsis">
-    Tween
+    緩動系統
   </span>
   
 
@@ -1306,7 +1308,7 @@
         
   
   <span class="md-ellipsis">
-    Animation
+    Cocos 動畫系統
   </span>
   
 
@@ -1326,7 +1328,7 @@
         
   
   <span class="md-ellipsis">
-    Spine
+    Spine 骨骼動畫
   </span>
   
 
@@ -1346,7 +1348,7 @@
         
   
   <span class="md-ellipsis">
-    Particle System
+    粒子系統
   </span>
   
 
@@ -1498,47 +1500,7 @@
         
   
   <span class="md-ellipsis">
-    Prefab
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../dynamic-load/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Dynamic load
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../bundle/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Bundle
+    節點池與預製體
   </span>
   
 
@@ -1567,7 +1529,7 @@
           
   
   <span class="md-ellipsis">
-    Load scene
+    場景加載與切換
   </span>
   
 
@@ -1578,7 +1540,7 @@
         
   
   <span class="md-ellipsis">
-    Load scene
+    場景加載與切換
   </span>
   
 
@@ -1601,22 +1563,28 @@
       
         <li class="md-nav__item">
   <a href="#directorpreloadscene" class="md-nav__link">
-    場景預加載 ( director.preloadScene )
+    <span class="md-ellipsis">
+      場景預加載（director.preloadScene）
+    </span>
   </a>
   
-    <nav class="md-nav" aria-label="場景預加載 ( director.preloadScene )">
+    <nav class="md-nav" aria-label="場景預加載（director.preloadScene）">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#onprogress" class="md-nav__link">
-    onProgress
+    <span class="md-ellipsis">
+      onProgress
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#onloaded" class="md-nav__link">
-    onLoaded
+    <span class="md-ellipsis">
+      onLoaded
+    </span>
   </a>
   
 </li>
@@ -1627,15 +1595,19 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#directorloadscene" class="md-nav__link">
-    場景切換 ( director.loadScene )
+  <a href="#directorloadscene4" class="md-nav__link">
+    <span class="md-ellipsis">
+      場景切換（director.loadScene）4**
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    使用範例
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      使用範例
+    </span>
   </a>
   
 </li>
@@ -1644,6 +1616,46 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dynamic-load/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    動態載入
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bundle/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    資源包
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1700,22 +1712,28 @@
       
         <li class="md-nav__item">
   <a href="#directorpreloadscene" class="md-nav__link">
-    場景預加載 ( director.preloadScene )
+    <span class="md-ellipsis">
+      場景預加載（director.preloadScene）
+    </span>
   </a>
   
-    <nav class="md-nav" aria-label="場景預加載 ( director.preloadScene )">
+    <nav class="md-nav" aria-label="場景預加載（director.preloadScene）">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#onprogress" class="md-nav__link">
-    onProgress
+    <span class="md-ellipsis">
+      onProgress
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#onloaded" class="md-nav__link">
-    onLoaded
+    <span class="md-ellipsis">
+      onLoaded
+    </span>
   </a>
   
 </li>
@@ -1726,15 +1744,19 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#directorloadscene" class="md-nav__link">
-    場景切換 ( director.loadScene )
+  <a href="#directorloadscene4" class="md-nav__link">
+    <span class="md-ellipsis">
+      場景切換（director.loadScene）4**
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    使用範例
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      使用範例
+    </span>
   </a>
   
 </li>
@@ -1754,9 +1776,9 @@
                   
 
 
-<h1 id="load-scene"><strong>Load scene</strong></h1>
-<h2 id="directorpreloadscene"><strong>場景預加載 ( director.preloadScene )</strong></h2>
-<p>用於<strong>預</strong>加載指定場景。<sup id="fnref:note1"><a class="footnote-ref" href="#fn:note1">1</a></sup></p>
+<h1 id="_1">場景加載與切換</h1>
+<h2 id="directorpreloadscene">場景預加載（director.preloadScene）</h2>
+<p>用於<strong>預先</strong>載入指定的場景。<sup id="fnref:note1"><a class="footnote-ref" href="#fn:note1">1</a></sup></p>
 <table>
 <thead>
 <tr>
@@ -1771,17 +1793,17 @@
 </tr>
 <tr>
 <td>onProgress</td>
-<td>加載進度的 callback。</td>
+<td>加載進度的 callback function。</td>
 </tr>
 <tr>
 <td>onLoaded</td>
-<td>加載完成的 callback。</td>
+<td>加載完成的 callback function。</td>
 </tr>
 </tbody>
 </table>
 <div class="language-TypeScript highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="w">    </span><span class="nx">director</span><span class="p">.</span><span class="nx">preloadScene</span><span class="p">(</span><span class="nx">sceneName</span><span class="p">,</span><span class="w"> </span><span class="nx">onProgress</span><span class="p">,</span><span class="w"> </span><span class="nx">onLoaded</span><span class="p">);</span>
 </span></code></pre></div>
-<h3 id="onprogress"><strong>onProgress</strong></h3>
+<h3 id="onprogress">onProgress</h3>
 <p>加載進度的 callback。<sup id="fnref:note2"><a class="footnote-ref" href="#fn:note2">2</a></sup></p>
 <table>
 <thead>
@@ -1801,10 +1823,11 @@
 </tr>
 </tbody>
 </table>
-<blockquote>
-<p>totalCount 可能會提升。</p>
-</blockquote>
-<h3 id="onloaded"><strong>onLoaded</strong></h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><code>totalCount</code> 可能會提高，若將此數值用於計算載入進度時需注意。</p>
+</div>
+<h3 id="onloaded">onLoaded</h3>
 <p>加載完成的 callback。<sup id="fnref:note3"><a class="footnote-ref" href="#fn:note3">3</a></sup></p>
 <table>
 <thead>
@@ -1816,7 +1839,7 @@
 <tbody>
 <tr>
 <td>error</td>
-<td>例外資訊，正常載入時為null。</td>
+<td>例外資訊，正常載入時為 null。</td>
 </tr>
 <tr>
 <td>sceneAsset</td>
@@ -1824,8 +1847,8 @@
 </tr>
 </tbody>
 </table>
-<h2 id="directorloadscene"><strong>場景切換 ( director.loadScene )</strong></h2>
-<p>用於加載指定場景。<sup id="fnref:note4"><a class="footnote-ref" href="#fn:note4">4</a></sup></p>
+<h2 id="directorloadscene4">場景切換（director.loadScene）<sup id="fnref:note4"><a class="footnote-ref" href="#fn:note4">4</a></sup>**</h2>
+<p>用於切換至指定場景，若場景尚未加載則會先載入再加載，因此不一定要先呼叫 <code>director.preloadScene</code>。</p>
 <table>
 <thead>
 <tr>
@@ -1842,8 +1865,33 @@
 </table>
 <div class="language-TypeScript highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="w">    </span><span class="nx">director</span><span class="p">.</span><span class="nx">loadScene</span><span class="p">(</span><span class="nx">sceneName</span><span class="p">);</span>
 </span></code></pre></div>
-<h2 id="_1"><strong>使用範例</strong></h2>
-<p><a class="glightbox" href="/webgame-engine/assets/load-scene/example.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="使用範例" src="/webgame-engine/assets/load-scene/example.png" /></a></p>
+<h2 id="_2">使用範例</h2>
+<div class="language-TypeScript highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">export</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">Loading</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">Component</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="kd">@property</span><span class="p">(</span><span class="nx">ProgressBar</span><span class="p">)</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="nx">progressBar</span><span class="o">:</span><span class="w"> </span><span class="kt">ProgressBar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="kd">@property</span><span class="p">(</span><span class="nx">Label</span><span class="p">)</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="nx">progressLabel</span><span class="o">:</span><span class="w"> </span><span class="kt">Label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="nx">onLoad</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="ow">void</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">        </span><span class="nx">director</span><span class="p">.</span><span class="nx">preloadScene</span><span class="p">(</span><span class="s1">&#39;Game&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">onProgress</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">),</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">onLoaded</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">));</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="nx">onProgress</span><span class="p">(</span><span class="nx">completeCount</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">,</span><span class="w"> </span><span class="nx">totalCount</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="ow">void</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">newPercent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">completeCount</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nx">totalCount</span><span class="p">;</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">        </span><span class="c1">// 避免 totalCount 提高而導致計算出來的 progress 反而變低</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">newPercent</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">progressBar</span><span class="p">.</span><span class="nx">progress</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="nx">progressBar</span><span class="p">.</span><span class="nx">progress</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">newPercent</span><span class="p">;</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="nx">progressLabel</span><span class="p">.</span><span class="kt">string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nb">Math</span><span class="p">.</span><span class="nx">trunc</span><span class="p">(</span><span class="nx">newPercent</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">100</span><span class="p">)</span><span class="si">}</span><span class="sb">%`</span><span class="p">;</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="nx">onLoaded</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="ow">void</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="w">        </span><span class="c1">// 預載完畢後，進入主遊戲場景</span>
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="w">        </span><span class="nx">director</span><span class="p">.</span><span class="nx">loadScene</span><span class="p">(</span><span class="s1">&#39;Game&#39;</span><span class="p">);</span>
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="p">}</span>
+</span></code></pre></div>
 <div class="footnote">
 <hr />
 <ol>
@@ -1908,7 +1956,7 @@
     <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.instant", "navigation.top", "navigation.expand", "navigation.tabs.sticky", "content.code.annotate", "content.code.copy", "content.code.select", "content.footnote.tooltips", "search.highlight", "search.share", "search.suggest"], "search": "../../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.aecac24b.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.6c14ae12.min.js"></script>
       
         <script src="../../../../javascripts/highlight.min.js"></script>
       

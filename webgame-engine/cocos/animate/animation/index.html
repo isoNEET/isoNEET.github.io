@@ -16,15 +16,15 @@
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.7">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.11">
     
     
       
-        <title>Animation - mkdocs</title>
+        <title>Cocos 動畫系統 - mkdocs</title>
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.4b4a2bd9.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.fad675c6.min.css">
       
       
 
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Animation
+              Cocos 動畫系統
             
           </span>
         </div>
@@ -162,7 +162,7 @@
         <a href="../../../" class="md-tabs__link">
           
   
-  網頁遊戲引擎原理與實做
+  網頁遊戲引擎原理與實作
 
         </a>
       </li>
@@ -304,7 +304,7 @@
             
   
   <span class="md-ellipsis">
-    網頁遊戲引擎原理與實做
+    網頁遊戲引擎原理與實作
   </span>
   
 
@@ -314,7 +314,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
-            網頁遊戲引擎原理與實做
+            網頁遊戲引擎原理與實作
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -362,7 +362,7 @@
             
   
   <span class="md-ellipsis">
-    課程總覽
+    環境安裝
   </span>
   
 
@@ -372,7 +372,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
-            課程總覽
+            環境安裝
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -406,7 +406,7 @@
         
   
   <span class="md-ellipsis">
-    JavaScript 與 TypeScript 環境安裝
+    JavaScript
   </span>
   
 
@@ -426,7 +426,7 @@
         
   
   <span class="md-ellipsis">
-    Git 環境安裝
+    Git
   </span>
   
 
@@ -446,7 +446,7 @@
         
   
   <span class="md-ellipsis">
-    Prettier & ESLint
+    Code Format
   </span>
   
 
@@ -572,7 +572,7 @@
         
   
   <span class="md-ellipsis">
-    進階：深入型別
+    進階：型別系統
   </span>
   
 
@@ -632,7 +632,7 @@
         
   
   <span class="md-ellipsis">
-    Task Schedule
+    事件循環
   </span>
   
 
@@ -652,7 +652,7 @@
         
   
   <span class="md-ellipsis">
-    非同步程式設計
+    非同步處理
   </span>
   
 
@@ -672,7 +672,7 @@
         
   
   <span class="md-ellipsis">
-    None
+    生成器與協程
   </span>
   
 
@@ -692,7 +692,7 @@
         
   
   <span class="md-ellipsis">
-    HTTP request
+    HTTP & RESTful API
   </span>
   
 
@@ -712,7 +712,7 @@
         
   
   <span class="md-ellipsis">
-    Websocket 介紹
+    Websocket
   </span>
   
 
@@ -900,31 +900,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../basic/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Component 基本介紹
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../node-and-coord/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Node & 坐標系統
+    Node與坐標系統
   </span>
   
 
@@ -945,6 +925,26 @@
   
   <span class="md-ellipsis">
     事件系統
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    元件介紹
   </span>
   
 
@@ -1288,7 +1288,7 @@
         
   
   <span class="md-ellipsis">
-    Tween
+    緩動系統
   </span>
   
 
@@ -1317,7 +1317,7 @@
           
   
   <span class="md-ellipsis">
-    Animation
+    Cocos 動畫系統
   </span>
   
 
@@ -1328,7 +1328,7 @@
         
   
   <span class="md-ellipsis">
-    Animation
+    Cocos 動畫系統
   </span>
   
 
@@ -1351,43 +1351,70 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    介紹
+    <span class="md-ellipsis">
+      介紹
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#animation_1" class="md-nav__link">
-    建立Animation
+    <span class="md-ellipsis">
+      建立 Animation
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#animation_2" class="md-nav__link">
-    Animation使用方式
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      使用方式
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      常用組件接口
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#animation-" class="md-nav__link">
-    Animation - 常用組件接口
+    <span class="md-ellipsis">
+      Animation－事件
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#animation-_1" class="md-nav__link">
-    Animation－事件
+    <span class="md-ellipsis">
+      Animation－事件使用方式
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Animation－事件使用方式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      參考網站:
+    </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#animation-_2" class="md-nav__link">
-    Animation－事件使用方式
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1410,7 +1437,7 @@
         
   
   <span class="md-ellipsis">
-    Spine
+    Spine 骨骼動畫
   </span>
   
 
@@ -1430,7 +1457,7 @@
         
   
   <span class="md-ellipsis">
-    Particle System
+    粒子系統
   </span>
   
 
@@ -1582,47 +1609,7 @@
         
   
   <span class="md-ellipsis">
-    Prefab
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../resource/dynamic-load/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Dynamic load
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../resource/bundle/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Bundle
+    節點池與預製體
   </span>
   
 
@@ -1642,7 +1629,47 @@
         
   
   <span class="md-ellipsis">
-    Load scene
+    場景加載與切換
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resource/dynamic-load/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    動態載入
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resource/bundle/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    資源包
   </span>
   
 
@@ -1703,43 +1730,70 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    介紹
+    <span class="md-ellipsis">
+      介紹
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#animation_1" class="md-nav__link">
-    建立Animation
+    <span class="md-ellipsis">
+      建立 Animation
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#animation_2" class="md-nav__link">
-    Animation使用方式
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      使用方式
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      常用組件接口
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#animation-" class="md-nav__link">
-    Animation - 常用組件接口
+    <span class="md-ellipsis">
+      Animation－事件
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#animation-_1" class="md-nav__link">
-    Animation－事件
+    <span class="md-ellipsis">
+      Animation－事件使用方式
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Animation－事件使用方式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      參考網站:
+    </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#animation-_2" class="md-nav__link">
-    Animation－事件使用方式
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1759,83 +1813,103 @@
 
 
 <h1 id="animation">Animation</h1>
-<h2 id="_1"><strong>介紹</strong></h2>
+<h2 id="_1">介紹</h2>
 <ul>
 <li>透過指定關鍵幀實現</li>
 <li>官方提供動畫編輯器</li>
 <li>適合應用於較為固定表演的動畫
-<a class="glightbox" href="../../../assets/animation/animation-1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../assets/animation/animation-1.png" /></a></li>
+  <a class="glightbox" href="/webgame-engine/assets/animation/animation-1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="/webgame-engine/assets/animation/animation-1.png" /></a></li>
 </ul>
-<h2 id="animation_1"><strong>建立Animation</strong></h2>
+<h2 id="animation_1">建立 Animation</h2>
 <ul>
 <li>
-<p>在動畫的節點上新增Animation組件
-<a class="glightbox" href="../../../assets/animation/animation-2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../assets/animation/animation-2.png" /></a></p>
+<p>在動畫的節點上新增 Animation 組件
+  <a class="glightbox" href="/webgame-engine/assets/animation/animation-2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="/webgame-engine/assets/animation/animation-2.png" /></a></p>
 </li>
 <li>
-<p>新增Animation Clip檔案 並拉入Clips
-<a class="glightbox" href="../../../assets/animation/animation-3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../assets/animation/animation-3.png" /></a>
-<a class="glightbox" href="../../../assets/animation/animation-4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../assets/animation/animation-4.png" /></a></p>
+<p>新增 Animation Clip 檔案 並拉入 Clips
+  <a class="glightbox" href="/webgame-engine/assets/animation/animation-3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="/webgame-engine/assets/animation/animation-3.png" /></a>
+  <a class="glightbox" href="/webgame-engine/assets/animation/animation-4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="/webgame-engine/assets/animation/animation-4.png" /></a></p>
 </li>
 <li>
 <p>進入動畫編輯模式
-<a class="glightbox" href="../../../assets/animation/animation-5.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../assets/animation/animation-5.png" /></a>
-<a class="glightbox" href="../../../assets/animation/animation-6.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../../../assets/animation/animation-6.png" /></a></p>
+  <a class="glightbox" href="/webgame-engine/assets/animation/animation-5.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="/webgame-engine/assets/animation/animation-5.png" /></a>
+  <a class="glightbox" href="/webgame-engine/assets/animation/animation-6.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="/webgame-engine/assets/animation/animation-6.png" /></a></p>
 </li>
 </ul>
-<h2 id="animation_2"><strong>Animation使用方式</strong></h2>
+<h2 id="_2">使用方式</h2>
 <ol>
 <li>
 <p>自動播放</p>
-<ul>
-<li>透過打勾”Play On Load”設定</li>
-<li>會播放Default Clip動畫</li>
-</ul>
+</li>
+<li>
+<p>透過打勾 <code>Play On Load</code> 設定</p>
+</li>
+<li>
+<p>會播放 <code>Default Clip</code> 所設定的動畫</p>
 </li>
 <li>
 <p>透過腳本控制</p>
 </li>
 </ol>
-<h2 id="animation-"><strong>Animation - 常用組件接口</strong></h2>
+<h2 id="_3">常用組件接口</h2>
 <ul>
-<li>取得組件
+<li>取得組件</li>
+</ul>
 <div class="language-ts highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">animation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">node</span><span class="p">.</span><span class="nx">getComponent</span><span class="p">(</span><span class="nx">Animation</span><span class="p">);</span>
-</span></code></pre></div></li>
-<li>播放Default Clip
-<div class="language-ts highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nx">animation</span><span class="p">.</span><span class="nx">play</span><span class="p">();</span>
-</span></code></pre></div></li>
-<li>播放指定的Clip
-<div class="language-ts highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nx">animation</span><span class="p">.</span><span class="nx">play</span><span class="p">(</span><span class="s1">&#39;Clip Name&#39;</span><span class="p">);</span>
-</span></code></pre></div></li>
-<li>暫停/繼續動畫表演
+</span></code></pre></div>
+<ul>
+<li>播放 Default Clip</li>
+</ul>
+<div class="language-ts highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nx">animation</span><span class="p">.</span><span class="nx">play</span><span class="p">();</span><span class="w"> </span><span class="c1">// 依據 Component 設定的 Default Clip 播放動畫</span>
+</span></code></pre></div>
+<ul>
+<li>播放指定的 Clip</li>
+</ul>
+<div class="language-ts highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nx">animation</span><span class="p">.</span><span class="nx">play</span><span class="p">(</span><span class="s1">&#39;Clip Name&#39;</span><span class="p">);</span><span class="w"> </span><span class="c1">// 直接以 Clip 名稱 播放指定動畫</span>
+</span></code></pre></div>
+<ul>
+<li>暫停/繼續動畫表演</li>
+</ul>
 <div class="language-ts highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nx">animation</span><span class="p">.</span><span class="nx">pause</span><span class="p">();</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nx">animation</span><span class="p">.</span><span class="nx">resume</span><span class="p">();</span>
-</span></code></pre></div></li>
-<li>取得指定的Clip狀態
-<div class="language-ts highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">state</span><span class="o">:</span><span class="w"> </span><span class="kt">AnimationState</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">animation</span><span class="p">.</span><span class="nx">getState</span><span class="p">(</span><span class="s1">&#39;Clip Name&#39;</span><span class="p">);</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nx">state</span><span class="p">.</span><span class="nx">duration</span><span class="p">;</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nx">state</span><span class="p">.</span><span class="nx">current</span><span class="p">;</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="nx">state</span><span class="p">.</span><span class="nx">isPlaying</span><span class="p">;</span>
-</span></code></pre></div></li>
-</ul>
-<h2 id="animation-_1"><strong>Animation－事件</strong></h2>
+</span></code></pre></div>
 <ul>
-<li>PLAY：開始播放時觸發</li>
-<li>STOP ：停止時觸發</li>
-<li>PAUSE：暫停時觸發</li>
-<li>RESUME ：恢復播放時觸發</li>
-<li>LASTFRAME：若動畫為循環播放，播放到最後一幀時觸發</li>
-<li>FINISHED：動畫播放完畢時觸發</li>
+<li>取得指定的 Clip 狀態</li>
 </ul>
-<h2 id="animation-_2"><strong>Animation－事件使用方式</strong></h2>
+<div class="language-ts highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">state</span><span class="o">:</span><span class="w"> </span><span class="kt">AnimationState</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">animation</span><span class="p">.</span><span class="nx">getState</span><span class="p">(</span><span class="s2">&quot;Clip Name&quot;</span><span class="p">);</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nx">state</span><span class="p">.</span><span class="nx">duration</span><span class="p">;</span><span class="w"> </span><span class="c1">// 動畫的時長 (單位：秒)</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nx">state</span><span class="p">.</span><span class="nx">current</span><span class="p">;</span><span class="w"> </span><span class="c1">// 當前動畫的播放進度 (單位：秒)</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="nx">state</span><span class="p">.</span><span class="nx">isPlaying</span><span class="p">;</span><span class="w"> </span><span class="c1">// 動畫是否正在播放</span>
+</span></code></pre></div>
+<h2 id="animation-">Animation－事件</h2>
 <ul>
-<li><em>注意：與其他組件不同，是直接在組件監聽</em>
-<div class="language-ts highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">animation</span><span class="o">:</span><span class="w"> </span><span class="kt">Animation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">node</span><span class="p">.</span><span class="nx">getComponent</span><span class="p">(</span><span class="nx">Animation</span><span class="p">);</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nx">animation</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="nx">Animation</span><span class="p">.</span><span class="nx">EventType</span><span class="p">.</span><span class="nx">PLAY</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="nx">Animation</span><span class="p">.</span><span class="nx">EventType</span><span class="p">,</span><span class="w"> </span><span class="nx">state</span><span class="o">:</span><span class="w"> </span><span class="kt">AnimationState</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;動畫已開始播放&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">state</span><span class="p">)</span>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="p">})</span>
-</span></code></pre></div></li>
+<li><strong>PLAY</strong>：開始播放時觸發</li>
+<li><strong>STOP</strong>：停止時觸發</li>
+<li><strong>PAUSE</strong>：暫停時觸發</li>
+<li><strong>RESUME</strong>：恢復播放時觸發</li>
+<li><strong>LASTFRAME</strong>：若動畫為循環播放，播放到最後一幀時觸發</li>
+<li><strong>FINISHED</strong>：動畫播放完畢時觸發</li>
 </ul>
+<h2 id="animation-_1">Animation－事件使用方式</h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>與其他大部分的組件不同，是直接在組件監聽事件。</p>
+</div>
+<div class="language-ts highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">animation</span><span class="o">:</span><span class="w"> </span><span class="kt">Animation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">getComponent</span><span class="p">(</span><span class="nx">Animation</span><span class="p">);</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="c1">// 注意：此處是 animation.on 而不是 animation.node.on</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nx">animation</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">  </span><span class="nx">Animation</span><span class="p">.</span><span class="nx">EventType</span><span class="p">.</span><span class="nx">PLAY</span><span class="p">,</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">  </span><span class="p">(</span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="nx">Animation</span><span class="p">.</span><span class="nx">EventType</span><span class="p">,</span><span class="w"> </span><span class="nx">state</span><span class="o">:</span><span class="w"> </span><span class="kt">AnimationState</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;動畫已開始播放&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">state</span><span class="p">);</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="p">);</span>
+</span></code></pre></div>
+<hr />
+<h3 id="_4">參考網站:</h3>
+<ol>
+<li><a href="https://docs.cocos.com/creator/3.6/manual/zh/animation/animation-create.html">Cocos Creator 3.6 Manual - animation</a></li>
+</ol>
 
 
 
@@ -1883,7 +1957,7 @@
     <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.instant", "navigation.top", "navigation.expand", "navigation.tabs.sticky", "content.code.annotate", "content.code.copy", "content.code.select", "content.footnote.tooltips", "search.highlight", "search.share", "search.suggest"], "search": "../../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.aecac24b.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.6c14ae12.min.js"></script>
       
         <script src="../../../../javascripts/highlight.min.js"></script>
       
