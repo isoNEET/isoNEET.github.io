@@ -1,0 +1,2023 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../promise/">
+      
+      
+        <link rel="next" href="../http-request/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.4">
+    
+    
+      
+        <title>生成器與協程 - Gamelab 教材</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.bd3936ea.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../styles/atom-one-dark.min.css">
+    
+      <link rel="stylesheet" href="../../../styles/styles.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Gamelab 教材" class="md-header__button md-logo" aria-label="Gamelab 教材" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Gamelab 教材
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              生成器與協程
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  網頁遊戲引擎原理與實作
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Gamelab 教材" class="md-nav__button md-logo" aria-label="Gamelab 教材" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Gamelab 教材
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    網頁遊戲引擎原理與實作
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            網頁遊戲引擎原理與實作
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    介紹
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_2" id="__nav_1_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    環境安裝
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            環境安裝
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../overview/cocos-creator/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cocos Creator
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../overview/javascript/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    JavaScript
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../overview/git/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../overview/git-install/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git安裝
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../overview/coding-style/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Code Format
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_1_3" id="__nav_1_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    JavaScript & TypeScript
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            JavaScript & TypeScript
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../basic-and-syntax/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    基礎型別與語法
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../class-and-object/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    類別與物件
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ts-js-compare/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    JS vs TS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dig-deep/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    進階：型別系統
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../strict-mode/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    嚴格模式
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../this-and-closure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    This 與 閉包
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-schedule/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    事件循環
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../promise/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    非同步處理
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    生成器與協程
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    生成器與協程
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    協作式的核心概念
+  </a>
+  
+    <nav class="md-nav" aria-label="協作式的核心概念">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    協程範例
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    執行結果
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generator" class="md-nav__link">
+    生成器 (Generator)
+  </a>
+  
+    <nav class="md-nav" aria-label="生成器 (Generator)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#return" class="md-nav__link">
+    加入 Return 的生成器函數
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    生成器的狀態
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    從外部注入數值
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../http-request/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HTTP & RESTful API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../websocket/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Websocket
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_4" id="__nav_1_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    設計模式
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_4">
+            <span class="md-nav__icon md-icon"></span>
+            設計模式
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pattern/singleton/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    單例模式
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pattern/composition/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    組合模式
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pattern/observer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    觀察者模式
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pattern/object-pool/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    物件池模式
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_5" id="__nav_1_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cocos Creator
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_5">
+            <span class="md-nav__icon md-icon"></span>
+            Cocos Creator
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cocos/node-and-coord/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Node與坐標系統
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cocos/events/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    事件系統
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cocos/basic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    元件介紹
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_5_4" id="__nav_1_5_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    常用元件
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_1_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            常用元件
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cocos/common/ui-transform-and-anchor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UITransform & Anchor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cocos/common/layout/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Layout
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cocos/common/ui-opacity/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UIOpacity
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cocos/common/label-and-richtext/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Label
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cocos/common/sprite/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sprite
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cocos/common/button/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Button
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cocos/common/editor-box/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    EditorBox
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cocos/common/toggle/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Toggle
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cocos/common/progress-bar/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ProgressBar
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cocos/common/slider/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Slider
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cocos/common/scroll-view/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ScrollView
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cocos/common/page-view/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PageView
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_5_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_5_5" id="__nav_1_5_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    動畫系統
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_1_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_5_5">
+            <span class="md-nav__icon md-icon"></span>
+            動畫系統
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cocos/animate/tween/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    緩動系統
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cocos/animate/animation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cocos 動畫系統
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cocos/animate/spine/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Spine 骨骼動畫
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cocos/animate/particle-system/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    粒子系統
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_5_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_5_6" id="__nav_1_5_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    音效系統
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_1_5_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_5_6">
+            <span class="md-nav__icon md-icon"></span>
+            音效系統
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cocos/sound/autoplay-policy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Autoplay Policy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cocos/sound/audio-source/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AudioSource
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_5_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_5_7" id="__nav_1_5_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    資源管理
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_1_5_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_5_7">
+            <span class="md-nav__icon md-icon"></span>
+            資源管理
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cocos/resource/prefab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    節點池與預製體
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cocos/resource/load-scene/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    場景加載與切換
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cocos/resource/dynamic-load/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    動態載入
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cocos/resource/bundle/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    資源包
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    協作式的核心概念
+  </a>
+  
+    <nav class="md-nav" aria-label="協作式的核心概念">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    協程範例
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    執行結果
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generator" class="md-nav__link">
+    生成器 (Generator)
+  </a>
+  
+    <nav class="md-nav" aria-label="生成器 (Generator)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#return" class="md-nav__link">
+    加入 Return 的生成器函數
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    生成器的狀態
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    從外部注入數值
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="_1">生成器與協程</h1>
+<p>在談論協程之前，可以先從以下的圖片了解協程(corountine)的運作觀念：</p>
+<p><a class="glightbox" href="https://www.modernescpp.com/wp-content/uploads/2021/02/FunctionsVersusCoroutines-768x412.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="corountine" src="https://www.modernescpp.com/wp-content/uploads/2021/02/FunctionsVersusCoroutines-768x412.png" /></a></p>
+<p>coroutine(協程, 或稱<strong>共常式</strong>)和Function（或稱為子程式, 或稱<strong>次常式</strong>）都是用於程式碼塊執行的概念，但它們在執行方式和用途上有著根本的差異。</p>
+<ol>
+<li>
+<p><strong>執行方式</strong>:</p>
+<ul>
+<li><strong>Function</strong>: 當你調用一個普通函式時，程序會進入該函式執行，並在函式執行完畢後返回調用處繼續執行。普通函式只有一個進入點和一個退出點，它們按照嚴格的 LIFO（後進先出）順序運行。</li>
+<li><strong>Coroutine</strong>: 協程則更加靈活。它們可以在執行過程中暫停（yield），然後在之後的某個時刻從上次暫停的地方繼續執行。這意味著協程可以有多個進入點和暫停點。</li>
+</ul>
+</li>
+<li>
+<p><strong>狀態保持</strong>:</p>
+<ul>
+<li><strong>Function</strong>: 一旦函式執行完畢，所有的狀態都會丟失，下一次調用時會重新開始。</li>
+<li><strong>Coroutine</strong>: 協程可以保持它們的狀態，這意味著變數在暫停和重新進入時保持其值。</li>
+</ul>
+</li>
+<li>
+<p><strong>用途</strong>:</p>
+<ul>
+<li><strong>Function</strong>: 適用於大多數的序列計算，當你需要一個簡單的執行流程時。</li>
+<li><strong>Coroutine</strong>: 非常適合於需要協作式多任務、非阻塞 I/O 操作或當你想要更細粒度的控制執行流程時。例如，它們被廣泛用於非同步程式，特別是在現代網絡框架中。</li>
+</ul>
+</li>
+<li>
+<p><strong>效率</strong>:</p>
+<ul>
+<li><strong>Function</strong>: 在調用和返回時可能會涉及到堆棧操作，這在函式呼叫非常頻繁的時候可能會影響效率。</li>
+<li><strong>Coroutine</strong>: 由於能夠暫停和恢復，協程可以減少某些情況下的性能開銷，尤其是在涉及到等待操作，如<strong>I/O 操作</strong>時。</li>
+</ul>
+</li>
+<li>
+<p><strong>控制流</strong>:</p>
+<ul>
+<li><strong>Function</strong>: 執行完一個函式再執行下一個，控制流是線性的。</li>
+<li><strong>Coroutine</strong>: 可以分時執行，控制流可能更加複雜，因為它們可以在多個點<strong>暫停和恢復</strong>。</li>
+</ul>
+</li>
+</ol>
+<p>在其他與語言如 Python 中，<code>async/await</code> 關鍵字允許你以近乎同步的方式編寫異步代碼，這背後就是依賴於協程的概念。</p>
+<p>Lua、Go 或是即將推廣的 C++ 20 標準，協程也是一個重要的概念，它們在這些語言的非同步編程模型中扮演著關鍵角色。</p>
+<h2 id="_2">協作式的核心概念</h2>
+<p>無論是<strong>協</strong>程還是<strong>共</strong>常式的任一翻譯，都在強調<strong>協同運作</strong>的概念</p>
+<p>而與<strong>共同協作</strong>相對的概念，就是<strong>搶占運作</strong>，一個典型的例子就是大部分多執行緒程式設計，必須處理 Mutex 或是 Semaphore 的持有權</p>
+<p>唯在持有<code>Flag</code>的情況下，才允許某一個Thread進入到關鍵區塊執行程式。</p>
+<p>反過來說，協程的介紹就如 Wiki 所介紹的：</p>
+<blockquote>
+<p>共常式可以通過yield（取其「退讓」之義而非「產生」）來呼叫其它共常式，接下來的每次共常式被呼叫時，從共常式上次yield返回的位置接著執行，通過yield方式轉移執行權的共常式之間不是呼叫者與被呼叫者的關係，而是彼此對稱、平等的。</p>
+</blockquote>
+<h3 id="_3">協程範例</h3>
+<p>同時，Wiki<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> 上的範例也相當明確：</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cm">/**</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="cm"> * corountine.js</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="cm"> */</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="kd">const</span><span class="w"> </span><span class="nx">queue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[];</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="kd">const</span><span class="w"> </span><span class="nx">FULL_LOAD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="kd">function</span><span class="o">*</span><span class="w"> </span><span class="nx">produce</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="kc">true</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nx">queue</span><span class="p">.</span><span class="nx">length</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="nx">FULL_LOAD</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">      </span><span class="kd">const</span><span class="w"> </span><span class="nx">newData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">().</span><span class="nx">toString</span><span class="p">(</span><span class="mf">36</span><span class="p">);</span><span class="w"> </span><span class="c1">// 模擬產生資料</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">      </span><span class="nx">queue</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">newData</span><span class="p">);</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="k">yield</span><span class="p">;</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="p">}</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="kd">function</span><span class="o">*</span><span class="w"> </span><span class="nx">comsume</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">  </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="kc">true</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nx">queue</span><span class="p">.</span><span class="nx">length</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="mf">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">      </span><span class="kd">const</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">queue</span><span class="p">.</span><span class="nx">pop</span><span class="p">();</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">      </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span><span class="w"> </span><span class="c1">// 模擬使用資料計算</span>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">    </span><span class="k">yield</span><span class="p">;</span>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="p">}</span>
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="kd">const</span><span class="w"> </span><span class="nx">compute</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">produce</span><span class="p">();</span>
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="kd">const</span><span class="w"> </span><span class="nx">use</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">comsume</span><span class="p">();</span>
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="nx">compute</span><span class="p">.</span><span class="nx">next</span><span class="p">();</span>
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;queue:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">queue</span><span class="p">);</span>
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="nx">use</span><span class="p">.</span><span class="nx">next</span><span class="p">();</span>
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;queue:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">queue</span><span class="p">);</span>
+</span></code></pre></div>
+<h3 id="_4">執行結果</h3>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">// after invoke `compute.next()`</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nx">queue</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="s1">&#39;0.ma0if60d78h&#39;</span><span class="p">,</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="s1">&#39;0.vdx12v43urr&#39;</span><span class="p">,</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="s1">&#39;0.s4a8l8pxnep&#39;</span><span class="p">,</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span><span class="s1">&#39;0.9hx7gvwewud&#39;</span><span class="p">,</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">  </span><span class="s1">&#39;0.c99szh55dea&#39;</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="p">]</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="c1">// after invoke `use.next()`</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="mf">0.</span><span class="nx">c99szh55dea</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="mf">0.9</span><span class="nx">hx7gvwewud</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="mf">0.</span><span class="nx">s4a8l8pxnep</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="mf">0.</span><span class="nx">vdx12v43urr</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="mf">0.</span><span class="nx">ma0if60d78h</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="c1">// check queue</span>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="nx">queue</span><span class="o">:</span><span class="w"> </span><span class="p">[]</span>
+</span></code></pre></div>
+<p>在生產者-消費者的模型中，為了讓程式效率最大化，必須符合以下限制：</p>
+<ul>
+<li>佇列用來存放資料的空間有限</li>
+<li>生產者要儘量在一次執行中向佇列多增加資料</li>
+<li>當滿載時，需要<strong>退出生產函式，把程式的執行權交給消費函式</strong></li>
+<li>消費者要儘量在一次執行中把佇列中的資料使用掉</li>
+<li>當滿載時，需要<strong>退出消費函式，把程式的執行權交給生產函式</strong></li>
+</ul>
+<p>當條件滿足後，生產/消費函式會進行<strong>yield</strong>，讓出自己的執行權，該過程是主動執行的，就好像<strong>讓出</strong>執行權，讓其函式可以運作
+因此被稱作<strong>協作式</strong>的工作模型</p>
+<p>以上的例子雖然也可以使用多執行緒進行處理，但是需要考量：</p>
+<ul>
+<li>需要至少兩個執行緒處理</li>
+<li><code>queue</code> 的存取是一個關鍵區塊，需要考慮互斥鎖</li>
+<li>消費者與生產者該如何互相通知彼此執行</li>
+</ul>
+<p>總體而言，多執行緒的程式設計雖然可以擁有更高的效能與控制精細度，但是也會導致設計的複雜度上升</p>
+<h2 id="generator">生成器 (Generator)</h2>
+<p>在 JavaScript 中，也有對應的語法<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>，改語法被稱為生成器(Generator)，或是另外一個常見的名稱<strong>迭代器</strong></p>
+<p>語法在上個小節中已經有示範了，就是在 <code>function</code> 後加上 <code>*</code>：</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">function</span><span class="o">*</span><span class="w"> </span><span class="nx">generator</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="k">for</span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mf">10</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="nx">i</span><span class="p">)</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="k">yield</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="p">}</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="kd">const</span><span class="w"> </span><span class="nx">seq</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">generator</span><span class="p">();</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="k">for</span><span class="p">(</span><span class="kd">const</span><span class="w"> </span><span class="nx">powerOfNum</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">seq</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">powerOfNum</span><span class="p">);</span><span class="w"> </span><span class="c1">// 依序輸出 1 ~ 10 的平方</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="p">}</span>
+</span></code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>呼叫生成器函式並不會讓裡面的程式碼立即執行，而是會回傳一個針對該函式的迭代器（iterator）物件。</p>
+<p>當呼叫迭代器的 next() 方法時，生成器函式將會執行到遭遇的第一個 yield 運算式，該運算式給定的值將從迭代器中回傳，如果是 yield* 則會交給另一個生成器函式處理。</p>
+</div>
+<p>在該例子中，<code>seq</code> 是一個生成器物件，使用 <code>for-of</code> 進行迭代時，都是從 <code>generator()</code> 的 <code>yield</code> 表達式回傳當前 i 的平方</p>
+<p>此例中 <code>for-of</code> 等同於</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">seq</span><span class="p">.</span><span class="nx">next</span><span class="p">();</span><span class="w"> </span><span class="o">!</span><span class="nx">i</span><span class="p">.</span><span class="nx">done</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">seq</span><span class="p">.</span><span class="nx">next</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>也就是說，每一次迭代，都是調用 <code>next()</code> 這個方法，他會從上一次 <code>yield</code> 的敘述恢復執行，直到遇到下一個 <code>yield</code> 或是 <code>return</code></p>
+<h3 id="return">加入 Return 的生成器函數</h3>
+<p>一個更修改的執行結果：</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1">// modify example:</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="kd">function</span><span class="o">*</span><span class="w"> </span><span class="nx">generator</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="k">for</span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mf">10</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="nx">i</span><span class="p">)</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="k">yield</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mf">1001</span><span class="p">;</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="p">}</span>
+</span></code></pre></div>
+<p><a class="glightbox" href="/webgame-engine/assets/javascript/generator1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="generator1" src="/webgame-engine/assets/javascript/generator1.png" /></a></p>
+<p>每當調用一個 <code>next()</code>，會回傳一個包含 <code>value</code> 與 <code>done</code> 的物件</p>
+<p>倘若在 <code>yield</code> 後沒有回傳值，則 <code>value</code> 會是 <code>undefined</code></p>
+<p>若函式執行完畢，<code>done</code> 會是 <code>true</code>，反之為 <code>false</code></p>
+<p>而遇到 <code>return</code> 敘述，<code>value</code> 會是回傳值，且<code>done</code> 被設定為 <code>true</code></p>
+<p>一旦 <code>done</code> 為 <code>true</code>，雖然可以繼續呼叫<code>next()</code>，但是<code>value</code>會永遠是<code>undefined</code>，且<code>done</code> 恆為 <code>true</code></p>
+<h3 id="_5">生成器的狀態</h3>
+<p><a class="glightbox" href="/webgame-engine/assets/javascript/generator2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="generator2" src="/webgame-engine/assets/javascript/generator2.png" /></a></p>
+<p>由 Debug Tools 顯示，其實 Generator 就是在 <code>initial</code> , <code>suspend</code> , <code>close</code> 狀態中切換</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>參考 C++ 20 的 <a href="https://en.cppreference.com/w/cpp/language/coroutines#co_yield">coroutine 規格</a></p>
+<p><a class="glightbox" href="/webgame-engine/assets/javascript/c++coroutine.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="C++20" src="/webgame-engine/assets/javascript/c++coroutine.png" /></a></p>
+<p>本質就是允許中斷的函式</p>
+</div>
+<h3 id="_6">從外部注入數值</h3>
+<p>在 Generator 中，我們也可以把 <code>yield</code> 看成一個特殊的關鍵字，倘若在呼叫 <code>next()</code> 中傳遞了引數</p>
+<p>則 <code>yield</code> 數值相當於傳入的引數</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kd">function</span><span class="o">*</span><span class="w"> </span><span class="nx">dateSteper</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">();</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="k">while</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">yield</span><span class="p">;</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">toLocaleDateString</span><span class="p">(),</span><span class="w"> </span><span class="nx">message</span><span class="p">);</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="nx">d</span><span class="p">.</span><span class="nx">setTime</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">getTime</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">24</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">60</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">60</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">1000</span><span class="p">)</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="p">}</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="kd">const</span><span class="w"> </span><span class="nx">steper</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">dateSteper</span><span class="p">();</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="nx">steper</span><span class="p">.</span><span class="nx">next</span><span class="p">();</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="nx">steper</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="s2">&quot;First Meesage&quot;</span><span class="p">);</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="nx">steper</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="s2">&quot;Second Meesage&quot;</span><span class="p">);</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="nx">steper</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="s2">&quot;Third Meesage&quot;</span><span class="p">);</span>
+</span></code></pre></div>
+<p><a class="glightbox" href="/webgame-engine/assets/javascript/yield_value.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="yield value" src="/webgame-engine/assets/javascript/yield_value.png" /></a></p>
+<p>該範例的運作流程結果如下：</p>
+<ol>
+<li>首次調用 <code>steper.next()</code> 時，估算右值的時候 suspend，退出函式</li>
+<li>此時尚未為抵達<code>console.log</code> 敘述，不輸出訊息</li>
+<li>第二次調用 <code>steper.next()</code> 時，恢復估算右值，帶入"First Message"後進行 console.log</li>
+<li>下一次迴圈開始，每次<code>next()</code>都會恢復估算右值，並且在下一次估算右值<strong>前</strong>退出</li>
+<li>可以無窮調用 <code>next()</code>，每次都會輸出下一天的日期與帶入的Message</li>
+</ol>
+<p>此例中，因為是個無窮迴圈，所以回傳的 <code>{ value , done }</code> 恆為 <code>{ undefined , false }</code></p>
+<div class="admonition tips">
+<p class="admonition-title">Tips</p>
+<p>請思考一下，倘若敘述改成 <code>const message = yield 100</code>，則每次輸出與回傳的<code>value</code>數值為何</p>
+</div>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p><a href="https://zh.wikipedia.org/zh-tw/%E5%8D%8F%E7%A8%8B">協程 Wiki</a>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator">JavaScript Generator</a>&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.instant", "navigation.top", "navigation.expand", "navigation.tabs.sticky", "content.code.annotate", "content.code.copy", "content.code.select", "content.footnote.tooltips", "search.highlight", "search.share", "search.suggest"], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.94c44541.min.js"></script>
+      
+        <script src="../../../javascripts/highlight.min.js"></script>
+      
+        <script src="../../../javascripts/cpp.min.js"></script>
+      
+        <script src="../../../javascripts/bash.min.js"></script>
+      
+        <script src="../../../javascripts/diff.min.js"></script>
+      
+        <script src="../../../javascripts/markdown.min.js"></script>
+      
+        <script src="../../../javascripts/llvm.min.js"></script>
+      
+        <script src="../../../javascripts/http.min.js"></script>
+      
+        <script src="../../../javascripts/javascript.min.js"></script>
+      
+        <script src="../../../javascripts/typescript.min.js"></script>
+      
+        <script src="../../../javascripts/loader.js"></script>
+      
+    
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>
