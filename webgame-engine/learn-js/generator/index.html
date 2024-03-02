@@ -1733,53 +1733,59 @@
 <h1 id="_1">生成器與協程</h1>
 <p>在談論協程之前，可以先從以下的圖片了解協程(corountine)的運作觀念：</p>
 <p><a class="glightbox" href="https://www.modernescpp.com/wp-content/uploads/2021/02/FunctionsVersusCoroutines-768x412.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="corountine" src="https://www.modernescpp.com/wp-content/uploads/2021/02/FunctionsVersusCoroutines-768x412.png" /></a></p>
-<p>coroutine(協程, 或稱<strong>共常式</strong>)和Function（或稱為子程式, 或稱<strong>次常式</strong>）都是用於程式碼塊執行的概念，但它們在執行方式和用途上有著根本的差異。</p>
+<p>coroutine(協程，或稱<strong>共常式</strong>)和 Function（或稱為子程式，或稱<strong>次常式</strong>）都是用於程式碼塊執行的概念，但它們在執行方式和用途上有著根本的差異。</p>
 <ol>
 <li>
 <p><strong>執行方式</strong>:</p>
-<ul>
-<li><strong>Function</strong>: 當你調用一個普通函式時，程序會進入該函式執行，並在函式執行完畢後返回調用處繼續執行。普通函式只有一個進入點和一個退出點，它們按照嚴格的 LIFO（後進先出）順序運行。</li>
-<li><strong>Coroutine</strong>: 協程則更加靈活。它們可以在執行過程中暫停（yield），然後在之後的某個時刻從上次暫停的地方繼續執行。這意味著協程可以有多個進入點和暫停點。</li>
-</ul>
+</li>
+<li>
+<p><strong>Function</strong>: 當你調用一個普通函式時，程序會進入該函式執行，並在函式執行完畢後返回調用處繼續執行。普通函式只有一個進入點和一個退出點，它們按照嚴格的 LIFO（後進先出）順序運行。</p>
+</li>
+<li>
+<p><strong>Coroutine</strong>: 協程則更加靈活。它們可以在執行過程中暫停（yield），然後在之後的某個時刻從上次暫停的地方繼續執行。這意味著協程可以有多個進入點和暫停點。</p>
 </li>
 <li>
 <p><strong>狀態保持</strong>:</p>
-<ul>
-<li><strong>Function</strong>: 一旦函式執行完畢，所有的狀態都會丟失，下一次調用時會重新開始。</li>
-<li><strong>Coroutine</strong>: 協程可以保持它們的狀態，這意味著變數在暫停和重新進入時保持其值。</li>
-</ul>
+</li>
+<li>
+<p><strong>Function</strong>: 一旦函式執行完畢，所有的狀態都會丟失，下一次調用時會重新開始。</p>
+</li>
+<li>
+<p><strong>Coroutine</strong>: 協程可以保持它們的狀態，這意味著變數在暫停和重新進入時保持其值。</p>
 </li>
 <li>
 <p><strong>用途</strong>:</p>
-<ul>
-<li><strong>Function</strong>: 適用於大多數的序列計算，當你需要一個簡單的執行流程時。</li>
-<li><strong>Coroutine</strong>: 非常適合於需要協作式多任務、非阻塞 I/O 操作或當你想要更細粒度的控制執行流程時。例如，它們被廣泛用於非同步程式，特別是在現代網絡框架中。</li>
-</ul>
+</li>
+<li>
+<p><strong>Function</strong>: 適用於大多數的序列計算，當你需要一個簡單的執行流程時。</p>
+</li>
+<li>
+<p><strong>Coroutine</strong>: 非常適合於需要協作式多任務、非阻塞 I/O 操作或當你想要更細粒度的控制執行流程時。例如，它們被廣泛用於非同步程式，特別是在現代網絡框架中。</p>
 </li>
 <li>
 <p><strong>效率</strong>:</p>
-<ul>
-<li><strong>Function</strong>: 在調用和返回時可能會涉及到堆棧操作，這在函式呼叫非常頻繁的時候可能會影響效率。</li>
-<li><strong>Coroutine</strong>: 由於能夠暫停和恢復，協程可以減少某些情況下的性能開銷，尤其是在涉及到等待操作，如<strong>I/O 操作</strong>時。</li>
-</ul>
+</li>
+<li>
+<p><strong>Function</strong>: 在調用和返回時可能會涉及到堆棧操作，這在函式呼叫非常頻繁的時候可能會影響效率。</p>
+</li>
+<li>
+<p><strong>Coroutine</strong>: 由於能夠暫停和恢復，協程可以減少某些情況下的性能開銷，尤其是在涉及到等待操作，如<strong>I/O 操作</strong>時。</p>
 </li>
 <li>
 <p><strong>控制流</strong>:</p>
-<ul>
+</li>
 <li><strong>Function</strong>: 執行完一個函式再執行下一個，控制流是線性的。</li>
 <li><strong>Coroutine</strong>: 可以分時執行，控制流可能更加複雜，因為它們可以在多個點<strong>暫停和恢復</strong>。</li>
-</ul>
-</li>
 </ol>
 <p>在其他與語言如 Python 中，<code>async/await</code> 關鍵字允許你以近乎同步的方式編寫異步代碼，這背後就是依賴於協程的概念。</p>
 <p>Lua、Go 或是即將推廣的 C++ 20 標準，協程也是一個重要的概念，它們在這些語言的非同步編程模型中扮演著關鍵角色。</p>
 <h2 id="_2">協作式的核心概念</h2>
 <p>無論是<strong>協</strong>程還是<strong>共</strong>常式的任一翻譯，都在強調<strong>協同運作</strong>的概念</p>
 <p>而與<strong>共同協作</strong>相對的概念，就是<strong>搶占運作</strong>，一個典型的例子就是大部分多執行緒程式設計，必須處理 Mutex 或是 Semaphore 的持有權</p>
-<p>唯在持有<code>Flag</code>的情況下，才允許某一個Thread進入到關鍵區塊執行程式。</p>
+<p>唯在持有<code>Flag</code>的情況下，才允許某一個 Thread 進入到關鍵區塊執行程式。</p>
 <p>反過來說，協程的介紹就如 Wiki 所介紹的：</p>
 <blockquote>
-<p>共常式可以通過yield（取其「退讓」之義而非「產生」）來呼叫其它共常式，接下來的每次共常式被呼叫時，從共常式上次yield返回的位置接著執行，通過yield方式轉移執行權的共常式之間不是呼叫者與被呼叫者的關係，而是彼此對稱、平等的。</p>
+<p>共常式可以通過 yield（取其「退讓」之義而非「產生」）來呼叫其它共常式，接下來的每次共常式被呼叫時，從共常式上次 yield 返回的位置接著執行，通過 yield 方式轉移執行權的共常式之間不是呼叫者與被呼叫者的關係，而是彼此對稱、平等的。</p>
 </blockquote>
 <h3 id="_3">協程範例</h3>
 <p>同時，Wiki<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> 上的範例也相當明確：</p>
@@ -1813,9 +1819,9 @@
 </span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="kd">const</span><span class="w"> </span><span class="nx">use</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">comsume</span><span class="p">();</span>
 </span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>
 </span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="nx">compute</span><span class="p">.</span><span class="nx">next</span><span class="p">();</span>
-</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;queue:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">queue</span><span class="p">);</span>
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;queue:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">queue</span><span class="p">);</span>
 </span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="nx">use</span><span class="p">.</span><span class="nx">next</span><span class="p">();</span>
-</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;queue:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">queue</span><span class="p">);</span>
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;queue:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">queue</span><span class="p">);</span>
 </span></code></pre></div>
 <h3 id="_4">執行結果</h3>
 <div class="language-js highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">// after invoke `compute.next()`</span>
@@ -1858,25 +1864,25 @@
 <p>在 JavaScript 中，也有對應的語法<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>，改語法被稱為生成器(Generator)，或是另外一個常見的名稱<strong>迭代器</strong></p>
 <p>語法在上個小節中已經有示範了，就是在 <code>function</code> 後加上 <code>*</code>：</p>
 <div class="language-js highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">function</span><span class="o">*</span><span class="w"> </span><span class="nx">generator</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="k">for</span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mf">10</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="nx">i</span><span class="p">)</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="k">yield</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="p">}</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="kd">const</span><span class="w"> </span><span class="nx">seq</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">generator</span><span class="p">();</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="k">for</span><span class="p">(</span><span class="kd">const</span><span class="w"> </span><span class="nx">powerOfNum</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">seq</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">powerOfNum</span><span class="p">);</span><span class="w"> </span><span class="c1">// 依序輸出 1 ~ 10 的平方</span>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="p">}</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="nx">i</span><span class="p">)</span><span class="w"> </span><span class="k">yield</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="p">}</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="kd">const</span><span class="w"> </span><span class="nx">seq</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">generator</span><span class="p">();</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">const</span><span class="w"> </span><span class="nx">powerOfNum</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">seq</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">powerOfNum</span><span class="p">);</span><span class="w"> </span><span class="c1">// 依序輸出 1 ~ 10 的平方</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="p">}</span>
 </span></code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>呼叫生成器函式並不會讓裡面的程式碼立即執行，而是會回傳一個針對該函式的迭代器（iterator）物件。</p>
-<p>當呼叫迭代器的 next() 方法時，生成器函式將會執行到遭遇的第一個 yield 運算式，該運算式給定的值將從迭代器中回傳，如果是 yield* 則會交給另一個生成器函式處理。</p>
 </div>
+<p>呼叫生成器函式並不會讓裡面的程式碼立即執行，而是會回傳一個針對該函式的迭代器（iterator）物件。</p>
+<div class="language-text highlight"><pre><span></span><code>當呼叫迭代器的 next() 方法時，生成器函式將會執行到遭遇的第一個 yield 運算式，該運算式給定的值將從迭代器中回傳，如果是 yield* 則會交給另一個生成器函式處理。
+</code></pre></div>
 <p>在該例子中，<code>seq</code> 是一個生成器物件，使用 <code>for-of</code> 進行迭代時，都是從 <code>generator()</code> 的 <code>yield</code> 表達式回傳當前 i 的平方</p>
 <p>此例中 <code>for-of</code> 等同於</p>
-<div class="language-js highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">seq</span><span class="p">.</span><span class="nx">next</span><span class="p">();</span><span class="w"> </span><span class="o">!</span><span class="nx">i</span><span class="p">.</span><span class="nx">done</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">seq</span><span class="p">.</span><span class="nx">next</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">seq</span><span class="p">.</span><span class="nx">next</span><span class="p">();</span><span class="w"> </span><span class="o">!</span><span class="nx">i</span><span class="p">.</span><span class="nx">done</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">seq</span><span class="p">.</span><span class="nx">next</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
 </span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="p">}</span>
 </span></code></pre></div>
@@ -1885,10 +1891,9 @@
 <p>一個更修改的執行結果：</p>
 <div class="language-js highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1">// modify example:</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="kd">function</span><span class="o">*</span><span class="w"> </span><span class="nx">generator</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="k">for</span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mf">10</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="nx">i</span><span class="p">)</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="k">yield</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mf">1001</span><span class="p">;</span>
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="p">}</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="nx">i</span><span class="p">)</span><span class="w"> </span><span class="k">yield</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mf">1001</span><span class="p">;</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="p">}</span>
 </span></code></pre></div>
 <p><a class="glightbox" href="/webgame-engine/assets/javascript/generator1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="generator1" src="/webgame-engine/assets/javascript/generator1.png" /></a></p>
 <p>每當調用一個 <code>next()</code>，會回傳一個包含 <code>value</code> 與 <code>done</code> 的物件</p>
@@ -1901,19 +1906,21 @@
 <p>由 Debug Tools 顯示，其實 Generator 就是在 <code>initial</code> , <code>suspend</code> , <code>close</code> 狀態中切換</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>參考 C++ 20 的 <a href="https://en.cppreference.com/w/cpp/language/coroutines#co_yield">coroutine 規格</a></p>
-<p><a class="glightbox" href="/webgame-engine/assets/javascript/c++coroutine.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="C++20" src="/webgame-engine/assets/javascript/c++coroutine.png" /></a></p>
-<p>本質就是允許中斷的函式</p>
 </div>
+<p>參考 C++ 20 的 <a href="https://en.cppreference.com/w/cpp/language/coroutines#co_yield">coroutine 規格</a></p>
+<div class="language-text highlight"><pre><span></span><code>![C++20](/webgame-engine/assets/javascript/c++coroutine.png)
+
+本質就是允許中斷的函式
+</code></pre></div>
 <h3 id="_6">從外部注入數值</h3>
 <p>在 Generator 中，我們也可以把 <code>yield</code> 看成一個特殊的關鍵字，倘若在呼叫 <code>next()</code> 中傳遞了引數</p>
 <p>則 <code>yield</code> 數值相當於傳入的引數</p>
 <div class="language-js highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kd">function</span><span class="o">*</span><span class="w"> </span><span class="nx">dateSteper</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">();</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="k">while</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="kc">true</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">yield</span><span class="p">;</span>
 </span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">toLocaleDateString</span><span class="p">(),</span><span class="w"> </span><span class="nx">message</span><span class="p">);</span>
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="nx">d</span><span class="p">.</span><span class="nx">setTime</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">getTime</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">24</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">60</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">60</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">1000</span><span class="p">)</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="nx">d</span><span class="p">.</span><span class="nx">setTime</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">getTime</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">24</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">60</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">60</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">1000</span><span class="p">);</span>
 </span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">  </span><span class="p">}</span>
 </span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="p">}</span>
 </span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>
@@ -1931,7 +1938,7 @@
 <li>此時尚未為抵達<code>console.log</code> 敘述，不輸出訊息</li>
 <li>第二次調用 <code>steper.next()</code> 時，恢復估算右值，帶入"First Message"後進行 console.log</li>
 <li>下一次迴圈開始，每次<code>next()</code>都會恢復估算右值，並且在下一次估算右值<strong>前</strong>退出</li>
-<li>可以無窮調用 <code>next()</code>，每次都會輸出下一天的日期與帶入的Message</li>
+<li>可以無窮調用 <code>next()</code>，每次都會輸出下一天的日期與帶入的 Message</li>
 </ol>
 <p>此例中，因為是個無窮迴圈，所以回傳的 <code>{ value , done }</code> 恆為 <code>{ undefined , false }</code></p>
 <div class="admonition tips">

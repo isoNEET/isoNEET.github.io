@@ -717,23 +717,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#fetch-request" class="md-nav__link">
-    使用 Fetch 發送請求 ( request )
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#post-request" class="md-nav__link">
-    發 POST Request
+    POST Request
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#reference" class="md-nav__link">
-    reference
+  <a href="#api_1" class="md-nav__link">
+    氣象資料開放平台 API 實作
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    執行程式碼
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cors-cross-origin-resource-sharing" class="md-nav__link">
+    CORS (Cross-Origin Resource Sharing)
+  </a>
+  
+    <nav class="md-nav" aria-label="CORS (Cross-Origin Resource Sharing)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#same-origin-policy" class="md-nav__link">
+    同源策略 (Same-Origin Policy)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1713,23 +1733,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#fetch-request" class="md-nav__link">
-    使用 Fetch 發送請求 ( request )
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#post-request" class="md-nav__link">
-    發 POST Request
+    POST Request
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#reference" class="md-nav__link">
-    reference
+  <a href="#api_1" class="md-nav__link">
+    氣象資料開放平台 API 實作
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    執行程式碼
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cors-cross-origin-resource-sharing" class="md-nav__link">
+    CORS (Cross-Origin Resource Sharing)
+  </a>
+  
+    <nav class="md-nav" aria-label="CORS (Cross-Origin Resource Sharing)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#same-origin-policy" class="md-nav__link">
+    同源策略 (Same-Origin Policy)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1819,19 +1859,22 @@
 <p><code>500 Internal Server Error</code>：伺服器出錯</p>
 <p><code>502 Bad Gateway</code>：服務沒有正確執行</p>
 <h2 id="restful-api">RESTful API</h2>
-<p>Restful API（Representational State Transfer）是一種基於 HTTP 協議的<strong>設計風格</strong>。</p>
+<p>表現層狀態轉換 REST（REpresentational State Transfer）是一種基於 HTTP 協議的<strong>設計風格</strong>。</p>
 <p>使用標準的 HTTP 動詞（GET、POST、PUT、DELETE 等）來操作。
-例如，使用 GET 來獲取資料，使用 POST 來新增，使用 PUT 來更新，使用 DELETE 來刪除，這些對應於 CURD 操作。</p>
+例如，使用 GET 來獲取資料，使用 POST 來新增，使用 PUT 來更新，使用 DELETE 來刪除，這些對應於 CRUD 操作。</p>
 <ul>
 <li>GET (取得)</li>
 <li>POST (新增)</li>
 <li>PUT (修改)</li>
 <li>DELETE (刪除)</li>
 </ul>
-<blockquote>
-<p>不建議在 GET 中使用登入帳號密碼
-/login?account="admin"&amp;password="123"</p>
-</blockquote>
+<p><a href="https://developer.mozilla.org/zh-TW/docs/Web/HTTP/Methods">其他HTTP動詞</a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>不建議在 GET 中使用登入帳號密碼，
+因為在 GET 請求中，URL 參數是以明文形式傳輸的，在未加密的情況下帳號密碼可以在 URL 被看見。</p>
+<p>例如: <code>/login?account=admin&amp;password=123</code></p>
+</div>
 <h2 id="api">與一般的 API 的差異</h2>
 <table>
 <thead>
@@ -1850,23 +1893,23 @@
 <tr>
 <td style="text-align: center;">更新使用者</td>
 <td style="text-align: center;"><code>POST</code> <code>/updateUser</code></td>
-<td style="text-align: center;"><code>PUT</code> <code>/user</code></td>
+<td style="text-align: center;"><code>PUT</code> <code>/user/{uid}</code></td>
 </tr>
 <tr>
 <td style="text-align: center;">取得使用者</td>
 <td style="text-align: center;"><code>POST</code> <code>/getUser</code></td>
-<td style="text-align: center;"><code>GET</code> <code>/user</code></td>
+<td style="text-align: center;"><code>GET</code> <code>/user/{uid}</code></td>
 </tr>
 <tr>
 <td style="text-align: center;">刪除使用者</td>
 <td style="text-align: center;"><code>POST</code> <code>/deleteUser</code></td>
-<td style="text-align: center;"><code>DELETE</code> <code>/user</code></td>
+<td style="text-align: center;"><code>DELETE</code> <code>/user/{uid}</code></td>
 </tr>
 </tbody>
 </table>
 <h2 id="restful-api_1">RESTful API 有哪些優勢？</h2>
 <ul>
-<li>可擴展性</li>
+<li>可擴展性<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">2</a></sup></li>
 </ul>
 <p>伺服器不必保留過去的用戶端請求資訊，透過無狀態和有效的快取機制來減少伺服器負擔，提升系統的擴展能力且減少效能瓶頸。</p>
 <ul>
@@ -1877,58 +1920,132 @@
 <ul>
 <li>獨立性</li>
 </ul>
-<p>您可以使用各種程式設計語言來編寫用戶端和伺服器應用程式，而不會影響 API 設計。</p>
-<h2 id="fetch-request">使用 Fetch 發送請求 ( request )</h2>
-<div class="language-js highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nx">fetch</span><span class="p">(</span><span class="s2">&quot;http://example.com/movies.json&quot;</span><span class="p">)</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">response</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="p">})</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">myJson</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myJson</span><span class="p">);</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="c1">// 處理資料</span>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">  </span><span class="p">});</span>
+<p>可以使用各種程式設計語言來編寫用戶端和伺服器應用程式，而不會影響 API 設計。</p>
+<h2 id="post-request">POST Request</h2>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nx">postData</span><span class="p">(</span><span class="s1">&#39;http://example.com/answer&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">answer</span><span class="o">:</span><span class="w"> </span><span class="mf">42</span><span class="w"> </span><span class="p">})</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">data</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">))</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">error</span><span class="p">));</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="kd">function</span><span class="w"> </span><span class="nx">postData</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span><span class="w"> </span><span class="nx">data</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="nx">body</span><span class="o">:</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">),</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">      </span><span class="s1">&#39;user-agent&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Mozilla/4.0 MDN Example&#39;</span><span class="p">,</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">      </span><span class="s1">&#39;content-type&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;application/json&#39;</span><span class="p">,</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="p">},</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="nx">method</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;POST&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// HTTP動詞，預設為GET</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">  </span><span class="p">}).</span><span class="nx">then</span><span class="p">((</span><span class="nx">response</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">());</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="p">}</span>
 </span></code></pre></div>
-<h2 id="post-request">發 POST Request</h2>
-<div class="language-js highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">// 設定api URL</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://api.example.com/endpoint&quot;</span><span class="p">;</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1">// 設定body要放的值</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="kd">const</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;John&quot;</span><span class="p">,</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="mf">30</span><span class="p">,</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="p">};</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="kd">const</span><span class="w"> </span><span class="nx">options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">  </span><span class="nx">method</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;POST&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// GET、POST、PUT、DELETE</span>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">  </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">    </span><span class="s2">&quot;Content-Type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;application/json&quot;</span><span class="p">,</span>
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">  </span><span class="p">},</span>
-</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">  </span><span class="nx">body</span><span class="o">:</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">),</span>
-</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="p">};</span>
-</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>
-</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="nx">fetch</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="p">)</span>
-</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">  </span><span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">response</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">())</span>
-</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">  </span><span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">data</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
-</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">    </span><span class="c1">// 處理資料</span>
-</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="w">  </span><span class="p">})</span>
-</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="w">  </span><span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
-</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="w">    </span><span class="c1">// 處理錯誤</span>
-</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="w">  </span><span class="p">});</span>
-</span></code></pre></div>
-<h2 id="reference">reference</h2>
+<p>範例程式碼<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">3</a></sup>中有幾個比較重要的參數</p>
+<ol>
+<li><strong><code>url</code></strong> 是 API 的網址</li>
+<li><strong><code>body</code></strong> 提供給伺服器的資訊，上面的範例為將 <code>data</code> 物件轉為JSON字串作為 body 提供給 Server</li>
+<li><strong><code>headers</code></strong> 可以放入 Http 的 Header資訊，一般常見的屬性包含 User-Agent、Content-Type 等...，較詳細的可以參考 <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers">MDN</a></li>
+<li><strong><code>method</code></strong> 放入 HTTP動詞，如 <code>GET</code>、<code>POST</code> 等</li>
+</ol>
+<h2 id="api_1">氣象資料開放平台 API 實作</h2>
 <ol>
 <li>
-<p><a href="https://developer.mozilla.org/zh-TW/docs/Web/API/Fetch_API/Using_Fetch">https://developer.mozilla.org/zh-TW/docs/Web/API/Fetch_API/Using_Fetch</a></p>
+<p>到<a href="https://opendata.cwa.gov.tw/index">氣象資料開放平台</a>註冊帳號
+<a class="glightbox" href="/webgame-engine/assets/HTTP-request/openWeatherData.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="/webgame-engine/assets/HTTP-request/openWeatherData.png" /></a></p>
 </li>
 <li>
-<p><a href="https://aws.amazon.com/tw/what-is/restful-api/">https://aws.amazon.com/tw/what-is/restful-api/</a></p>
+<p>註冊一個帳號 <a href="https://pweb.cwa.gov.tw/emember/register">https://pweb.cwa.gov.tw/emember/register</a>
+<a class="glightbox" href="/webgame-engine/assets/HTTP-request/openWeatherDataRegister.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="/webgame-engine/assets/HTTP-request/openWeatherDataRegister.png" /></a></p>
+</li>
+<li>
+<p>到電子信箱啟用會員後再次<a href="https://opendata.cwa.gov.tw/userLogin">登入</a>
+<a class="glightbox" href="/webgame-engine/assets/HTTP-request/emailConfirm.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="/webgame-engine/assets/HTTP-request/emailConfirm.png" /></a></p>
+</li>
+<li>
+<p>登入後取得授權碼並將授權碼複製下來
+<a class="glightbox" href="/webgame-engine/assets/HTTP-request/getToken.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="/webgame-engine/assets/HTTP-request/getToken.png" /></a></p>
+</li>
+<li>
+<p>前往開發指南查看<a href="https://opendata.cwa.gov.tw/dist/opendata-swagger.html">api文件</a>
+<a class="glightbox" href="/webgame-engine/assets/HTTP-request/apiDoc.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="/webgame-engine/assets/HTTP-request/apiDoc.png" /></a></p>
+</li>
+<li>
+<p>可以在swagger文檔中使用API request
+<a class="glightbox" href="/webgame-engine/assets/HTTP-request/trySwagger1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="/webgame-engine/assets/HTTP-request/trySwagger1.png" /></a></p>
+</li>
+<li>
+<p>填入需要的參數後點擊Execute執行
+<a class="glightbox" href="/webgame-engine/assets/HTTP-request/trySwagger2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="/webgame-engine/assets/HTTP-request/trySwagger2.png" /></a></p>
+</li>
+<li>
+<p>執行後的回傳結果
+<a class="glightbox" href="/webgame-engine/assets/HTTP-request/result.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="/webgame-engine/assets/HTTP-request/result.png" /></a></p>
 </li>
 </ol>
+<h2 id="_3">執行程式碼</h2>
+<ul>
+<li>BaseUrl
+<a class="glightbox" href="/webgame-engine/assets/HTTP-request/baseUrl.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="/webgame-engine/assets/HTTP-request/baseUrl.png" /></a></li>
+</ul>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>  https://opendata.cwa.gov.tw/api/v1/rest/datastore/F-D0047-063?Authorization=XXX-XXX-XXX
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>   └┬┘   └────────┬────────┘ └┬┘    └────────────┬───────────┘  └──────────┬───────────┘
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>Scheme       API domain    BaseUrl             Path                     Query Argument
+</span></code></pre></div>
+<ul>
+<li>
+<p>BaseUrl
+<a class="glightbox" href="/webgame-engine/assets/HTTP-request/baseUrl.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="/webgame-engine/assets/HTTP-request/baseUrl.png" /></a></p>
+</li>
+<li>
+<p>API Path
+<a class="glightbox" href="/webgame-engine/assets/HTTP-request/apiPath.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="/webgame-engine/assets/HTTP-request/apiPath.png" /></a></p>
+</li>
+</ul>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">baseUrl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://opendata.cwa.gov.tw/api/v1/&quot;</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;rest/datastore/F-D0047-063&quot;</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">authorization</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;yourAuthorization&quot;</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nx">fetch</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">baseUrl</span><span class="si">}${</span><span class="nx">path</span><span class="si">}</span><span class="sb">?Authorization=</span><span class="si">${</span><span class="nx">authorization</span><span class="si">}</span><span class="sb">`</span><span class="p">)</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span><span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">response</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">  </span><span class="p">})</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">  </span><span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">myJson</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myJson</span><span class="p">);</span><span class="w"> </span><span class="c1">// 輸出json資料</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">  </span><span class="p">});</span>
+</span></code></pre></div>
+<ul>
+<li>結果輸出
+<a class="glightbox" href="/webgame-engine/assets/HTTP-request/consoleTest.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="/webgame-engine/assets/HTTP-request/consoleTest.png" /></a></li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>如果你的網站使用 HTTPS (加密) 則不能請求 HTTP (未加密)的網站，為了確保整個網站的安全性，瀏覽器禁止在使用HTTPS的網站中請求HTTP。</p>
+<blockquote>
+<p>可以在HTTPS存取HTTP圖片、影片資源</p>
+</blockquote>
+</div>
+<h2 id="cors-cross-origin-resource-sharing">CORS (Cross-Origin Resource Sharing)</h2>
+<p>CORS是一種瀏覽器<strong>安全機制</strong>，當在網頁中使用 JavaScript 發起跨域請求時，瀏覽器會執行同源策略，阻止該請求，以保護使用者的安全。</p>
+<h3 id="same-origin-policy">同源策略 (Same-Origin Policy)</h3>
+<p>同源是指<strong>相同域名(domain)、協議(protocol)跟端口(port)</strong>，
+在同源策略下，僅允許網頁從與它自己相同的原始來源來載入資源。
+在某些情況下，網頁需要與其他來源的資源，例如使用不同網域的 API。</p>
+<p>在伺服器端可以設定 CORS 的限制，確保僅允許來自特定網域的請求或限制允許的 HTTP 方法和標頭。
+這有助於防止跨站腳本攻擊(XSS)和跨站點請求偽造(CSRF)等安全風險。</p>
+<ul>
+<li>出現CORS的錯誤可能類似下圖情境<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup></li>
+</ul>
+<p><a class="glightbox" href="https://miro.medium.com/v2/resize:fit:1400/format:webp/0*bI2yxKryqJzyUkud" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="出現CORS的錯誤" src="https://miro.medium.com/v2/resize:fit:1400/format:webp/0*bI2yxKryqJzyUkud" /></a></p>
 <div class="footnote">
 <hr />
 <ol>
 <li id="fn:1">
 <p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p>https://aws.amazon.com/tw/what-is/restful-api/&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>https://developer.mozilla.org/zh-TW/docs/Web/API/Fetch_API/Using_Fetch&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:4">
+<p>https://miro.medium.com/v2/resize:fit:1400/format:webp/0*bI2yxKryqJzyUkud&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>

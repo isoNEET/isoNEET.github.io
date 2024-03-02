@@ -1789,12 +1789,12 @@
 <div class="admonition quote">
 <p class="admonition-title">Quote</p>
 <p>this 值由被呼叫的函式來決定。它不能在執行期間被指派，每次函式呼叫調用的值也可能不同</p>
-<p>this是一個特殊的值, 無法於執行期間被覆蓋</p>
+<p>this 是一個特殊的值，無法於執行期間被覆蓋</p>
 <p>在 <strong>嚴格模式</strong> 與 <strong>非嚴格模式</strong>下有所不同</p>
 </div>
 <h3 id="this_2">This 的查找</h3>
-<p>對於一般的 function, 查找 this 的範圍會從調用者(caller)往上查找：</p>
-<div class="language-javascript highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="s2">&quot;use strict&quot;</span><span class="p">;</span>
+<p>對於一般的 function，查找 this 的範圍會從調用者(caller)往上查找：</p>
+<p><div class="language-javascript highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="s2">&quot;use strict&quot;</span><span class="p">;</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">obj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nx">prop</span><span class="o">:</span><span class="w"> </span><span class="mf">300</span><span class="p">,</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nx">fn</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -1807,16 +1807,18 @@
 </span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="p">}</span>
 </span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
 </span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="nx">obj</span><span class="p">.</span><span class="nx">fn</span><span class="p">();</span><span class="w"> </span><span class="c1">// 300;</span>
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="nx">obj</span><span class="p">.</span><span class="nx">fn2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">outerFn</span><span class="p">;</span>
-</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
-</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="nx">obj</span><span class="p">.</span><span class="nx">fn2</span><span class="p">();</span><span class="w"> </span><span class="c1">// 300, 因為此時 outerFn 繫結於 obj 的成員位址</span>
-</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
-</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="nx">outerFn</span><span class="p">();</span><span class="w"> </span><span class="c1">// Error, this 並沒有 prop 這個成員</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="nx">obj</span><span class="p">.</span><span class="nx">fn</span><span class="p">();</span><span class="w"> </span><span class="c1">// 300;</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="nx">obj</span><span class="p">.</span><span class="nx">fn2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">outerFn</span><span class="p">;</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="nx">obj</span><span class="p">.</span><span class="nx">fn2</span><span class="p">();</span><span class="w"> </span><span class="c1">// 300, 因為此時 outerFn 繫結於 obj 的成員位址</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="nx">obj</span><span class="p">.</span><span class="nx">fn2</span><span class="p">();</span><span class="w"> </span><span class="c1">// 300, 因為此時 outerFn 繫結於 obj 的成員位址</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="nx">outerFn</span><span class="p">();</span><span class="w"> </span><span class="c1">// Error, this 並沒有 prop 這個成員</span>
 </span></code></pre></div>
-<p><code>this</code>的判斷, 是先依照是不是作為某個物件的屬性或方法被調用</p>
-<p>在上述的例子中, 因為 <code>outerFn</code> 是直接以一個 function 被調用, 而不是某個物件底下的方法, 所以 <code>this</code> 的值為 <code>undefined</code></p>
-<p>但經過 <code>obj.fn2</code> 指向 <code>outerFn</code>, 此時 <code>obj.fn2</code> 同樣是調用 <code>outerFn</code>, 但是是以 <code>obj</code>的成員被調用</p>
+<code>this</code>的判斷，是先依照是不是作為某個物件的屬性或方法被調用</p>
+<p>在上述的例子中，因為 <code>outerFn</code> 是直接以一個 function 被調用，而不是某個物件底下的方法，所以 <code>this</code> 的值為 <code>undefined</code></p>
+<p>但經過 <code>obj.fn2</code> 指向 <code>outerFn</code>，此時 <code>obj.fn2</code> 同樣是調用 <code>outerFn</code>，但是是以 <code>obj</code>的成員被調用</p>
 <p>因此 <code>this</code> 的值相當於 <code>obj</code></p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -1851,8 +1853,8 @@
 </span></code></pre></div>
 <div class="admonition danger">
 <p class="admonition-title">Danger</p>
-<p>在上述的例中, 通過 <strong>proto</strong> 屬性直接修改一個物件的原型(Prototype)</p>
-<p>但真正開發中, 直接改變物件的原型是一件很不建議的事情, 同時也會影響到所有參照原型的實例</p>
+<p>在上述的例中，通過 <strong>proto</strong> 屬性直接修改一個物件的原型(Prototype)</p>
+<p>但真正開發中，直接改變物件的原型是一件很不建議的事情，同時也會影響到所有參照原型的實例</p>
 </div>
 <h3 id="this_3">This 的綁定</h3>
 <p>五種 this 的綁定方式</p>
@@ -1889,7 +1891,7 @@
 </span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="nx">sayName</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">obj3</span><span class="p">)();</span><span class="w"> </span><span class="c1">// 輸出 &quot;Kevin&quot;</span>
 </span></code></pre></div>
 <p><strong><code>new</code> 綁定：</strong></p>
-<p>使用<code>new</code> 運算符生成構造函式時，this 指向新創建的物件。</p>
+<p>使用 <code>new</code> 運算符生成構造函式時，this 指向新創建的物件。</p>
 <div class="language-js highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">Person</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span><span class="w"> </span><span class="nx">age</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">name</span><span class="p">;</span>
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="k">this</span><span class="p">.</span><span class="nx">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">age</span><span class="p">;</span>
@@ -1898,7 +1900,7 @@
 </span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span><span class="w"> </span><span class="c1">// 輸出 &quot;Alice&quot;</span>
 </span></code></pre></div>
 <p><strong>箭頭函式綁定：</strong></p>
-<p><code>箭頭函式中的this指向，始終指向箭頭函式的上下文</code>和調用方式無關。</p>
+<p><code>箭頭函式中的 this 指向，始終指向箭頭函式的上下文</code>和調用方式無關。</p>
 <div class="language-js highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">obj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span>
 </span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="nx">sayName</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -1914,31 +1916,31 @@
 <h2 id="this_4">This 指向</h2>
 <div class="admonition quote">
 <p class="admonition-title">Quote</p>
+<p>在函式執行的過程中，<code>this</code> 一旦被確定，那就不能更改了</p>
 </div>
-<p>在函式執行的過程中，<code>this</code>一旦被確定，那就不能更改了</p>
 <p><strong>全域中的<code>this</code></strong></p>
 <ul>
-<li>嚴格模式下：全域中的<code>this</code>指向<code>undefined</code>，並非全域物件</li>
+<li>嚴格模式下：全域中的 <code>this</code> 指向 <code>undefined</code> ，並非全域物件</li>
 </ul>
 <div class="language-js highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="s2">&quot;use strict&quot;</span><span class="p">;</span>
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="kc">undefined</span><span class="p">);</span><span class="w"> </span><span class="c1">// 輸出 true</span>
 </span></code></pre></div>
 <ul>
-<li>非嚴格模式下：全域中的 this 指向全域物件，瀏覽器環境下是<code>window</code>，在 Node.js 環境中，全域物件是 <code>global</code> 物件。</li>
+<li>非嚴格模式下：全域中的this指向全域物件，瀏覽器環境下是 <code>window</code>，在 Node.js 環境中，全域物件是 <code>global</code> 物件。</li>
 </ul>
 <p><strong>函式中的<code>this</code></strong></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>當函式作為方法調用時，this指向調用該方法的函式</p>
-<p>當函式作為函式調用時，this指向全域物件</p>
-<p>當函式被使用運算子調用時，this指向新創建的物件</p>
-<p>當箭頭函式被調用時，this指向箭頭函式的執行上下文</p>
+<p>當函式作為方法調用時，this 指向調用該方法的函式</p>
+<p>當函式作為函式調用時，this 指向全域物件</p>
+<p>當函式被使用運算子調用時，this 指向新創建的物件</p>
+<p>當箭頭函式被調用時，this 指向箭頭函式的執行上下文</p>
 </div>
 <p>箭頭函式下，this 的指向固定為箭頭函式的上下文，也就是箭頭函式外層的執行上下文中的 this，不會根據函式的調用方式決定</p>
 <h2 id="arrow-function">箭頭函式(Arrow Function)</h2>
 <p>箭頭函式表示法：</p>
-<div class="language-javascript highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1">// ex.1</span>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1">// ex.1</span>
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">b</span><span class="p">;</span>
 </span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="p">};</span>
@@ -1950,7 +1952,7 @@
 </span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="kd">const</span><span class="w"> </span><span class="nx">sayHello</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">name</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="sb">`Hello, </span><span class="si">${</span><span class="nx">name</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>
 </span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>
 </span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="c1">// ex.4</span>
-</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="kd">const</span><span class="w"> </span><span class="nx">sayHello</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">name</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="sb">`Hello, </span><span class="si">${</span><span class="nx">name</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span><span class="w"> </span><span class="c1">// 只有一個參數時, 可以省略()</span>
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="kd">const</span><span class="w"> </span><span class="nx">sayHello</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="sb">`Hello, </span><span class="si">${</span><span class="nx">name</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span><span class="w"> </span><span class="c1">// 只有一個參數時, 可以省略()</span>
 </span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>
 </span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="c1">// ex.5</span>
 </span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="kd">const</span><span class="w"> </span><span class="nx">returnObj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">user</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">({</span>
@@ -1961,13 +1963,13 @@
 </span><span id="__span-7-21"><a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a><span class="c1">// 倘若使用 user =&gt; {}, 此時的 {} 會被視作 block statement, 使用 ({}) 則視為 object expression</span>
 </span></code></pre></div>
 <h3 id="this_5">箭頭函式對 this 的影響</h3>
-<p>this 對於一般函式來說, this 有幾種可能值：</p>
+<p>this 對於一般函式來說，this 有幾種可能值：</p>
 <ul>
-<li>作為 new 建構子來說, this 指向物件本身</li>
-<li>對於 strict mode 下直接調用函式, 函式中的 this 是 <code>undefined</code></li>
-<li>作為物件的方法呼叫時, 參考至物件上</li>
+<li>作為 new 建構子來說，this指向物件本身</li>
+<li>對於 strict mode 下直接調用函式，函式中的 this 是 <code>undefined</code></li>
+<li>作為物件的方法呼叫時，參考至物件上</li>
 </ul>
-<p>而 arrow function () =&gt; {} 的行為, 是基於詞法域(lexical), 而非語法語境(context)</p>
+<p>而 arrow function () =&gt; {} 的行為，是基於詞法域(lexical)，而非語法語境(context)</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>箭頭函式當中的 this 綁定的是是定義時的物件，而不是使用時的物件。也就是說，在箭頭函式中，this 指稱的對象在被定義時就固定了，而不會隨著使用時的脈絡而改變。</p>
@@ -1978,18 +1980,18 @@
 <p>要快速釐清 arrow function 與 一般 function 的使用時機時：</p>
 <p>使用 <code>function() {}</code> 宣告的時機：</p>
 <ol>
-<li>在物件中, 方法要參照物件本身</li>
-<li>在類別中, 宣告成員函式的情景</li>
+<li>在物件中，方法要參照物件本身</li>
+<li>在類別中，宣告成員函式的情景</li>
 <li>使用到 Generator <code>function*</code> 的情況</li>
 <li>使用 arguments 的情況</li>
 </ol>
-<p>除此之外, 都可以直接使用<code>() =&gt; {}</code> Arrow Function 的形式來宣告函式</p>
-<p>但原則上來說, 盡可能使用展開運算替代arguments, 因此動態參數的情況, 也可以使用 arrow function</p>
+<p>除此之外，都可以直接使用<code>() =&gt; {}</code> Arrow Function 的形式來宣告函式</p>
+<p>但原則上來說， 盡可能使用展開運算替代 arguments，因此動態參數的情況，也可以使用 arrow function</p>
 </div>
 <h2 id="_1">閉包</h2>
 <h3 id="_2">語法域與詞法域</h3>
-<p>通俗的解釋, 語法域代表的是執行期間動態決定的行為, 比方說普通函式的<code>this</code>、建構式的<code>super</code></p>
-<p>而詞法域代表的是封閉範圍的前後文, 如同變數的查找一樣, 舉例來說：</p>
+<p>通俗的解釋，語法域代表的是執行期間動態決定的行為，比方說普通函式的<code>this</code>、建構式的 <code>super</code></p>
+<p>而詞法域代表的是封閉範圍的前後文，如同變數的查找一樣，舉例來說：</p>
 <div class="language-js highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">{</span>
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="c1">// -- block 1</span>
 </span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">100</span><span class="p">;</span>
@@ -1999,29 +2001,31 @@
 </span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">300</span><span class="p">;</span>
 </span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">    </span><span class="kd">function</span><span class="w"> </span><span class="nx">fn</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">      </span><span class="c1">// -- block 2.1</span>
-</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="w">      </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">,</span><span class="w"> </span><span class="nx">c</span><span class="p">);</span>
-</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="w">    </span><span class="nx">fn</span><span class="p">();</span><span class="w"> </span><span class="c1">// 100, 200, 300</span>
-</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="w">  </span><span class="p">}</span>
-</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="w">  </span><span class="p">{</span>
-</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="w">    </span><span class="c1">// -- block 3</span>
-</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="w">    </span><span class="kd">function</span><span class="w"> </span><span class="nx">fn</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="w">      </span><span class="c1">// -- block 3.1</span>
-</span><span id="__span-8-18"><a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a><span class="w">      </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">,</span><span class="w"> </span><span class="nx">c</span><span class="p">);</span>
-</span><span id="__span-8-19"><a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-8-20"><a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a><span class="w">    </span><span class="nx">fn</span><span class="p">();</span><span class="w"> </span><span class="c1">// 錯誤, c 不存於該 block 3.1 以及 block 3</span>
-</span><span id="__span-8-21"><a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a><span class="w">  </span><span class="p">}</span>
-</span><span id="__span-8-22"><a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a><span class="p">}</span>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="w">      </span><span class="kd">function</span><span class="w"> </span><span class="nx">fn</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="w">        </span><span class="c1">// -- block 2.1</span>
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">,</span><span class="w"> </span><span class="nx">c</span><span class="p">);</span>
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="w">      </span><span class="p">}</span>
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="w">      </span><span class="nx">fn</span><span class="p">();</span><span class="w"> </span><span class="c1">// 100, 200, 300</span>
+</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="w">      </span><span class="nx">fn</span><span class="p">();</span><span class="w"> </span><span class="c1">// 100, 200, 300</span>
+</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-8-18"><a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a><span class="w">      </span><span class="c1">// -- block 3</span>
+</span><span id="__span-8-19"><a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a><span class="w">      </span><span class="kd">function</span><span class="w"> </span><span class="nx">fn</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-8-20"><a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a><span class="w">        </span><span class="c1">// -- block 3.1</span>
+</span><span id="__span-8-21"><a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a><span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">,</span><span class="w"> </span><span class="nx">c</span><span class="p">);</span>
+</span><span id="__span-8-22"><a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a><span class="w">      </span><span class="p">}</span>
+</span><span id="__span-8-23"><a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a><span class="w">      </span><span class="nx">fn</span><span class="p">();</span><span class="w"> </span><span class="c1">// 錯誤, c 不存於該 block 3.1 以及 block 3</span>
+</span><span id="__span-8-24"><a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-8-25"><a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-8-26"><a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a><span class="p">}</span>
 </span></code></pre></div>
-<p>a, b 在同一個 block, 而 c 在的 block 可以看到外部(block 1)
-所以第一個 block 2 可以看到 a,b,c, 但是第二個僅能看到 a,b</p>
+<p>a, b 在同一個 block，而 c 在的 block 可以看到外部(block 1)
+所以第一個 block 2 可以看到 a, b, c, 但是第二個僅能看到 a, b</p>
 <p>這就是詞法域(其行為依照原始碼的樣子), 比較編譯器領域的說法是：Token 被宣告的位置</p>
-<p>而閉包則複雜一點, 以上面的例子來說, 可以觀察出：</p>
-<ul>
-<li>block 允許巢狀</li>
-<li>內部的 block 可以存取外部的 block</li>
-<li>外部的 block 不可以存取內部的 block</li>
-</ul>
+<p>而閉包則複雜一點，以上面的例子來說，可以觀察出：
+- block 允許巢狀
+- 內部的 block 可以存取外部的 block
+- 外部的 block 不可以存取內部的 block</p>
 <h3 id="_3">閉包的概念</h3>
 <div class="admonition quote">
 <p class="admonition-title">Quote</p>
@@ -2074,7 +2078,7 @@
 </span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="nx">counter</span><span class="p">();</span><span class="w"> </span><span class="c1">// 輸出 1</span>
 </span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="nx">counter</span><span class="p">();</span><span class="w"> </span><span class="c1">// 輸出 2</span>
 </span></code></pre></div>
-<p>創建<code>createCounter</code> 函式，該函式定義變數 <code>count</code> 和一個內部函式 increment。當我們調用 <code>createCounter</code> 並將其返回值賦給 counter 變數時，counter 變數實際上保存了 increment 的引用以及對 <code>count</code> 變數的引用。由於 <code>count</code> 變數是在 <code>createCounter</code> 函式內部定義的，因此它不會被其他代碼所訪問。</p>
+<p>創建 <code>createCounter</code> 函式，該函式定義變數 <code>count</code> 和一個內部函式 increment。當我們調用 <code>createCounter</code> 並將其返回值賦給 counter 變數時，counter 變數實際上保存了 increment 的引用以及對 <code>count</code> 變數的引用。由於 <code>count</code> 變數是在 <code>createCounter</code> 函式內部定義的，因此它不會被其他代碼所訪問。</p>
 <p>每次調用 <code>counter</code> 函式時，它都會執行 increment 中的代碼，並在控制台輸出當前計數器的值。由於 increment 函式捕獲了 <code>count</code> 變數，因此它可以增加計數器的值並在每次調用時輸出正確的結果。</p>
 <p><strong>模組封裝</strong></p>
 <p>利用閉包封裝了私有變數和方法，以便可以在需要時安全地公開公共介面。</p>

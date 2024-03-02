@@ -648,6 +648,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#settimeout-setinterval" class="md-nav__link">
+    補充：setTimeout 與 setInterval
+  </a>
+  
+    <nav class="md-nav" aria-label="補充：setTimeout 與 setInterval">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    遇到的問題
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    解決方法
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1675,6 +1702,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#settimeout-setinterval" class="md-nav__link">
+    補充：setTimeout 與 setInterval
+  </a>
+  
+    <nav class="md-nav" aria-label="補充：setTimeout 與 setInterval">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    遇到的問題
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    解決方法
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1695,7 +1749,7 @@
 <p>JavaScript 是單線程（single threaded runtime）的程式語言，所有的程式碼片段都會在堆疊中（stack）被執行，而且一次只會執行一個程式碼片段。</p>
 <div class="admonition quote">
 <p class="admonition-title">Quote</p>
-<p>如果JavaScript是單執行緒的，那麼我們如何像在Java中那樣創建和運行執行緒？</p>
+<p>如果 JavaScript 是單執行緒的，那麼我們如何像在 Java 中那樣創建和運行執行緒？</p>
 <p>我們使用events或設定一段程式碼在給定時間執行，這種非同步性在 JavaScript 中稱為 event loop。</p>
 </div>
 <p><a class="glightbox" href="/webgame-engine/assets/task-schedule/js-visual-representation.svg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="js-v8" src="/webgame-engine/assets/task-schedule/js-visual-representation.svg" /></a></p>
@@ -1725,12 +1779,12 @@
 <p>當呼叫 bar 時，會產生一個含有 bar 的參數及區域變數的 frame，而在 bar 呼叫了 foo 時，含有 foo 參數及變數的第二個 frame 就會被置於堆疊的最上面。當 foo 回傳後，最上面的 frame 會被抽離堆疊（僅留下 bar 的呼叫 frame）。然後當 bar 返回之後，堆疊就會清空。</p>
 <h3 id="_2">阻塞</h3>
 <p>模擬一個情境：</p>
-<p>在 C++ 中, 可能使用 <code>cin</code> 或是 <code>scanf</code> 來得到使用者的輸入, 程式碼如下：</p>
+<p>在 C++ 中，可能使用 <code>cin</code> 或是 <code>scanf</code> 來得到使用者的輸入，程式碼如下：</p>
 <div class="language-cpp highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">num</span><span class="p">;</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Hello, world&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
 </span></code></pre></div>
-<p><code>cin</code> 會嘗試取得使用者輸入, 然後輸出 <code>"Hello, world"</code>。但是使用者輸入之前, 畫面是不會繼續渲染的, 這在交互式的 command interface 不是問題</p>
-<p>但是到了 GUI 卻相當嚴重, 比方說登入頁面, 在你輸入帳號、密碼之前, 畫面上其他部分都停止繪製, 這不是一個好的體驗</p>
+<p><code>cin</code> 會嘗試取得使用者輸入，然後輸出 <code>"Hello, world"</code>。但是使用者輸入之前，畫面是不會繼續渲染的，這在交互式的 command interface 不是問題</p>
+<p>但是到了 GUI 卻相當嚴重，比方說登入頁面，在你輸入帳號、密碼之前，畫面上其他部分都停止繪製，這不是一個好的體驗</p>
 <h2 id="_3">概述非同步與同步</h2>
 <p>為了解決阻塞的問題，我們可以透過非同步（Asynchronous）的方式來解決</p>
 <p>下面用一個常見的速食店的例子來說明同步與非同步的差異：</p>
@@ -1764,22 +1818,18 @@
 <p>我們之所以可以在瀏覽器中同時（concurrently）處理多個事情，是因為瀏覽器並非只是一個 JavaScript Runtime。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-</div>
 <p>JavaScript 的執行時期（Runtime）一次只能做一件事，但瀏覽器提供了更多不同的 API 讓我們使用，進而讓我們可以透過 event loop 搭配非同步的方式同時處理多個事項。</p>
+</div>
 <p>Event loop 的作用是去監控堆疊（call stack）和工作佇列（task queue），當堆疊當中沒有執行項目的時候，便把佇列中的內容拉到堆疊中去執行。</p>
-<p>Task Queue 紀錄等待執行的工作, 由後方的 Worker 取出後執行, 完成後調用註冊的 Handler</p>
-<p>比方說 setTimeout(fn, ms), 接受一個 function 和毫秒的數值, 就會在 N 毫秒後調用該方法</p>
+<p>Task Queue 紀錄等待執行的工作，由後方的Worker取出後執行，完成後調用註冊的 Handler</p>
+<p>比方說 setTimeout(fn, ms)，接受一個 function 和毫秒的數值，就會在 N 毫秒後調用該方法</p>
 <div class="language-js highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">);</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nx">setTimeout</span><span class="p">(</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="kd">function</span><span class="w"> </span><span class="nx">cb</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">      </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;There&quot;</span><span class="p">);</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="p">},</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">  </span><span class="mf">5000</span>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="p">);</span><span class="w"> </span><span class="c1">// 1秒後印出 &#39;test&#39;</span>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Bye&quot;</span><span class="p">);</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="w"> </span><span class="nx">cb</span><span class="p">(){</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;There&#39;</span><span class="p">)</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="p">},</span><span class="w"> </span><span class="mf">5000</span><span class="p">)</span><span class="w"> </span><span class="c1">// 5秒後印出 &#39;test&#39;</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Bye&quot;</span><span class="p">);</span>
 </span></code></pre></div>
 <p>執行的過程可能如下：</p>
 <ol>
@@ -1789,13 +1839,22 @@
 </ol>
 <p>證明 call stack 結束後, 才會執行 task queue 的工作如下：</p>
 <div class="language-js highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">arr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[];</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nx">setTimeout</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">arr</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="mf">1</span><span class="p">),</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span><span class="w"> </span><span class="c1">// Enqueue - task queue</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nx">setTimeout</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">arr</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="mf">2</span><span class="p">),</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span><span class="w"> </span><span class="c1">// Enqueue - task queue</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nx">setTimeout</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">arr</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="mf">3</span><span class="p">),</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span><span class="w"> </span><span class="c1">// Enqueue - task queue</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="nx">arr</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="mf">4</span><span class="p">);</span><span class="w"> </span><span class="c1">// call stack</span>
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr</span><span class="p">);</span><span class="w"> </span><span class="c1">// [4, 1, 2, 3]</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="nx">arr</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="mf">1</span><span class="p">);</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="p">},</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span><span class="w"> </span><span class="c1">// Enqueue - task queue</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">  </span><span class="nx">arr</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="mf">2</span><span class="p">);</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="p">},</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span><span class="w"> </span><span class="c1">// Enqueue - task queue</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">  </span><span class="nx">arr</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="mf">3</span><span class="p">);</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="p">},</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span><span class="w"> </span><span class="c1">// Enqueue - task queue</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="nx">arr</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="mf">4</span><span class="p">);</span><span class="w"> </span><span class="c1">// call stack</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr</span><span class="p">);</span><span class="w"> </span><span class="c1">// [4, 1, 2, 3]</span>
 </span></code></pre></div>
-<p>該程式碼揭露的：因為前面三次 push 是放在 task queue 的, 因此狀況就好像：</p>
+<p>該程式碼揭露的：因為前面三次 push 是放在 task queue 的，因此狀況就好像：</p>
 <div class="language-js highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nx">Task</span><span class="w"> </span><span class="nx">Queue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="nx">fn</span><span class="p">,</span><span class="w"> </span><span class="nx">fn</span><span class="p">,</span><span class="w"> </span><span class="nx">fn</span><span class="p">];</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nx">Call</span><span class="w"> </span><span class="nx">Stack</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="nx">fn</span><span class="p">];</span>
 </span></code></pre></div>
@@ -1804,21 +1863,17 @@
 <p class="admonition-title">Info</p>
 </div>
 <p>setTimeout 與 setInterval：</p>
-<div class="language-text highlight"><pre><span></span><code>1. setTimeout - 經過至少多少毫秒後, 應該調用 function
-2. setInterval - 每隔至少多少毫秒後, 應該調用 function
+<div class="language-text highlight"><pre><span></span><code>1. setTimeout - 經過至少多少毫秒後，應該調用 function
+2. setInterval - 每隔至少多少毫秒後，應該調用 function
 </code></pre></div>
 <p><strong>setTimeout 0</strong></p>
-<div class="language-js highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">);</span>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">)</span>
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nx">setTimeout</span><span class="p">(</span>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">  </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="kd">function</span><span class="w"> </span><span class="nx">cb</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">      </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;There&quot;</span><span class="p">);</span>
-</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">    </span><span class="p">},</span>
-</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">  </span><span class="mf">0</span>
-</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="p">);</span><span class="w"> </span><span class="c1">// 1秒後印出 &#39;test&#39;</span>
-</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
-</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Bye&quot;</span><span class="p">);</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="w"> </span><span class="nx">cb</span><span class="p">(){</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;There&#39;</span><span class="p">)</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="p">},</span><span class="w"> </span><span class="mf">0</span><span class="p">)</span><span class="w"> </span><span class="c1">// 1秒後印出 &#39;test&#39;</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Bye&quot;</span><span class="p">);</span>
 </span></code></pre></div>
 <ol>
 <li>Hello 會被放到堆疊中執行</li>
@@ -1848,12 +1903,41 @@
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-</div>
 <p>當我們點擊瀏覽器時，這個點擊事件的 callback function 並不是立即被執行的，而是先被放到工作佇列（queue）中，直到堆疊（stack）空了之後，才會被執行</p>
+</div>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-</div>
 <p>這邊分享一個提供視覺化更方便瞭解整個流程的工具 <a href="http://latentflip.com/loupe/?code=JC5vbignYnV0dG9uJywgJ2NsaWNrJywgZnVuY3Rpb24gb25DbGljaygpIHsKICAgIHNldFRpbWVvdXQoZnVuY3Rpb24gdGltZXIoKSB7CiAgICAgICAgY29uc29sZS5sb2coJ1lvdSBjbGlja2VkIHRoZSBidXR0b24hJyk7ICAgIAogICAgfSwgMjAwMCk7Cn0pOwoKY29uc29sZS5sb2coIkhpISIpOwoKc2V0VGltZW91dChmdW5jdGlvbiB0aW1lb3V0KCkgewogICAgY29uc29sZS5sb2coIkNsaWNrIHRoZSBidXR0b24hIik7Cn0sIDUwMDApOwoKY29uc29sZS5sb2coIldlbGNvbWUgdG8gbG91cGUuIik7!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D">Loupe</a></p>
+</div>
+<h2 id="settimeout-setinterval">補充：setTimeout 與 setInterval</h2>
+<h3 id="_4">遇到的問題</h3>
+<p>在 Web 開發中我們時常使用 setTimeout 及 setInterval 來實現定時任務。
+但因為瀏覽器為了提高性能以及節省資源，所以會針對在背景執行的標籤頁來做優化策略。</p>
+<p>而瀏覽器 setTimeout 及 setInterval 會因為瀏覽器的優化策略而受到影響，導致計時器的執行時間間隔被延長。
+也就是說在背景執行的標籤頁中所使用的計時器任務有可能不會按照原先所設定的間隔時間來做執行。</p>
+<p>如下範例顯示：</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">lastTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">()</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="kd">function</span><span class="w"> </span><span class="nx">measureTime</span><span class="p">(){</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">currentTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">()</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">currentTime</span><span class="o">-</span><span class="nx">lastTime</span><span class="p">)</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">    </span><span class="nx">lastTime</span><span class="o">=</span><span class="nx">currentTime</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="p">}</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="nx">setInterval</span><span class="p">(</span><span class="nx">measureTime</span><span class="p">,</span><span class="mf">1000</span><span class="p">)</span>
+</span></code></pre></div>
+<p><a class="glightbox" href="/webgame-engine/assets/task-schedule/timeout-problem.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="timeout-problem" src="/webgame-engine/assets/task-schedule/timeout-problem.png" /></a></p>
+<p>標籤頁在背景執行越久間隔時間會變得越來越久。</p>
+<h3 id="_5">解決方法</h3>
+<p>如果需要在標籤頁背景執行時定時任務，並且定時器按照先前設定的時間間隔了時間間隔來做執行，可以考慮使用下面兩個方式</p>
+<ol>
+<li>使用 Web worker</li>
+<li>使用 visibility Change事件</li>
+<li>使用 requestAnimationFrame API</li>
+</ol>
+<p>Web worker是在背景運行的的獨立線程，因此是不會受到瀏覽器優化策略的影響，所以可以將定時任務放在 Web worker 中來做執行。</p>
+<p>visibility Change 事件是一個可以使用來作為監聽頁面可見性變化的事件。
+所以可以使用事件來判斷標籤頁從背景切換到前景時再去觸發定時任務，以保證任務按照原先設定的時間間隔來執行。</p>
+<p>在動畫的部分可以選擇使用 requestAnimationFrame API 來解決。requsetAnimationFrame API 可依裝置畫面刷新頻率決定執行時機，確保每個 Frame 只跑一次，並會在畫面隱藏時暫停執行。</p>
 
 
 

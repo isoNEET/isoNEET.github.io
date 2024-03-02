@@ -1836,13 +1836,13 @@
 </span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="nx">p2</span><span class="p">.</span><span class="nx">calcBmi</span><span class="p">();</span><span class="w"> </span><span class="c1">// 22.89307408198773</span>
 </span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="nx">p1</span><span class="p">.</span><span class="nx">calcBmi</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nx">p2</span><span class="p">.</span><span class="nx">calcBmi</span><span class="p">;</span><span class="w"> </span><span class="c1">// true</span>
 </span></code></pre></div>
-<p>這裡定義 <code>Person</code> 型別, 並宣告了 <code>calcBmi</code> 方法的實作。</p>
-<p>當宣告了一個物件時, 便可以同時定義他的 <code>prototype</code></p>
-<p>當調用 function 的順序(e.g. <code>p1.calcBmi</code>)時, 會依序 <a href="/webgame-engine/learn-js/dig-deep/#_3">原型鏈</a> 查找</p>
+<p>這裡定義 <code>Person</code> 型別，並宣告了 <code>calcBmi</code> 方法的實作。</p>
+<p>當宣告了一個物件時，便可以同時定義他的 <code>prototype</code></p>
+<p>當調用 function 的順序(e.g. <code>p1.calcBmi</code>)時，會依序 <a href="/webgame-engine/learn-js/dig-deep/#_3">原型鏈</a> 查找</p>
 <p><code>p1.calcBmi</code> -&gt; <code>Person.prototype.calcBmi</code> -&gt; <code>Object.prototype.calcBmi</code></p>
 <div class="admonition question">
 <p class="admonition-title">Question</p>
-<p>若回傳一個包含函式的物件, 其行為會與定義 Class 一樣嗎？</p>
+<p>若回傳一個包含函式的物件，其行為會與定義 Class 一樣嗎？</p>
 </div>
 <div class="language-js highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="cm">/* Class-like Example */</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kd">function</span><span class="w"> </span><span class="nx">Person</span><span class="p">(</span><span class="nx">height</span><span class="p">,</span><span class="w"> </span><span class="nx">weight</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -1861,12 +1861,12 @@
 </span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="nx">p2</span><span class="p">.</span><span class="nx">calcBmi</span><span class="p">();</span><span class="w"> </span><span class="c1">// 22.89307408198773</span>
 </span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="nx">p1</span><span class="p">.</span><span class="nx">calcBmi</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nx">p2</span><span class="p">.</span><span class="nx">calcBmi</span><span class="p">;</span><span class="w"> </span><span class="c1">// false</span>
 </span></code></pre></div>
-<p>這個行為"看起來"會跟使用 <code>new Person</code> 一樣, 但是有個非常嚴重的問題, 就是 <code>p1.calcBmi != p2.calcBmi</code></p>
-<p>這個問題的嚴重性在於, 假定定義了像是 <code>MyClass</code> 這種類別, 並且有個方法 <code>myFunction</code>, 當建立了 1000 個實例</p>
-<p>myFunction 也會被建立 1000 次, 這對於記憶體的處理是非常不健康的</p>
-<p>邏輯上, 成員變數應該保持在自己的 scope, 而方法(例如 <code>MyClass.myFunction</code>) 是一個獨立的 function, 由所有的 <code>MyClass</code> 共用該 function 位址</p>
-<p>僅需要傳入自己的參考, MyClass 便會假設 <code>this</code> 是自己傳進來的參考</p>
-<p>使用 C++ 來舉例, C++ 的 class 實作隱含了 <code>this</code> 參數, 比方說</p>
+<p>這個行為"看起來"會跟使用 <code>new Person</code> 一樣，但是有個非常嚴重的問題，就是 <code>p1.calcBmi != p2.calcBmi</code></p>
+<p>這個問題的嚴重性在於，假定定義了像是 <code>MyClass</code> 這種類別，並且有個方法 <code>myFunction</code>，當建立了 1000 個實例</p>
+<p>myFunction 也會被建立 1000 次，這對於記憶體的處理是非常不健康的</p>
+<p>邏輯上，成員變數應該保持在自己的 scope，而方法(例如 <code>MyClass.myFunction</code>) 是一個獨立的 function，由所有的 <code>MyClass</code> 共用該 function 位址</p>
+<p>僅需要傳入自己的參考，MyClass 便會假設 <code>this</code> 是自己傳進來的參考</p>
+<p>使用 C++ 來舉例，C++ 的 class 實作隱含了 <code>this</code> 參數，比方說</p>
 <div class="language-c++ highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Person</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">public</span><span class="o">:</span>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="n">Person</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">height</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">weight</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="n">height_</span><span class="p">(</span><span class="n">height</span><span class="p">),</span><span class="w"> </span><span class="n">weight_</span><span class="p">(</span><span class="n">weight</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
@@ -1880,12 +1880,12 @@
 </span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">weight_</span><span class="p">;</span>
 </span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="p">}</span>
 </span></code></pre></div>
-<p>實際上, <code>calcBmi</code> 的簽章會包含一個隱含的參數 <code>this</code></p>
+<p>實際上，<code>calcBmi</code> 的簽章會包含一個隱含的參數 <code>this</code></p>
 <div class="language-c++ highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kt">double</span><span class="w"> </span><span class="nf">Person::calcBmi</span><span class="p">(</span><span class="n">Person</span><span class="o">*</span><span class="w"> </span><span class="k">this</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">weight_</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="o">-&gt;</span><span class="n">height_</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">height_</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">10000</span><span class="p">);</span>
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="p">}</span>
 </span></code></pre></div>
-<p>如果要驗證這一點, 通過 <code>std::bind</code> 這個函式可以更好的觀察到</p>
+<p>如果要驗證這一點，通過 <code>std::bind</code> 這個函式可以更好的觀察到</p>
 <div class="language-c++ highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;functional&gt;</span>
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
@@ -1910,33 +1910,33 @@
 </span></code></pre></div>
 <p>逐步拆解以上的過程：</p>
 <ol>
-<li><code>class Person</code> 宣告了 <code>calcBmi</code> function, 允許 <code>Person</code> 計算 BMI</li>
-<li>把 <code>fn</code> 通過 <code>std::bind</code> 繫結了 <code>Person::calcBmi</code> 這個函式, 並且把 <code>this</code> 的 Context 繫結在 <code>person</code> 上</li>
-<li>調用 <code>fn()</code> 時, 相當於調用了 <code>person.calcBmi()</code></li>
+<li><code>class Person</code> 宣告了 <code>calcBmi</code> function，允許 <code>Person</code> 計算 BMI</li>
+<li>把 <code>fn</code> 通過 <code>std::bind</code> 繫結了 <code>Person::calcBmi</code> 這個函式，並且把 <code>this</code> 的 Context 繫結在 <code>person</code> 上</li>
+<li>調用 <code>fn()</code> 時，相當於調用了 <code>person.calcBmi()</code></li>
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>以筆者的理解來說明：</p>
-<p>在Class的實現上, 可以拆解為 <code>屬性</code> 以及 <code>方法</code></p>
+<p>在Class的實現上，可以拆解為 <code>屬性</code> 以及 <code>方法</code></p>
 <p><code>屬性</code> 是由實例自行維護的數據區塊</p>
 <p><code>方法</code> 則是所有的實例共享同樣的函式宣告與實作</p>
-<p>所有的方法雖然共用相同的function 區段, 但是因為隱含了 <code>*this</code>, 所以不同實例調用方法才會呈現不同的結果</p>
+<p>所有的方法雖然共用相同的function 區段，但是因為隱含了 <code>*this</code>，所以不同實例調用方法才會呈現不同的結果</p>
 <p>可以參考 MSDN C++ 上的 <a href="https://learn.microsoft.com/en-us/cpp/cpp/thiscall?view=msvc-170">__thiscall</a></p>
-<p>部分程式語言, 如 Rustlang, 則要求在成員的方法實作, 顯式宣告第一個參數為 <code>&amp;self</code></p>
-<p>在 JavaScript 上, 早期的 Class 實作要求使用 <code>function</code> 來宣告, 在 <code>Person</code> 該例中</p>
-<p>早期開發人員通過 <code>if(!(this instanceof Person))</code> 判斷 <code>Person</code> 是通過建構式被調用, 還是通過一般函式被調用</p>
-<p>因為一般函式與建構式的調用, this 的數值是不相同的(在下個章節進行討論)</p>
-<p>function 的定義統一被移到 <code>&lt;Class Name&gt;.prototype</code> 這個區段, 而屬性則由實例自行維護</p>
+<p>部分程式語言，如 Rustlang，則要求在成員的方法實作，顯式宣告第一個參數為 <code>&amp;self</code></p>
+<p>在 JavaScript 上，早期的 Class 實作要求使用 <code>function</code> 來宣告，在 <code>Person</code> 該例中</p>
+<p>早期開發人員通過 <code>if(!(this instanceof Person))</code> 判斷 <code>Person</code> 是通過建構式被調用，還是通過一般函式被調用</p>
+<p>因為一般函式與建構式的調用，this 的數值是不相同的(在下個章節進行討論)</p>
+<p>function 的定義統一被移到 <code>&lt;Class Name&gt;.prototype</code> 這個區段，而屬性則由實例自行維護</p>
 <p>因此前兩個例子中：</p>
 <ol>
-<li><code>Class Example</code> 所有的 <code>Person</code> 實例, 會共享 <code>Person.prototype.calcBmi</code> 的實現</li>
-<li><code>Class-like Example</code> 所有的 <code>Person</code> 實例, 不會共享 <code>Person.prototype.calcBmi</code> 的實現, 相當於 <code>calcBmi</code> 的實現每次在 <code>Person()</code> 調用時, 都被重新宣告/實現一次。</li>
+<li><code>Class Example</code> 所有的 <code>Person</code> 實例，會共享 <code>Person.prototype.calcBmi</code> 的實現</li>
+<li><code>Class-like Example</code> 所有的 <code>Person</code> 實例，不會共享 <code>Person.prototype.calcBmi</code> 的實現，相當於 <code>calcBmi</code> 的實現每次在 <code>Person()</code> 調用時，都被重新宣告/實現一次。</li>
 </ol>
-<p>在例子2中, 使用的實例越多, 記憶體的使用則越劇烈</p>
+<p>在例子2中，使用的實例越多，記憶體的使用則越劇烈。</p>
 </div>
 <h2 id="es6">ES6 以後的類別</h2>
 <ul>
-<li>ES6 (ECMA 2016) 以後的標準, 提供了 <code>class</code> 與 <code>extends</code> 關鍵字</li>
+<li>ES6 (ECMA 2016) 以後的標準，提供了 <code>class</code> 與 <code>extends</code> 關鍵字</li>
 <li><code>class</code> 實際上是一種特別的 <a href="/webgame-engine/learn-js/basic-and-syntax/#functions">函式(Functions)</a></li>
 <li>函式宣告和類別宣告的一個重要差別在於函式宣告是 <a href="/webgame-engine/learn-js/basic-and-syntax/#hoisting">可提升(Hoisted)</a> 的，但類別宣告不是</li>
 <li><code>class</code> 可用兩種方式定義，分別是 <a href="#class_declarations">類別宣告(Class declarations)</a> 和 <a href="#class_expressions">類別表達(Class expressions)</a></li>
@@ -2105,10 +2105,10 @@
 </span><span id="__span-9-79"><a id="__codelineno-9-79" name="__codelineno-9-79" href="#__codelineno-9-79"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">adult</span><span class="p">.</span><span class="nx">introStr</span><span class="p">());</span><span class="w"> </span><span class="c1">// &quot;Cindy is 25 year-old and has 2 children.&quot;</span>
 </span><span id="__span-9-80"><a id="__codelineno-9-80" name="__codelineno-9-80" href="#__codelineno-9-80"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Is adult an instance of Person?&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">adult</span><span class="w"> </span><span class="ow">instanceof</span><span class="w"> </span><span class="nx">Person</span><span class="p">);</span><span class="w"> </span><span class="c1">// true</span>
 </span></code></pre></div>
-<p>此外, 假設建構式不需要參數, 類別可以使用 new Person 或是 new Person() 的方式初始化, 他們的差異是運算子優先順序</p>
-<p>因為成員存取算運子.的優先度比較高, 所以使用</p>
-<p>new Person.introStr 會導致錯誤, 因為 Person 不存在 introStr 這個靜態方法, 但是使用</p>
-<p>new Person().introStr 則不會出錯, 因為他實際上調用了 (new Person).introStr</p>
+<p>此外，假設建構式不需要參數，類別可以使用 new Person 或是 new Person() 的方式初始化，他們的差異是運算子優先順序</p>
+<p>因為成員存取算運子.的優先度比較高，所以使用</p>
+<p>new Person.introStr 會導致錯誤，因為 Person 不存在 introStr 這個靜態方法，但是使用</p>
+<p>new Person().introStr 則不會出錯，因為他實際上調用了 (new Person).introStr</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>new Class().method() 等同於 (new Class).method();</p>
