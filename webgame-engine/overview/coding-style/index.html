@@ -1716,7 +1716,7 @@
 </ol>
 <p><a class="glightbox" href="/webgame-engine/assets/coding-style/prettier6.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Prettier Extension" src="/webgame-engine/assets/coding-style/prettier6.png" /></a></p>
 <ol>
-<li>下載<a href="/webgame-engine/assets/coding-style/.prettierrc" download>.prettierrc</a>，並將其放置於專案的根目錄中。如檔案名稱開頭少了<code>.</code>，請手動重新命名為<code>.prettierrc</code></li>
+<li>下載<a href="/webgame-engine/assets/coding-style/.prettierrc.zip" download>.prettierrc</a>，並將其放置於專案的根目錄中。如檔案名稱開頭少了<code>.</code>，請手動重新命名為<code>.prettierrc</code></li>
 </ol>
 <p><a class="glightbox" href="/webgame-engine/assets/coding-style/prettier8.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Prettier Extension" src="/webgame-engine/assets/coding-style/prettier8.png" /></a></p>
 <p>現在，每次編輯完檔案時，可以右鍵程式碼編輯視窗並選擇<code>Format Document</code>來使用 Prettier 格式化程式碼。</p>
@@ -1724,21 +1724,21 @@
 <h2 id="vscode-eslint">如何在 VSCode 使用 ESLint</h2>
 <ol>
 <li>
-<p>在專案根目錄中使用控制台 npm 指令：安裝 ESLint：</p>
-<p><a class="glightbox" href="/webgame-engine/assets/coding-style/eslint15.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Prettier Extension" src="/webgame-engine/assets/coding-style/eslint15.png" /></a></p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>npm<span class="w"> </span>install<span class="w"> </span>eslint<span class="w"> </span>--save-dev
+<p>在專案根目錄中使用控制台 npm 指令安裝 ESLint：</p>
+<p><a class="glightbox" href="https://i.imgur.com/TQoaM3F.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Prettier Extension" src="https://i.imgur.com/TQoaM3F.png" /></a></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>npm<span class="w"> </span>install<span class="w"> </span>eslint<span class="w"> </span>-D
 </span></code></pre></div>
 </li>
 <li>
-<p>在專案根目錄中使用控制台 npm 指令</p>
-<p><a class="glightbox" href="/webgame-engine/assets/coding-style/eslint19.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Prettier Extension" src="/webgame-engine/assets/coding-style/eslint19.png" /></a></p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>npm<span class="w"> </span>install<span class="w"> </span>eslint-config-airbnb-base
+<p>初始化 eslint 環境設定：</p>
+<p><a class="glightbox" href="https://i.imgur.com/KJ6liUb.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Prettier Extension" src="https://i.imgur.com/KJ6liUb.png" /></a></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>npx<span class="w"> </span>eslint<span class="w"> </span>--init
 </span></code></pre></div>
 </li>
 <li>
-<p>在專案根目錄中使用控制台 npm 指令</p>
-<p><a class="glightbox" href="/webgame-engine/assets/coding-style/eslint20.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Prettier Extension" src="/webgame-engine/assets/coding-style/eslint20.png" /></a></p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>npm<span class="w"> </span>install<span class="w"> </span>--save-dev<span class="w"> </span>eslint-config-prettier
+<p>在專案根目錄中使用控制台輸入指令安裝 <a href="https://www.npmjs.com/package/eslint-config-prettier">eslint-config-prettier</a>：</p>
+<p><a class="glightbox" href="https://i.imgur.com/S0Niw8r.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Prettier Extension" src="https://i.imgur.com/S0Niw8r.png" /></a></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>npm<span class="w"> </span>install<span class="w"> </span>-D<span class="w"> </span>eslint-config-prettier
 </span></code></pre></div>
 </li>
 <li>
@@ -1752,6 +1752,8 @@
 <li>
 <p>安裝完成後重啟 VSCode，之後可於<code>OUTPUT</code>頁面中的<code>ESLint</code>選項下檢查是否正常安裝</p>
 <p><a class="glightbox" href="/webgame-engine/assets/coding-style/eslint21.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Prettier Extension" src="/webgame-engine/assets/coding-style/eslint21.png" /></a></p>
+<p>或是可以故意輸入一些違反 eslint 原則的程式碼，來藉此確認是否設定成功。</p>
+<p><a class="glightbox" href="https://i.imgur.com/pppedKd.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Prettier Extension" src="https://i.imgur.com/pppedKd.png" /></a></p>
 </li>
 <li>
 <p>想查看 ESLint 提示，可以於 VSCode 中打開 Problems 視窗（Ctrl+Shift+M），檢查建議。
@@ -1834,7 +1836,7 @@
 </div>
 <h2 id="_1">課程作業限制的程式碼撰寫風格</h2>
 <p>本堂課程繳交作業時，程式碼需符合助教所提供的 <code>.prettierrc</code> 及 <code>.eslintrc.js</code> 設定原則，檢查時若發現有警告或是錯誤，將會進行扣分。</p>
-<p>設定檔可以從這裡下載：<a href="/webgame-engine/assets/coding-style/.eslintrc.js" download>.eslintrc.js</a> | <a href="/webgame-engine/assets/coding-style/.prettierrc" download>.prettierrc</a></p>
+<p>設定檔可以從這裡下載：<a href="/webgame-engine/assets/coding-style/.eslintrc.js" download>.eslintrc.js</a> | <a href="/webgame-engine/assets/coding-style/.prettierrc.zip" download>.prettierrc</a></p>
 <p>違反 ESLint 原則時，VS Code 會標註紅色（Error）或黃色（Warning）底線，可以透過滑鼠懸浮於上找到違反原則的提示，也可以點擊超連結查看 ESLint 官方的使用範例。</p>
 <p><a class="glightbox" href="https://i.imgur.com/W1vhTlF.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="ESLint Error" src="https://i.imgur.com/W1vhTlF.png" /></a></p>
 <div class="admonition warning">
